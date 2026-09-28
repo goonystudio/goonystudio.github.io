@@ -69,6 +69,11 @@
     section{padding:64px 0}
   }
   @media (prefers-reduced-motion:reduce){.hero .bg,.player .ph,.player .ph::after{animation:none}}
+  .reel{display:grid;grid-template-columns:1fr 340px;gap:56px;align-items:center}
+  .phone{position:relative;border-radius:34px;overflow:hidden;aspect-ratio:9/16;background:#111;box-shadow:0 30px 60px -25px rgba(0,0,0,.45);border:8px solid #1b1714}
+  .phone video{width:100%;height:100%;object-fit:cover;display:block}
+  .sound{position:absolute;right:12px;bottom:12px;background:rgba(255,255,255,.92);color:var(--ink);border:0;border-radius:999px;padding:8px 14px;font:600 12px Inter,sans-serif;cursor:pointer}
+  @media (max-width:820px){.reel{grid-template-columns:1fr}.phone{max-width:320px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -99,6 +104,20 @@
 </section>
 
 <section>
+  <div class="wrap reel">
+    <div>
+      <h2>Et en format réseaux sociaux</h2>
+      <p class="lead">Nous avions aussi imaginé ce reel pour vous&nbsp;: un canapé bouclette dans un séjour baigné de lumière, des gros plans sur la matière, puis la pièce qui prend vie. 18 secondes au format vertical, prêtes pour Instagram, TikTok ou une publicité Facebook.</p>
+      <p class="cap">Réalisé par GOONY Studio en IA générative, sans tournage.</p>
+    </div>
+    <div class="phone">
+      <video id="reel" src="reel.mp4" poster="reel-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="sound" id="snd" type="button">Activer le son</button>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--card)">
   <div class="wrap">
     <h2>Ce qu'on peut faire ensemble</h2>
     <p class="lead">Un canapé se choisit à l'œil et au toucher. La vidéo rapproche vos clients du showroom.</p>
@@ -147,6 +166,8 @@
   // Si demo.mp4 n'est pas encore là, on garde l'aperçu animé
   const v=document.getElementById('v');
   v.addEventListener('loadeddata',()=>{v.style.display='block';document.querySelector('.ph').style.display='none'});
+  const r=document.getElementById('reel'),b=document.getElementById('snd');
+  b.addEventListener('click',()=>{r.muted=!r.muted;if(!r.muted)r.play();b.textContent=r.muted?'Activer le son':'Couper le son'});
 </script>
 </body>
 </html>
