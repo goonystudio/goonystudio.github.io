@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Groupe Ippolito × GOONY Studio | Vos biens, visités en vidéo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1d1d1b; --navy:#16162f; --muted:#5f5f5c; --bg:#ffffff; --soft:#f5f5f5;
+    --accent:#f2b705; --line:#e6e6e3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;font-weight:400}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .cond{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.01em}
+  header{position:absolute;top:0;left:0;right:0;z-index:5}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:24px;color:#fff;font-size:12px;letter-spacing:.16em;text-transform:uppercase;gap:12px}
+  header b{font-weight:600}
+  header .x{color:var(--accent);margin:0 6px}
+
+  .hero{position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden;background:#222}
+  .hero .bg{position:absolute;inset:0;background:url("hero.jpg") center/cover;animation:kb 24s ease-in-out infinite alternate}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.15) 40%,rgba(10,10,20,.88) 100%)}
+  @keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14) translate(-2%,-1.5%)}}
+  .hero .wrap{position:relative;z-index:2;padding-bottom:10vh;color:#fff;display:flex;gap:28px}
+  .hero .bar{width:2px;background:#fff;opacity:.85;flex:none;position:relative;margin-top:6px}
+  .hero .bar::after{content:"";position:absolute;bottom:-6px;left:-4px;width:10px;height:10px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg)}
+  .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.9;margin-bottom:14px;font-weight:500}
+  .eyebrow span{color:var(--accent)}
+  h1{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:clamp(46px,8vw,96px);line-height:.95;text-transform:uppercase;max-width:13ch}
+  h1 em{font-style:normal;color:var(--accent)}
+  .hero p{max-width:54ch;margin-top:20px;font-size:16px;font-weight:300;opacity:.95}
+  .btn{display:inline-block;margin-top:28px;background:var(--accent);color:var(--ink);padding:14px 28px;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;transition:transform .2s,background .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6);margin-left:10px}
+
+  section{padding:96px 0}
+  .kicker{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:12px}
+  .kicker::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  h2{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:clamp(36px,5vw,58px);line-height:1;text-transform:uppercase;margin-bottom:16px}
+  .lead{color:var(--muted);max-width:62ch;font-size:16px}
+
+  .demo{background:var(--soft)}
+  .player{margin-top:40px;position:relative;overflow:hidden;background:#111;aspect-ratio:16/9;box-shadow:0 40px 80px -40px rgba(22,22,47,.55)}
+  .player video{width:100%;height:100%;object-fit:cover;display:block}
+  .tag{position:absolute;left:16px;top:16px;z-index:2;background:var(--accent);color:var(--ink);font-size:11px;font-weight:600;padding:7px 12px;letter-spacing:.1em;text-transform:uppercase;pointer-events:none}
+  .snd{position:absolute;right:16px;top:16px;z-index:2;background:rgba(0,0,0,.6);color:#fff;border:1px solid rgba(255,255,255,.4);font:500 12px Poppins,sans-serif;padding:8px 14px;cursor:pointer;letter-spacing:.06em;text-transform:uppercase}
+  .snd:hover{background:rgba(0,0,0,.8)}
+  .cap{margin-top:14px;font-size:14px;color:var(--muted)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--line)}
+  .step{padding:30px 28px 10px 0}
+  .step + .step{padding-left:28px;border-left:1px solid var(--line)}
+  .step .n{font-family:"Barlow Condensed",sans-serif;font-size:56px;font-weight:600;line-height:1;color:var(--accent)}
+  .step h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:24px;font-weight:600;margin:10px 0 6px}
+  .step p{color:var(--muted);font-size:15px}
+
+  .compare{background:var(--navy);color:#fff}
+  .compare .lead{color:#c3c3d4}
+  .compare .kicker{color:#c3c3d4}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+  .col{padding:30px;border:1px solid rgba(255,255,255,.14)}
+  .col.us{background:#fff;color:var(--ink);border-color:#fff}
+  .col h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:26px;font-weight:600;margin-bottom:14px}
+  .col ul{list-style:none}
+  .col li{padding:10px 0 10px 28px;border-bottom:1px solid rgba(255,255,255,.1);position:relative;font-size:15px}
+  .col.us li{border-color:var(--line)}
+  .col li::before{content:"";position:absolute;left:2px;top:19px;width:12px;height:2px;background:#8a8aa3}
+  .col.us li::before{width:10px;height:10px;border-radius:50%;background:var(--accent);top:16px}
+  .col.them{color:#d6d6e2}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+  .card{background:#fff;border:1px solid var(--line);padding:28px;border-top:3px solid var(--accent)}
+  .card .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .card h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:26px;font-weight:600;margin:8px 0 8px;line-height:1.05}
+  .card p{color:var(--muted);font-size:15px}
+
+  .split{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+  .split img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+  ul.check{list-style:none;margin-top:22px}
+  ul.check li{padding:12px 0 12px 30px;border-bottom:1px solid var(--line);position:relative;font-size:15px}
+  ul.check li::before{content:"";position:absolute;left:4px;top:21px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+
+  .offer{background:var(--ink);color:#fff}
+  .offer .lead,.offer .kicker{color:#bdbdb8}
+  .offer .grid .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);border-top-color:var(--accent)}
+  .offer .grid .card p{color:#c9c9c4}
+
+  .cta{text-align:center}
+  .cta .kicker{justify-content:center}
+  .cta .lead{margin:0 auto}
+  .cta .btn{background:var(--ink);color:#fff}
+  footer{padding:36px 0;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .grid,.cols,.steps,.split{grid-template-columns:1fr}
+    .step,.step + .step{padding:24px 0 6px;border-left:none;border-top:1px solid var(--line)}
+    .steps{border-top:none}
+    section{padding:68px 0}
+    .hero .bar{display:none}
+    .btn.ghost{margin-left:0}
+    header .wrap span:last-child{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){.hero .bg{animation:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><span><b>GOONY</b> Studio<span class="x">×</span>Groupe Ippolito</span><span>Démo immobilier</span></div></header>
+
+<div class="hero">
+  <div class="bg" role="img" aria-label="Villa contemporaine avec piscine, extrait de la démo"></div>
+  <div class="wrap">
+    <div class="bar" aria-hidden="true"></div>
+    <div>
+      <div class="eyebrow">Pour le <span>Groupe Ippolito</span> · Branche immobilier</div>
+      <h1>Vos biens, <em>visités en vidéo</em></h1>
+      <p>Les photos de l'annonce suffisent : nous en faisons une visite vidéo fluide et cinématographique. Sans équipe de tournage, sans drone, sans déplacement.</p>
+      <a class="btn" href="#demo">Voir la démo</a><a class="btn ghost" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+    </div>
+  </div>
+</div>
+
+<section class="demo" id="demo">
+  <div class="wrap">
+    <div class="kicker">La démo</div>
+    <h2>Un home tour créé à partir de photos</h2>
+    <p class="lead">Vue aérienne, terrasse, piscine, pièces de vie, chambre : chaque plan de cette visite a été animé à partir de simples photos du bien. Aucune caméra ne s'est déplacée sur place.</p>
+    <div class="player">
+      <video id="v" autoplay muted loop playsinline controls preload="metadata" poster="poster.jpg"><source src="demo.mp4" type="video/mp4"></video>
+      <span class="tag">Démo GOONY Studio</span>
+      <button class="snd" id="snd" type="button">Activer le son</button>
+    </div>
+    <p class="cap">Exemple de visite réalisée par GOONY Studio à partir de photos, pour une villa de la Côte d'Azur.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Comment ça marche</div>
+    <h2>De l'annonce à la vidéo</h2>
+    <p class="lead">Un processus volontairement simple, pensé pour s'intégrer au rythme des mises en vente de vos agences.</p>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Vous envoyez les photos</h3><p>Celles de l'annonce suffisent, sans shooting supplémentaire ni rendez-vous sur place.</p></div>
+      <div class="step"><div class="n">02</div><h3>On anime chaque plan</h3><p>Mouvements de caméra, enchaînements, rythme : chaque pièce prend vie, de façon stable et cinématographique.</p></div>
+      <div class="step"><div class="n">03</div><h3>On ajuste en un instant</h3><p>Un plan à reprendre, une pièce à mettre davantage en valeur : n'importe quel plan se retouche en quelques secondes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="wrap">
+    <div class="kicker">Pourquoi c'est plus simple</div>
+    <h2>Tournage classique ou GOONY</h2>
+    <p class="lead">Le même résultat à l'écran, sans la logistique d'un tournage.</p>
+    <div class="cols">
+      <div class="col them">
+        <h3>Tournage classique</h3>
+        <ul>
+          <li>Une équipe à mobiliser et à faire venir sur place</li>
+          <li>Drone, stabilisateur et matériel à prévoir</li>
+          <li>Un créneau à caler avec le propriétaire ou l'occupant</li>
+          <li>Dépendant de la météo et de la lumière du jour</li>
+          <li>Un coût et un délai difficiles à tenir sur un grand volume de biens</li>
+        </ul>
+      </div>
+      <div class="col us">
+        <h3>Avec GOONY Studio</h3>
+        <ul>
+          <li>Les photos de l'annonce suffisent</li>
+          <li>Des mouvements plus stables et plus cinématographiques</li>
+          <li>Chaque plan retouchable en quelques secondes</li>
+          <li>Aucun déplacement, aucune visite à organiser</li>
+          <li>Des délais courts, adaptés à une production en série</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--soft)">
+  <div class="wrap">
+    <div class="kicker">Pour vos métiers</div>
+    <h2>Ce qu'on peut faire ensemble</h2>
+    <p class="lead">Transaction, programmes neufs, gestion locative, courtage : la même approche s'adapte à chaque activité de la Maison Oréa et du groupe.</p>
+    <div class="grid">
+      <div class="card"><div class="lbl">Transaction</div><h3>Une visite par bien</h3><p>Une vidéo pour chaque mandat, à diffuser sur vos annonces, vos portails et vos envois aux acquéreurs. Faisable en série sur tout un portefeuille.</p></div>
+      <div class="card"><div class="lbl">Programmes neufs</div><h3>Donner vie au neuf</h3><p>À partir de perspectives 3D ou des photos de l'appartement témoin, une visite qui aide les acquéreurs à se projeter avant la livraison.</p></div>
+      <div class="card"><div class="lbl">Réseaux sociaux</div><h3>Tous les formats</h3><p>Une version horizontale pour vos sites et vos annonces, une version verticale pour Instagram, TikTok et Facebook, aux couleurs de chaque agence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="kicker">Le studio</div>
+      <h2>Pourquoi GOONY Studio</h2>
+      <p class="lead">Notre studio de production est basé à Monaco. Nous produisons des vidéos pour des marques de secteurs variés, et nous nous spécialisons aujourd'hui dans l'immobilier sur la Côte d'Azur.</p>
+      <ul class="check">
+        <li>Tournage réel, IA générative, ou un mélange des deux</li>
+        <li>Du contenu pensé pour vos réseaux sociaux (Instagram, TikTok, Facebook, X) comme pour vos sites internet</li>
+        <li>Livraison rapide, sans mobiliser vos équipes</li>
+        <li>Ils nous font confiance&nbsp;: L'Artelier, Sifas, Cede Arena, Ezus</li>
+      </ul>
+      <a class="btn" style="background:var(--ink);color:#fff" href="https://www.goonystudio.com" target="_blank" rel="noopener">Voir le portfolio</a>
+    </div>
+    <img src="side.jpg" alt="Séjour lumineux ouvert sur le jardin, extrait de la démo" loading="lazy">
+  </div>
+</section>
+
+<section class="offer">
+  <div class="wrap">
+    <div class="kicker">Les formats</div>
+    <h2>Ce qu'on peut vous proposer</h2>
+    <p class="lead">Des formules qui s'adaptent à vos besoins, d'un premier test sur quelques biens à un suivi régulier pour l'ensemble des agences.</p>
+    <div class="grid">
+      <div class="card"><h3>Un test sur quelques biens</h3><p>Quelques visites réalisées à partir de mandats en cours, pour mesurer l'impact sur vos annonces et vos réseaux.</p></div>
+      <div class="card"><h3>Un volume régulier</h3><p>Une production suivie pour vos agences, avec un circuit simple : vous envoyez les photos, nous livrons les vidéos.</p></div>
+      <div class="card"><h3>Un film sur mesure</h3><p>Une vidéo plus longue pour un programme neuf, une agence ou une marque du groupe, pour un lancement ou une page d'accueil.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="kicker">Parlons-en</div>
+    <h2>On en parle 15 minutes&nbsp;?</h2>
+    <p class="lead">Un appel rapide pour comprendre vos besoins en contenu vidéo et voir par quels biens commencer.</p>
+    <a class="btn" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+    <p class="cap" style="margin-top:16px">ou écrivez-nous à <a href="mailto:contact@goonystudio.com">contact@goonystudio.com</a></p>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>GOONY Studio · Monaco · <a href="https://www.goonystudio.com">goonystudio.com</a> · contact@goonystudio.com</span><span>Démo non commerciale, réalisée pour le Groupe Ippolito</span></div></footer>
+
+<script>
+  const v=document.getElementById('v'), b=document.getElementById('snd');
+  b.addEventListener('click',()=>{v.muted=!v.muted; if(!v.muted){v.currentTime=0;v.play()} b.textContent=v.muted?'Activer le son':'Couper le son'});
+  v.addEventListener('volumechange',()=>{b.textContent=v.muted?'Activer le son':'Couper le son'});
+</script>
+</body>
+</html>
