@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BARNES Cannes × GOONY Studio | Vos propriétés d'exception, en vidéo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1d1d1b; --muted:#6b6966; --bg:#ffffff; --cream:#f7f3f2; --cream-2:#f2eeed;
+    --red:#b4002f; --red-d:#8f0025; --line:#e4dedb; --star:#ebba30;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Raleway,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;font-weight:400}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  .up{text-transform:uppercase;letter-spacing:.18em}
+
+  header{position:absolute;top:0;left:0;right:0;z-index:5}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:26px;color:#fff;font-size:12px;letter-spacing:.24em;text-transform:uppercase;gap:12px}
+  header b{font-weight:600}
+
+  .hero{position:relative;min-height:94vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#2a2826}
+  .hero .bg{position:absolute;inset:0;background:url("hero.jpg") center/cover;animation:kb 26s ease-in-out infinite alternate}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.55) 0%,rgba(20,18,16,.35) 45%,rgba(20,18,16,.7) 100%)}
+  @keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.13) translate(-1.5%,-1%)}}
+  .hero .wrap{position:relative;z-index:2;color:#fff;padding-top:60px}
+  .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;opacity:.9;margin-bottom:18px}
+  h1{font-weight:300;font-size:clamp(34px,5.6vw,64px);line-height:1.15;text-transform:uppercase;letter-spacing:.16em;max-width:20ch;margin:0 auto}
+  .rule{width:64px;height:1px;background:#fff;opacity:.8;margin:26px auto}
+  .hero p{max-width:56ch;margin:0 auto;font-size:16px;font-weight:300;opacity:.95}
+  .btns{margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--red);color:#fff;border:1px solid var(--red);padding:12px 30px 11px;border-radius:800px;text-decoration:none;font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;transition:background .2s,transform .2s}
+  .btn:hover{background:var(--red-d);border-color:var(--red-d);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;border-color:rgba(255,255,255,.75)}
+  .btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+  section{padding:100px 0}
+  h2{font-weight:300;font-size:clamp(26px,3.4vw,34px);line-height:1.3;text-transform:uppercase;letter-spacing:.16em;margin-bottom:18px}
+  .center{text-align:center}
+  .center .lead{margin:0 auto}
+  .lead{color:var(--muted);max-width:64ch;font-size:16px}
+  .sep{width:48px;height:2px;background:var(--red);margin:0 0 22px}
+  .center .sep{margin:0 auto 22px}
+
+  .demo{background:var(--cream)}
+  .player{margin-top:44px;position:relative;overflow:hidden;background:#111;aspect-ratio:16/9;border-radius:6px;box-shadow:0 30px 70px -40px rgba(29,29,27,.55)}
+  .player video{width:100%;height:100%;object-fit:cover;display:block}
+  .tag{position:absolute;left:16px;top:16px;z-index:2;background:rgba(255,255,255,.94);color:var(--ink);font-size:11px;font-weight:600;padding:7px 14px;letter-spacing:.18em;text-transform:uppercase;border-radius:800px;pointer-events:none}
+  .snd{position:absolute;right:16px;top:16px;z-index:2;background:var(--red);color:#fff;border:none;font:500 11px Raleway,sans-serif;padding:8px 16px;cursor:pointer;letter-spacing:.18em;text-transform:uppercase;border-radius:800px}
+  .snd:hover{background:var(--red-d)}
+  .cap{margin-top:16px;font-size:14px;color:var(--muted)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+  .step{text-align:center;padding:10px 18px}
+  .step .n{font-weight:300;font-size:44px;letter-spacing:.1em;color:var(--red);line-height:1}
+  .step h3{font-weight:500;text-transform:uppercase;letter-spacing:.16em;font-size:14px;margin:18px 0 10px}
+  .step p{color:var(--muted);font-size:15px}
+
+  .compare{background:var(--ink);color:#fff}
+  .compare .lead{color:#bdb8b4}
+  .compare .sep{background:#fff}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+  .col{padding:34px;border:1px solid rgba(255,255,255,.16);border-radius:6px}
+  .col.us{background:#fff;color:var(--ink);border-color:#fff}
+  .col h3{font-weight:500;text-transform:uppercase;letter-spacing:.18em;font-size:14px;margin-bottom:16px}
+  .col.us h3{color:var(--red)}
+  .col ul{list-style:none}
+  .col li{padding:11px 0 11px 26px;border-bottom:1px solid rgba(255,255,255,.1);position:relative;font-size:15px}
+  .col.us li{border-color:var(--line)}
+  .col li::before{content:"";position:absolute;left:2px;top:22px;width:10px;height:1px;background:#8e8a86}
+  .col.us li::before{width:6px;height:6px;border-radius:50%;background:var(--red);top:20px}
+  .col.them{color:#d9d4d0}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+  .card{background:#fff;padding:32px 28px;border-radius:6px;box-shadow:0 10px 30px -20px rgba(29,29,27,.25)}
+  .card .lbl{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--red);font-weight:600}
+  .card h3{font-weight:400;text-transform:uppercase;letter-spacing:.12em;font-size:18px;margin:12px 0 10px;line-height:1.35}
+  .card p{color:var(--muted);font-size:15px}
+
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
+  .split img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+  ul.check{list-style:none;margin-top:22px}
+  ul.check li{padding:13px 0 13px 26px;border-bottom:1px solid var(--line);position:relative;font-size:15px}
+  ul.check li::before{content:"";position:absolute;left:4px;top:24px;width:6px;height:6px;border-radius:50%;background:var(--red)}
+  .split .btn{margin-top:28px}
+
+  .offer{background:var(--cream-2)}
+
+  .cta{text-align:center}
+  footer{padding:36px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.06em}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .grid,.cols,.steps,.split{grid-template-columns:1fr}
+    section{padding:70px 0}
+    header .wrap > span:last-child{display:none}
+    h1{letter-spacing:.1em}
+  }
+  @media (prefers-reduced-motion:reduce){.hero .bg{animation:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><span><b>GOONY</b> Studio &nbsp;×&nbsp; BARNES Cannes</span><span>Démo personnalisée</span></div></header>
+
+<div class="hero">
+  <div class="bg" role="img" aria-label="Villa contemporaine avec piscine vue du ciel, extrait de la démo"></div>
+  <div class="wrap">
+    <div class="eyebrow">Pour BARNES Cannes</div>
+    <h1>Vos propriétés d'exception, en vidéo</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p>Une visite cinématographique pour chaque bien de votre portefeuille, créée à partir des photos de l'annonce. Sans tournage, sans drone, sans déplacement.</p>
+    <div class="btns">
+      <a class="btn" href="#demo">Voir la démo</a>
+      <a class="btn ghost" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+    </div>
+  </div>
+</div>
+
+<section class="demo center" id="demo">
+  <div class="wrap">
+    <div class="sep"></div>
+    <h2>Une visite créée à partir de photos</h2>
+    <p class="lead">Vue aérienne, terrasse, piscine, pièces de vie, chambre : chaque plan de cette visite a été animé à partir de simples photos de la propriété. Aucune caméra ne s'est déplacée sur place.</p>
+    <div class="player">
+      <video id="v" autoplay muted loop playsinline controls preload="metadata" poster="poster.jpg"><source src="demo.mp4" type="video/mp4"></video>
+      <span class="tag">Démo GOONY Studio</span>
+      <button class="snd" id="snd" type="button">Activer le son</button>
+    </div>
+    <p class="cap">Exemple de visite réalisée par GOONY Studio à partir de photos, pour une villa de la Côte d'Azur.</p>
+  </div>
+</section>
+
+<section class="center">
+  <div class="wrap">
+    <div class="sep"></div>
+    <h2>De l'annonce à la vidéo</h2>
+    <p class="lead">Un processus discret, pensé pour suivre le rythme de vos mandats sans rien demander à vos propriétaires.</p>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Vous nous transmettez les photos</h3><p>Celles de l'annonce suffisent. Pas de nouveau shooting, pas de visite à organiser chez le propriétaire.</p></div>
+      <div class="step"><div class="n">02</div><h3>Nous animons chaque plan</h3><p>Mouvements de caméra lents et fluides, enchaînements soignés : la propriété se dévoile comme lors d'un vrai tournage.</p></div>
+      <div class="step"><div class="n">03</div><h3>Nous ajustons en un instant</h3><p>Un plan à reprendre, une vue mer à mettre davantage en valeur : chaque plan se retouche en quelques secondes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="wrap">
+    <div class="sep"></div>
+    <h2>Tournage classique ou GOONY</h2>
+    <p class="lead">Le même niveau d'exigence à l'écran, sans la logistique d'un tournage.</p>
+    <div class="cols">
+      <div class="col them">
+        <h3>Tournage classique</h3>
+        <ul>
+          <li>Une équipe et un pilote de drone à faire venir sur place</li>
+          <li>Stabilisateur et matériel à prévoir</li>
+          <li>Un créneau à caler avec des propriétaires souvent absents</li>
+          <li>Dépendant de la météo et de la lumière</li>
+          <li>Réservé à quelques biens phares, faute de budget et de temps</li>
+        </ul>
+      </div>
+      <div class="col us">
+        <h3>Avec GOONY Studio</h3>
+        <ul>
+          <li>Les photos de l'annonce suffisent</li>
+          <li>Des mouvements plus stables et plus cinématographiques</li>
+          <li>Chaque plan retouchable en quelques secondes</li>
+          <li>Aucun déplacement, en toute discrétion pour le propriétaire</li>
+          <li>Une vidéo possible pour chaque bien, pas seulement les plus chers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="wrap">
+    <div class="center">
+      <div class="sep"></div>
+      <h2>Ce qu'on peut faire ensemble</h2>
+      <p class="lead">De la Croisette à Super Cannes, de la Californie au Cap d'Antibes : chaque propriété mérite d'être vue en mouvement.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="lbl">Vente</div><h3>Une visite pour chaque mandat</h3><p>Villas, penthouses, appartements en front de mer : une vidéo pour vos annonces, vos portails et vos envois aux acquéreurs.</p></div>
+      <div class="card"><div class="lbl">Clientèle internationale</div><h3>Visiter avant de voyager</h3><p>Une visite fluide que vos acquéreurs étrangers peuvent découvrir à distance, avant de prévoir leur venue à Cannes.</p></div>
+      <div class="card"><div class="lbl">Réseaux sociaux</div><h3>Tous les formats</h3><p>Une version horizontale pour le site BARNES, une version verticale pour Instagram et vos réseaux, dans l'esprit de la marque.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="sep"></div>
+      <h2>Pourquoi GOONY Studio</h2>
+      <p class="lead">Notre studio de production est basé à Monaco. Nous produisons des vidéos pour des marques de secteurs variés, et nous nous spécialisons aujourd'hui dans l'immobilier de prestige sur la Côte d'Azur.</p>
+      <ul class="check">
+        <li>Tournage réel, IA générative, ou un mélange des deux</li>
+        <li>Du contenu pensé pour vos réseaux sociaux (Instagram, TikTok, Facebook, X) comme pour votre site internet</li>
+        <li>Livraison rapide, sans mobiliser vos équipes</li>
+        <li>Ils nous font confiance&nbsp;: L'Artelier, Sifas, Cede Arena, Ezus</li>
+      </ul>
+      <a class="btn" href="https://www.goonystudio.com" target="_blank" rel="noopener">Voir le portfolio</a>
+    </div>
+    <img src="side.jpg" alt="Séjour lumineux ouvert sur le jardin, extrait de la démo" loading="lazy">
+  </div>
+</section>
+
+<section class="demo">
+  <div class="wrap">
+    <div class="center">
+      <div class="sep"></div>
+      <h2>Ce qu'on peut vous proposer</h2>
+      <p class="lead">Des formules qui s'adaptent à vos besoins, d'un premier essai sur quelques biens à un accompagnement régulier de l'agence.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Un essai sur quelques biens</h3><p>Quelques visites réalisées à partir de mandats en cours, pour juger du rendu sur vos annonces et vos réseaux.</p></div>
+      <div class="card"><h3>Un volume régulier</h3><p>Une production suivie pour l'agence, avec un circuit simple : vous transmettez les photos, nous livrons les vidéos.</p></div>
+      <div class="card"><h3>Un film sur mesure</h3><p>Une vidéo plus longue pour une propriété phare ou pour présenter l'agence et son territoire.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="sep" style="margin:0 auto 22px"></div>
+    <h2>On en parle 15 minutes&nbsp;?</h2>
+    <p class="lead" style="margin:0 auto">Un appel rapide pour voir quelles propriétés mettre en vidéo en premier.</p>
+    <div class="btns"><a class="btn" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a></div>
+    <p class="cap" style="margin-top:18px">ou écrivez-nous à <a href="mailto:contact@goonystudio.com">contact@goonystudio.com</a></p>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>GOONY Studio · Monaco · <a href="https://www.goonystudio.com">goonystudio.com</a> · contact@goonystudio.com</span><span>Démo non commerciale, réalisée pour BARNES Cannes</span></div></footer>
+
+<script>
+  const v=document.getElementById('v'), b=document.getElementById('snd');
+  b.addEventListener('click',()=>{v.muted=!v.muted; if(!v.muted){v.currentTime=0;v.play()} b.textContent=v.muted?'Activer le son':'Couper le son'});
+  v.addEventListener('volumechange',()=>{b.textContent=v.muted?'Activer le son':'Couper le son'});
+</script>
+</body>
+</html>
