@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sud Azur Properties × GOONY Studio | Vos villas de prestige, en vidéo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#293751; --navy-d:#1e293d; --navy-a:rgba(41,55,81,.86);
+    --ink:#1c1c1c; --muted:#6f6f6f; --grey:#999999; --bg:#ffffff; --mist:#f5f5f3; --line:#e3e3e0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Lato,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+
+  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px;gap:12px}
+  .brand{font-family:Spectral,serif;font-size:22px;font-weight:500;color:var(--navy);line-height:1.1}
+  .brand small{display:block;font-family:Lato,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:400;margin-top:4px}
+  header nav{display:flex;gap:26px;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+  header nav a{text-decoration:none}
+  header nav a:hover{color:var(--navy)}
+
+  .hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;overflow:hidden;background:#20262f}
+  .hero .bg{position:absolute;inset:0;background:url("hero.jpg") center/cover;animation:kb 28s ease-in-out infinite alternate}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,32,.15) 0%,rgba(20,24,32,.2) 50%,rgba(20,24,32,.55) 100%)}
+  @keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.12) translate(-1.5%,-1%)}}
+  .band{position:relative;z-index:2;width:100%;background:var(--navy-a);color:#fff;padding:38px 0 42px}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:10px}
+  h1{font-family:Spectral,serif;font-weight:500;font-size:clamp(32px,4.8vw,56px);line-height:1.12;max-width:22ch}
+  h1 em{font-style:italic;font-weight:400}
+  .band p{max-width:60ch;margin-top:14px;font-size:16px;font-weight:300;opacity:.95}
+  .btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--navy);color:#fff;border:1px solid var(--navy);padding:13px 28px;border-radius:0;text-decoration:none;font-weight:400;font-size:13px;letter-spacing:.08em;text-transform:uppercase;transition:background .2s}
+  .btn:hover{background:var(--navy-d);border-color:var(--navy-d)}
+  .band .btn{background:#fff;color:var(--navy);border-color:#fff}
+  .band .btn:hover{background:#eef0f4}
+  .band .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.8)}
+  .band .btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+  section{padding:96px 0}
+  .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:10px}
+  h2{font-family:Spectral,serif;font-weight:500;font-size:clamp(28px,3.6vw,40px);line-height:1.2;color:var(--navy);margin-bottom:16px}
+  .center{text-align:center}
+  .center .lead{margin:0 auto}
+  .lead{color:var(--muted);max-width:64ch;font-size:16px}
+
+  .demo{background:var(--mist)}
+  .player{margin-top:44px;position:relative;overflow:hidden;background:#111;aspect-ratio:16/9;box-shadow:0 30px 60px -40px rgba(41,55,81,.6)}
+  .player video{width:100%;height:100%;object-fit:cover;display:block}
+  .tag{position:absolute;left:0;top:18px;z-index:2;background:var(--navy-a);color:#fff;font-size:11px;padding:8px 16px;letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
+  .snd{position:absolute;right:16px;top:16px;z-index:2;background:#fff;color:var(--navy);border:none;font:400 11px Lato,sans-serif;padding:9px 16px;cursor:pointer;letter-spacing:.14em;text-transform:uppercase}
+  .snd:hover{background:#eef0f4}
+  .cap{margin-top:16px;font-size:14px;color:var(--muted)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:52px;border-top:1px solid var(--line)}
+  .step{padding:34px 28px;border-right:1px solid var(--line);text-align:left}
+  .step:last-child{border-right:none}
+  .step .n{font-family:Spectral,serif;font-size:46px;font-weight:300;color:var(--navy);line-height:1}
+  .step h3{font-family:Spectral,serif;font-weight:500;font-size:21px;margin:16px 0 8px;color:var(--ink)}
+  .step p{color:var(--muted);font-size:15px}
+
+  .compare{background:var(--navy);color:#fff}
+  .compare h2{color:#fff}
+  .compare .kicker{color:#aab3c4}
+  .compare .lead{color:#c9cfdb}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+  .col{padding:34px;border:1px solid rgba(255,255,255,.2)}
+  .col.us{background:#fff;color:var(--ink);border-color:#fff}
+  .col h3{font-family:Spectral,serif;font-weight:500;font-size:22px;margin-bottom:14px}
+  .col.us h3{color:var(--navy)}
+  .col ul{list-style:none}
+  .col li{padding:11px 0 11px 24px;border-bottom:1px solid rgba(255,255,255,.12);position:relative;font-size:15px}
+  .col.us li{border-color:var(--line)}
+  .col li::before{content:"";position:absolute;left:2px;top:23px;width:10px;height:1px;background:#8d97ab}
+  .col.us li::before{width:7px;height:7px;background:var(--navy);top:20px}
+  .col.them{color:#dde1ea}
+
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  .tile{position:relative;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;padding:30px 26px;color:#fff;background:#333 center/cover;overflow:hidden}
+  .tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,32,.15),rgba(20,24,32,.78))}
+  .tile>*{position:relative}
+  .tile .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+  .tile h3{font-family:Spectral,serif;font-weight:500;font-size:26px;line-height:1.2;margin:8px 0 8px}
+  .tile p{font-size:14.5px;opacity:.92;font-weight:300}
+
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
+  .split img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+  ul.check{list-style:none;margin-top:22px}
+  ul.check li{padding:13px 0 13px 26px;border-bottom:1px solid var(--line);position:relative;font-size:15px}
+  ul.check li::before{content:"";position:absolute;left:4px;top:23px;width:7px;height:7px;background:var(--navy)}
+  .split .btn{margin-top:28px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+  .card{background:#fff;padding:34px 28px;border-top:3px solid var(--navy)}
+  .card h3{font-family:Spectral,serif;font-weight:500;font-size:22px;line-height:1.25;color:var(--navy);margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px}
+
+  .cta{text-align:center}
+  .cta .btn{margin-top:26px}
+  .cta .mail{margin-top:16px;font-size:14px;color:var(--muted)}
+  footer{padding:30px 0;background:var(--navy);color:#c9cfdb;font-size:12px;letter-spacing:.04em}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a{color:#fff}
+
+  @media (max-width:860px){
+    .grid,.cols,.steps,.split,.tiles{grid-template-columns:1fr}
+    .step{border-right:none;border-bottom:1px solid var(--line)}
+    section{padding:68px 0}
+    header nav{display:none}
+    .hero{min-height:78vh}
+  }
+  @media (prefers-reduced-motion:reduce){.hero .bg{animation:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><div class="brand">GOONY Studio × Sud Azur<small>Démo personnalisée · Èze</small></div><nav><a href="#demo">La démo</a><a href="#offre">Nos propositions</a><a href="#contact">Contactez-nous</a></nav></div></header>
+
+<div class="hero">
+  <div class="bg" role="img" aria-label="Villa contemporaine avec piscine vue du ciel, extrait de la démo"></div>
+  <div class="band">
+    <div class="wrap">
+      <div class="eyebrow">Pour Sud Azur Properties</div>
+      <h1>Vos villas de prestige, <em>en mouvement</em></h1>
+      <p>Une visite cinématographique pour chaque bien, de Menton à Nice, créée à partir des photos de l'annonce. Sans tournage, sans drone, sans déplacement.</p>
+      <div class="btns">
+        <a class="btn" href="#demo">Voir la démo</a>
+        <a class="btn ghost" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="demo center" id="demo">
+  <div class="wrap">
+    <div class="kicker">La démo</div>
+    <h2>Une visite créée à partir de photos</h2>
+    <p class="lead">Vue aérienne, terrasse, piscine, pièces de vie, chambre : chaque plan de cette visite a été animé à partir de simples photos de la propriété. Aucune caméra ne s'est déplacée sur place.</p>
+    <div class="player">
+      <video id="v" autoplay muted loop playsinline controls preload="metadata" poster="poster.jpg"><source src="demo.mp4" type="video/mp4"></video>
+      <span class="tag">Démo GOONY Studio</span>
+      <button class="snd" id="snd" type="button">Activer le son</button>
+    </div>
+    <p class="cap">Exemple de visite réalisée par GOONY Studio à partir de photos, pour une villa de la Côte d'Azur.</p>
+  </div>
+</section>
+
+<section class="center">
+  <div class="wrap">
+    <div class="kicker">Comment ça marche</div>
+    <h2>De l'annonce à la vidéo</h2>
+    <p class="lead">Un processus discret, qui suit le rythme de vos mandats sans rien demander à vos propriétaires.</p>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Vous nous transmettez les photos</h3><p>Celles de l'annonce suffisent. Pas de nouveau shooting, pas de visite à organiser chez le propriétaire.</p></div>
+      <div class="step"><div class="n">02</div><h3>Nous animons chaque plan</h3><p>Mouvements de caméra lents et fluides, enchaînements soignés : la propriété se dévoile comme lors d'un vrai tournage.</p></div>
+      <div class="step"><div class="n">03</div><h3>Nous ajustons en un instant</h3><p>Un plan à reprendre, une vue mer à mettre davantage en valeur : chaque plan se retouche en quelques secondes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="wrap">
+    <div class="kicker">Pourquoi c'est plus simple</div>
+    <h2>Tournage classique ou GOONY</h2>
+    <p class="lead">Le même niveau d'exigence à l'écran, sans la logistique d'un tournage.</p>
+    <div class="cols">
+      <div class="col them">
+        <h3>Tournage classique</h3>
+        <ul>
+          <li>Une équipe et un pilote de drone à faire venir sur place</li>
+          <li>Stabilisateur et matériel à prévoir</li>
+          <li>Un créneau à caler avec des propriétaires souvent absents</li>
+          <li>Dépendant de la météo et de la lumière</li>
+          <li>Réservé à quelques biens phares, faute de temps et de budget</li>
+        </ul>
+      </div>
+      <div class="col us">
+        <h3>Avec GOONY Studio</h3>
+        <ul>
+          <li>Les photos de l'annonce suffisent</li>
+          <li>Des mouvements plus stables et plus cinématographiques</li>
+          <li>Chaque plan retouchable en quelques secondes</li>
+          <li>Aucun déplacement, en toute discrétion pour le propriétaire</li>
+          <li>Une vidéo possible pour chaque bien de votre sélection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center">
+      <div class="kicker">Ce qu'on peut faire ensemble</div>
+      <h2>Vente, location, territoire</h2>
+      <p class="lead">D'Èze à Saint-Jean-Cap-Ferrat, de Villefranche-sur-Mer à Beaulieu : chaque bien mérite d'être vu en mouvement.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile" style="background-image:url('side.jpg')"><div class="lbl">Vente</div><h3>Une visite pour chaque mandat</h3><p>Villas de prestige et appartements de luxe : une vidéo pour votre site, les portails et vos envois aux acquéreurs.</p></div>
+      <div class="tile" style="background-image:url('poster.jpg')"><div class="lbl">Location saisonnière</div><h3>Donner envie de réserver</h3><p>Une visite fluide pour vos locations à la semaine ou au mois, que vos clients internationaux découvrent à distance.</p></div>
+      <div class="tile" style="background-image:url('hero.jpg')"><div class="lbl">Réseaux sociaux</div><h3>Tous les formats</h3><p>Une version horizontale pour le site, une version verticale pour Instagram et Facebook, dans l'esprit de l'agence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="demo">
+  <div class="wrap split">
+    <div>
+      <div class="kicker">Qui sommes-nous</div>
+      <h2>Pourquoi GOONY Studio</h2>
+      <p class="lead">Notre studio de production est basé à Monaco, à quelques minutes d'Èze. Nous produisons des vidéos pour des marques de secteurs variés, et nous nous spécialisons aujourd'hui dans l'immobilier de prestige sur la Côte d'Azur.</p>
+      <ul class="check">
+        <li>Tournage réel, IA générative, ou un mélange des deux</li>
+        <li>Du contenu pensé pour vos réseaux sociaux comme pour votre site internet</li>
+        <li>Livraison rapide, sans mobiliser vos équipes</li>
+        <li>Ils nous font confiance&nbsp;: L'Artelier, Sifas, Cede Arena, Ezus</li>
+      </ul>
+      <a class="btn" href="https://www.goonystudio.com" target="_blank" rel="noopener">Voir le portfolio</a>
+    </div>
+    <img src="side.jpg" alt="Séjour lumineux ouvert sur le jardin, extrait de la démo" loading="lazy">
+  </div>
+</section>
+
+<section id="offre">
+  <div class="wrap">
+    <div class="center">
+      <div class="kicker">Nos propositions</div>
+      <h2>Ce qu'on peut vous proposer</h2>
+      <p class="lead">Des formules qui s'adaptent à l'agence, d'un premier essai sur quelques biens à un accompagnement régulier.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Un essai sur quelques biens</h3><p>Quelques visites réalisées à partir de vos coups de coeur du moment, pour juger du rendu sur votre site et vos réseaux.</p></div>
+      <div class="card"><h3>Un volume régulier</h3><p>Une production suivie pour l'agence, avec un circuit simple : vous transmettez les photos, nous livrons les vidéos.</p></div>
+      <div class="card"><h3>Un film sur mesure</h3><p>Une vidéo plus longue pour une propriété phare, ou pour raconter l'agence et son territoire depuis 1959.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta demo" id="contact">
+  <div class="wrap">
+    <div class="kicker">Contactez-nous</div>
+    <h2>On en parle 15 minutes&nbsp;?</h2>
+    <p class="lead" style="margin:0 auto">Un appel rapide pour voir ensemble ce que cela donnerait sur vos biens.</p>
+    <a class="btn" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+    <p class="mail">ou écrivez-nous à <a href="mailto:contact@goonystudio.com">contact@goonystudio.com</a></p>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>GOONY Studio · Monaco · <a href="https://www.goonystudio.com">goonystudio.com</a></span><span>Démo non commerciale, réalisée pour Sud Azur Properties</span></div></footer>
+
+<script>
+  const v=document.getElementById('v'), b=document.getElementById('snd');
+  b.addEventListener('click',()=>{v.muted=!v.muted; if(!v.muted){v.currentTime=0;v.play()} b.textContent=v.muted?'Activer le son':'Couper le son'});
+  v.addEventListener('volumechange',()=>{b.textContent=v.muted?'Activer le son':'Couper le son'});
+</script>
+</body>
+</html>
