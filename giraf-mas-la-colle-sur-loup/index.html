@@ -67,6 +67,14 @@
   .seg i{position:absolute;left:10px;top:8px;font-style:normal;font-family:"Playfair Display",serif;font-size:22px;line-height:1;z-index:1}
   .seg small{position:absolute;left:10px;bottom:8px;right:8px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;z-index:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .seg:hover{box-shadow:inset 0 -3px 0 var(--gold)}
+  .seg.opt::after,.legend .sw{background:repeating-linear-gradient(135deg,rgba(240,208,145,.55) 0 6px,transparent 6px 13px)}
+  .seg.opt::after{content:"";position:absolute;inset:0}
+  .seg.opt{opacity:.8}
+  .legend{margin-top:18px;font-size:13px;color:#f4f2f1;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .legend .sw{display:inline-block;width:28px;height:14px;border:1px solid rgba(240,208,145,.8)}
+  .badge{display:inline-block;margin-left:8px;padding:2px 8px;border:1px solid var(--gold-d);color:var(--gold-d);font-size:10px;letter-spacing:.06em}
+  .shot.opt .frames img{opacity:.78}
+  tr.opt td{background:#faf6ec}
   .ticks{position:relative;height:22px;margin-top:8px;font-size:11px;color:#f4f2f1;font-variant-numeric:tabular-nums}
   .ticks span{position:absolute;transform:translateX(-50%)}
   .ticks span:first-child{transform:none}
@@ -138,8 +146,8 @@
 
 <div class="facts">
   <div class="wrap">
-    <div class="fact"><b>20 s</b><span>Durée</span></div>
-    <div class="fact"><b>7</b><span>Plans</span></div>
+    <div class="fact"><b>32 s</b><span>Durée, chambre comprise</span></div>
+    <div class="fact"><b>8</b><span>Plans</span></div>
     <div class="fact"><b>16:9</b><span>Format</span></div>
     <div class="fact"><b>1080p</b><span>Définition</span></div>
     <div class="fact"><b>GIRAF</b><span>Musique de l'agence</span></div>
@@ -149,10 +157,11 @@
 <section class="montage center" id="montage">
   <div class="wrap">
     <div class="kick">Le montage</div>
-    <h2>Une seule promenade, du ciel à la chambre</h2>
-    <p class="lead">Chaque plan part exactement de l'image où le précédent s'arrête : on arrive par les airs, on longe la piscine, on entre par la baie vitrée et on termine dans la suite parentale, avant la signature GIRAF sur votre musique.</p>
+    <h2>Une seule promenade, du ciel au salon</h2>
+    <p class="lead">Deux plans aériens pour prendre le temps du mas et de son jardin, puis la piscine, un demi-tour vers le pool house et une entrée à reculons par la baie vitrée, jusqu'au séjour. Chaque plan part exactement de l'image où le précédent s'arrête. La suite parentale est en option, avant la signature GIRAF sur votre musique.</p>
     <div class="timeline" id="tl" aria-label="Frise du montage"></div>
     <div class="ticks" id="ticks"></div>
+    <p class="legend"><span class="sw"></span>Plan en option. Sans lui, le film dure 27 s et reste un seul mouvement du ciel au salon.</p>
   </div>
 </section>
 
@@ -182,15 +191,16 @@
 <footer><div class="wrap"><span>GOONY Studio · Monaco · <a href="https://www.goonystudio.com">goonystudio.com</a> · <a href="mailto:contact@goonystudio.com">contact@goonystudio.com</a></span><span>Réalisé pour GIRAF</span></div></footer>
 
 <script>
-  const TOTAL = 20;
+  const TOTAL = 32;
   const SHOTS = [
-    {t:"Arrivée par les airs", space:"Vue aérienne", a:0, b:3.0, move:"Drone en descente lente vers la piscine", why:"Situer le mas dans son écrin de verdure, la vue dégagée et le terrain plat de 1 890 m².", out:"Raccord image"},
-    {t:"Le long de la piscine", space:"Piscine miroir", a:3.0, b:5.4, move:"Travelling avant à hauteur d'homme, cadré sous la branche", why:"Prendre le temps de la piscine miroir avec le mas en fond, plein sud-ouest.", out:"Coupe sur la façade"},
-    {t:"Entrée par la baie vitrée", space:"Façade et salle à manger", a:5.4, b:7.8, move:"Dolly avant qui franchit la baie ouverte", why:"Faire le lien entre jardin et intérieur, comme le vivent les propriétaires.", out:"Raccord image"},
-    {t:"Vers le séjour", space:"Salle à manger et salon", a:7.8, b:10.2, move:"Demi-tour fluide et recul vers le salon", why:"Révéler les volumes et les poutres blanchies du séjour de 55 m².", out:"Raccord image"},
-    {t:"Le salon, contrechamp", space:"Salon", a:10.2, b:12.6, move:"Panoramique vers la droite, puis whip pan", why:"Montrer l'autre face du salon : colonne, cheminée, arche et accès au jardin.", out:"Whip pan"},
-    {t:"La suite parentale", space:"Chambre", a:12.6, b:17.6, move:"Push très lent vers la fenêtre ouverte sur le jardin", why:"Plan le plus long du film : on termine au calme, de plain-pied sur le jardin.", out:"Fondu enchaîné"},
-    {t:"Signature GIRAF", space:"Carton de fin", a:17.6, b:20.0, move:"Logo sur fond crème", why:"L'immobilier qui prend de la hauteur : on termine sur la signature de l'agence.", out:"Fondu au noir"}
+    {t:"Survol des toits", space:"Vue aérienne", a:0, b:2.0, move:"Drone en vol avant au-dessus des toits, vers la tour", why:"Ouvrir haut et large sur les toitures en tuiles, la tour et le jardin, pour situer le mas dans son écrin de verdure avant de descendre.", out:"Raccord image"},
+    {t:"Descente vers la piscine", space:"Vue aérienne", a:2.0, b:5.5, move:"Drone en descente lente vers la piscine", why:"Rester dehors plus longtemps pour apprécier l'extérieur : le terrain plat de 1 890 m², la piscine et le mas en fond.", out:"Volet par le feuillage"},
+    {t:"Le long de la piscine", space:"Piscine", a:5.5, b:11.0, move:"Travelling avant à hauteur d'homme sous la branche, qui finit au ras de l'eau", why:"Prendre le temps de la piscine avec le mas en fond, plein sud-ouest.", out:"Raccord image"},
+    {t:"Demi-tour, puis entrée à reculons", space:"Pool house et baie vitrée", a:11.0, b:15.5, move:"Demi-tour vers le pool house, puis travelling arrière sous l'olivier et à travers la baie ouverte", why:"Faire le tour du jardin d'un seul geste, puis entrer dans le mas en gardant le jardin dans le cadre, comme on le vit en rentrant de la piscine.", out:"Raccord image"},
+    {t:"La salle à manger", space:"Salle à manger", a:15.5, b:18.2, move:"Recul continu, puis passage derrière le pilier", why:"La grande table face à la baie : le jardin reste visible pendant que l'intérieur se découvre.", out:"Raccord par amorce"},
+    {t:"Le séjour", space:"Salon", a:18.2, b:22.0, move:"Recul vers le canapé, panoramique vers la droite, puis whip pan", why:"Révéler les volumes et les poutres blanchies du séjour de 55 m², jusqu'à la colonne et aux portes-fenêtres sur le jardin.", out:"Whip pan vers la chambre, ou fondu vers le carton sans elle"},
+    {t:"La suite parentale", space:"Chambre", opt:true, a:22.0, b:26.8, move:"Push lent vers la fenêtre ouverte sur le jardin", why:"Plan en option : la chambre ne s'enchaîne pas au salon dans la continuité du mouvement. Elle demande une coupe qui interrompt le plan-séquence et allonge le film. Sans elle, le séjour enchaîne directement sur la signature GIRAF.", out:"Fondu au noir"},
+    {t:"Signature GIRAF", space:"Carton de fin", a:26.8, b:32.0, move:"Logo sur fond crème, entre deux fondus au noir", why:"L'immobilier qui prend de la hauteur : on termine sur la signature de l'agence.", out:"Fondu au noir"}
   ];
   const tc = s => { const m=Math.floor(s/60), r=s-m*60; return String(m).padStart(2,"0")+":"+r.toFixed(1).padStart(4,"0"); };
   const tl=document.getElementById('tl'), board=document.getElementById('board'), rows=document.getElementById('rows'), ticks=document.getElementById('ticks');
@@ -198,23 +208,24 @@
   SHOTS.forEach((s,i)=>{
     const n=i+1, d=(s.b-s.a).toFixed(1).replace('.',',')+" s";
     const seg=document.createElement('a');
-    seg.className='seg'; seg.href='#plan'+n; seg.style.flex=(s.b-s.a); seg.style.backgroundImage=`url(s${n}a.jpg)`;
-    seg.innerHTML=`<i>${n}</i><small>${s.space}</small>`; seg.title=`Plan ${n} · ${s.t} · ${d}`;
+    seg.className='seg'+(s.opt?' opt':''); seg.href='#plan'+n; seg.style.flex=(s.b-s.a); seg.style.backgroundImage=`url(s${n}a.jpg)`;
+    seg.innerHTML=`<i>${n}</i><small>${s.space}</small>`; seg.title=`Plan ${n} · ${s.t} · ${d}`+(s.opt?' · en option':'');
     tl.appendChild(seg);
 
     const c=document.createElement('article');
-    c.className='shot'; c.id='plan'+n;
+    c.className='shot'+(s.opt?' opt':''); c.id='plan'+n;
     c.innerHTML=`<div class="frames"><img src="s${n}a.jpg" alt="Plan ${n}, image de départ" loading="lazy"><span class="arr">›</span><img src="s${n}b.jpg" alt="Plan ${n}, image d'arrivée" loading="lazy"></div>
-      <div class="body"><div class="meta"><span>Plan ${n} · ${s.space}</span><span class="tc">${tc(s.a)} › ${tc(s.b)}</span></div>
+      <div class="body"><div class="meta"><span>Plan ${n} · ${s.space}${s.opt?'<span class="badge">En option</span>':''}</span><span class="tc">${tc(s.a)} › ${tc(s.b)}</span></div>
       <h3>${s.t}</h3><p>${s.why}</p>
       <dl><dt>Caméra</dt><dd>${s.move}</dd><dt>Durée</dt><dd>${d}</dd><dt>Sortie</dt><dd>${s.out}</dd></dl></div>`;
     board.appendChild(c);
 
     const r=document.createElement('tr');
-    r.innerHTML=`<td class="n">${n}</td><td class="tc">${tc(s.a)} › ${tc(s.b)}</td><td class="tc">${d}</td><td><b>${s.space}</b></td><td>${s.move}</td><td>${s.out}</td>`;
+    if(s.opt)r.className='opt';
+    r.innerHTML=`<td class="n">${n}</td><td class="tc">${tc(s.a)} › ${tc(s.b)}</td><td class="tc">${d}</td><td><b>${s.space}</b>${s.opt?'<br><small>En option</small>':''}</td><td>${s.move}</td><td>${s.out}</td>`;
     rows.appendChild(r);
   });
-  ticks.innerHTML=[0,5,10,15,20].map(t=>`<span style="left:${t/TOTAL*100}%">00:${String(t).padStart(2,"0")}</span>`).join('');
+  ticks.innerHTML=[0,8,16,24,32].map(t=>`<span style="left:${t/TOTAL*100}%">00:${String(t).padStart(2,"0")}</span>`).join('');
 </script>
 </body>
 </html>
