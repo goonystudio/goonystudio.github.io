@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GIRAF × GOONY Studio | Prévisualisation, Mas authentique à La Colle-sur-Loup</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#25282b; --text:#333333; --muted:#6e6a67; --taupe:#9f9a97; --taupe-d:#8a8582;
+    --gold:#f0d091; --gold-d:#c9a75d; --light:#efefef; --bg:#ffffff; --line:#dddddd;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Work Sans",system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+  header{position:absolute;top:0;left:0;right:0;z-index:5}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:24px;color:#fff;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;gap:12px}
+  header .pill{border:1px solid rgba(255,255,255,.85);padding:7px 14px;font-size:11px}
+
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#3a3633}
+  .hero .bg{position:absolute;inset:0;background:url("hero.jpg") center/cover;animation:kb 26s ease-in-out infinite alternate}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,24,22,.62) 0%,rgba(25,24,22,.45) 50%,rgba(25,24,22,.72) 100%)}
+  @keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.13) translate(-1.5%,-1%)}}
+  .hero .wrap{position:relative;z-index:2;color:#fff;padding-top:60px}
+  .eyebrow{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+  h1{font-family:"Playfair Display",serif;font-weight:400;font-size:clamp(38px,6vw,66px);line-height:1.12;max-width:17ch;margin:0 auto}
+  h1 em{font-style:italic;color:var(--gold)}
+  .hero p{max-width:58ch;margin:22px auto 0;font-size:16px;font-weight:300}
+  .btns{margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#000;border:1px solid var(--gold);padding:12px 24px;border-radius:0;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;transition:background .2s;cursor:pointer;font-family:inherit}
+  .btn::after{content:"›";color:var(--gold);font-size:18px;line-height:0;font-weight:400}
+  .btn:hover{background:#faf6ec}
+  .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.8)}
+  .btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+  .facts{background:var(--ink);color:#fff}
+  .facts .wrap{display:grid;grid-template-columns:repeat(5,1fr);text-align:center}
+  .fact{padding:26px 10px;border-left:1px solid rgba(255,255,255,.12)}
+  .fact:first-child{border-left:0}
+  .fact b{display:block;font-family:"Playfair Display",serif;font-weight:400;font-size:28px;line-height:1.2;color:var(--gold)}
+  .fact span{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#c9c6c3}
+
+  section{padding:96px 0}
+  .center{text-align:center}
+  .kick{display:inline-block;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--taupe);padding:10px 0;position:relative;margin-bottom:12px}
+  .kick::before,.kick::after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:40px;height:1px;background:var(--gold)}
+  .kick::before{top:0}.kick::after{bottom:0}
+  h2{font-family:"Playfair Display",serif;font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.2;color:var(--ink);margin-bottom:18px}
+  .lead{color:var(--muted);max-width:64ch;font-size:16px}
+  .center .lead{margin:0 auto}
+
+  /* Le film */
+  .film{background:var(--taupe);color:#fff}
+  .film h2,.film .kick{color:#fff}
+  .film .lead{color:#f4f2f1}
+  .player{margin-top:44px;position:relative;overflow:hidden;background:#111;aspect-ratio:16/9;box-shadow:0 30px 60px -36px rgba(0,0,0,.6)}
+  .player video{width:100%;height:100%;object-fit:cover;display:block}
+  .tag{position:absolute;left:16px;top:16px;z-index:2;background:#fff;color:#000;font-size:11px;font-weight:600;padding:7px 12px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--gold);pointer-events:none}
+  .snd{position:absolute;right:16px;top:16px;z-index:2;background:var(--ink);color:#fff;border:1px solid var(--gold);font:600 11px "Work Sans",sans-serif;padding:8px 14px;cursor:pointer;letter-spacing:.04em;text-transform:uppercase}
+  .snd:hover{background:#000}
+  .now{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:22px;text-align:left;flex-wrap:wrap}
+  .now .t{font-family:"Playfair Display",serif;font-size:22px}
+  .now .tc{font-size:13px;letter-spacing:.06em;font-variant-numeric:tabular-nums;color:#f4f2f1}
+  .timeline{position:relative;display:flex;height:64px;margin-top:12px;background:rgba(0,0,0,.18);user-select:none}
+  .seg{position:relative;height:100%;border-left:1px solid rgba(255,255,255,.35);cursor:pointer;overflow:hidden;background-size:cover;background-position:center}
+  .seg:first-child{border-left:0}
+  .seg::before{content:"";position:absolute;inset:0;background:rgba(37,40,43,.55);transition:background .25s}
+  .seg:hover::before{background:rgba(37,40,43,.3)}
+  .seg.on::before{background:rgba(37,40,43,.08)}
+  .seg i{position:absolute;left:8px;top:6px;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.04em;z-index:1}
+  .seg.on{box-shadow:inset 0 -3px 0 var(--gold)}
+  .head{position:absolute;top:-6px;bottom:-6px;width:2px;background:var(--gold);left:0;pointer-events:none;z-index:3;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+  .ticks{display:flex;justify-content:space-between;font-size:11px;color:#f4f2f1;margin-top:6px;font-variant-numeric:tabular-nums}
+  .cap{margin-top:18px;font-size:14px;color:#f4f2f1}
+
+  /* Storyboard */
+  .board{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:52px;text-align:left}
+  .shot{border:1px solid var(--line);background:#fff;position:relative;cursor:pointer;transition:border-color .2s, box-shadow .2s}
+  .shot:hover{border-color:var(--gold)}
+  .shot.on{border-color:var(--gold);box-shadow:0 18px 40px -28px rgba(0,0,0,.45)}
+  .shot::before{content:"";position:absolute;left:24px;top:0;width:40px;height:2px;background:var(--gold);z-index:1}
+  .frames{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:var(--light)}
+  .frames img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .frames .arr{padding:0 8px;color:var(--gold-d);font-size:22px}
+  .shot .body{padding:22px 24px 24px}
+  .shot .meta{display:flex;justify-content:space-between;gap:10px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--taupe)}
+  .shot .meta .tc{font-variant-numeric:tabular-nums}
+  .shot h3{font-family:"Playfair Display",serif;font-weight:400;font-size:23px;line-height:1.25;color:var(--ink);margin:8px 0}
+  .shot p{color:var(--muted);font-size:15px}
+  .shot dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin-top:14px;font-size:13px;padding-top:14px;border-top:1px solid var(--line)}
+  .shot dt{color:var(--taupe);text-transform:uppercase;letter-spacing:.04em;font-weight:600;font-size:11px;padding-top:2px}
+  .shot dd{color:var(--text)}
+
+  /* Shot list */
+  .soft{background:var(--light)}
+  .tablewrap{margin-top:48px;overflow-x:auto;background:#fff;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:14px;text-align:left;min-width:820px}
+  th{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--taupe);padding:16px 14px;border-bottom:1px solid var(--gold);white-space:nowrap}
+  td{padding:14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  tbody tr{cursor:pointer;transition:background .2s}
+  tbody tr:hover{background:#faf6ec}
+  tbody tr.on{background:#faf6ec}
+  td.n{font-family:"Playfair Display",serif;font-size:22px;color:var(--taupe);line-height:1}
+  td.tc{font-variant-numeric:tabular-nums;white-space:nowrap}
+  td b{font-weight:600;color:var(--ink)}
+
+  /* Son */
+  .sound{background:var(--ink);color:#fff}
+  .sound h2{color:#fff}
+  .sound .kick{color:var(--gold)}
+  .sound .lead{color:#c9c6c3}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px;text-align:left}
+  .col{padding:34px;border:1px solid rgba(255,255,255,.18)}
+  .col.us{background:#fff;color:var(--text);border-color:var(--gold)}
+  .col h3{font-family:"Playfair Display",serif;font-weight:400;font-size:24px;margin-bottom:14px}
+  .col ul{list-style:none}
+  .col li{padding:11px 0 11px 24px;border-bottom:1px solid rgba(255,255,255,.12);position:relative;font-size:15px;color:#dcd9d6}
+  .col.us li{border-color:var(--line);color:var(--text);display:flex;justify-content:space-between;gap:12px}
+  .col li::before{content:"";position:absolute;left:2px;top:23px;width:10px;height:1px;background:#8f8b88}
+  .col.us li::before{content:"›";background:none;color:var(--gold-d);font-size:20px;top:7px;width:auto;height:auto}
+  .col.us li span{font-variant-numeric:tabular-nums;color:var(--taupe);white-space:nowrap}
+
+  /* Etapes */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+  .step{text-align:center;padding:10px 16px}
+  .step .n{font-family:"Playfair Display",serif;font-size:48px;color:var(--taupe);line-height:1}
+  .step h3{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:16px 0 8px}
+  .step p{color:var(--muted);font-size:15px}
+
+  .cta{background:var(--taupe);color:#fff}
+  .cta h2,.cta .kick{color:#fff}
+  .cta .lead{color:#f4f2f1}
+  .cta .mail{margin-top:16px;font-size:14px;color:#f4f2f1}
+  footer{padding:30px 0;background:var(--ink);color:#bdb9b6;font-size:12px}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a{color:#fff}
+
+  @media (max-width:860px){
+    .board,.cols,.steps{grid-template-columns:1fr}
+    .facts .wrap{grid-template-columns:repeat(2,1fr)}
+    .fact{border-left:0;border-top:1px solid rgba(255,255,255,.12)}
+    .fact:nth-child(-n+2){border-top:0}
+    .fact:last-child{grid-column:span 2}
+    section{padding:68px 0}
+    header .wrap > span:last-child{display:none}
+    .seg i{display:none}
+    .timeline{height:44px}
+  }
+  @media (prefers-reduced-motion:reduce){.hero .bg{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><span>GOONY Studio &nbsp;×&nbsp; GIRAF</span><span class="pill">Prévisualisation · Version 1</span></div></header>
+
+<div class="hero">
+  <div class="bg" role="img" aria-label="Vue aérienne du mas, de sa piscine et de son jardin"></div>
+  <div class="wrap">
+    <div class="eyebrow">Prévisualisation · Réf. 649 · La Colle-sur-Loup</div>
+    <h1>Le mas authentique, <em>en mouvement</em></h1>
+    <p>Voici la visite vidéo telle qu'elle se présentera : le film, son découpage plan par plan et les intentions de mise en scène. Tout est encore ajustable avant la version finale.</p>
+    <div class="btns">
+      <a class="btn" href="#film">Voir le film</a>
+      <a class="btn ghost" href="#storyboard">Le storyboard</a>
+    </div>
+  </div>
+</div>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>20 s</b><span>Durée</span></div>
+    <div class="fact"><b>7</b><span>Plans</span></div>
+    <div class="fact"><b>16:9</b><span>Format</span></div>
+    <div class="fact"><b>1080p</b><span>Définition</span></div>
+    <div class="fact"><b>V1</b><span>Musique à venir</span></div>
+  </div>
+</div>
+
+<section class="film center" id="film">
+  <div class="wrap">
+    <div class="kick">Le film</div>
+    <h2>Une seule promenade, du ciel à la chambre</h2>
+    <p class="lead">Chaque plan part exactement de l'image où le précédent s'arrête : on arrive par les airs, on longe la piscine, on entre par la baie vitrée et on termine dans la suite parentale. Cliquez sur la frise pour aller directement à un plan.</p>
+    <div class="player">
+      <video id="v" autoplay muted loop playsinline controls preload="metadata" poster="poster.jpg"><source src="film.mp4" type="video/mp4"></video>
+      <span class="tag">Prévisualisation</span>
+      <button class="snd" id="snd" type="button">Activer le son</button>
+    </div>
+    <div class="now"><span class="t" id="nowT">Plan 1 · Arrivée par les airs</span><span class="tc" id="nowTc">00:00.0 / 00:20.0</span></div>
+    <div class="timeline" id="tl" aria-label="Frise du montage"><div class="head" id="head"></div></div>
+    <div class="ticks"><span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span><span>00:20</span></div>
+    <p class="cap">Version de travail avec le sound design. La musique sera ajoutée sur la version finale.</p>
+  </div>
+</section>
+
+<section class="center" id="storyboard">
+  <div class="wrap">
+    <div class="kick">Le storyboard</div>
+    <h2>Plan par plan</h2>
+    <p class="lead">Pour chaque plan : l'image de départ, l'image d'arrivée, le mouvement de caméra et son intention. Un clic sur une carte lance le film à cet endroit.</p>
+    <div class="board" id="board"></div>
+  </div>
+</section>
+
+<section class="soft center" id="shotlist">
+  <div class="wrap">
+    <div class="kick">La shot list</div>
+    <h2>Le découpage technique</h2>
+    <p class="lead">Les timecodes, durées, mouvements et transitions du montage, tels qu'ils sont posés dans la timeline.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>#</th><th>Timecode</th><th>Durée</th><th>Espace</th><th>Mouvement de caméra</th><th>Transition de sortie</th><th>Son</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sound center">
+  <div class="wrap">
+    <div class="kick">La bande son</div>
+    <h2>Musique et sound design</h2>
+    <p class="lead">Des effets discrets accompagnent chaque mouvement, sous une musique choisie pour le rythme de la visite.</p>
+    <div class="cols">
+      <div class="col">
+        <h3>Musique</h3>
+        <ul>
+          <li>Ajoutée sur la version finale</li>
+          <li>Ambiance lumineuse et posée, à l'image du mas</li>
+          <li>Calée sur les coupes et sur l'apparition du logo</li>
+          <li>Un changement de direction musicale reste possible à vos retours</li>
+        </ul>
+      </div>
+      <div class="col us">
+        <h3>Sound design</h3>
+        <ul id="sfx"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="center">
+  <div class="wrap">
+    <div class="kick">La suite</div>
+    <h2>De la prévisualisation à la livraison</h2>
+    <p class="lead">Rien n'est figé : un plan, une durée ou un ordre se reprennent rapidement à partir de vos retours.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Vos retours</h3><p>Un plan à raccourcir, une pièce à ajouter, un détail du bien à mettre en avant : indiquez-nous le numéro du plan.</p></div>
+      <div class="step"><div class="n">2</div><h3>Finitions</h3><p>Ajustements des plans, musique, mixage et étalonnage final, dans l'esprit des visuels GIRAF.</p></div>
+      <div class="step"><div class="n">3</div><h3>Livraison</h3><p>Le film en 16:9 pour le site et les portails, et sur demande une version verticale pour Instagram et Facebook.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta center">
+  <div class="wrap">
+    <div class="kick">Vos retours</div>
+    <h2>Une remarque sur un plan&nbsp;?</h2>
+    <p class="lead">Écrivez-nous en citant le numéro du plan, ou prenons quinze minutes pour regarder le film ensemble.</p>
+    <div class="btns">
+      <a class="btn" href="mailto:contact@goonystudio.com?subject=Retours%20pr%C3%A9visualisation%20%C2%B7%20Mas%20La%20Colle-sur-Loup%20(r%C3%A9f.%20649)">Envoyer mes retours</a>
+      <a class="btn ghost" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+    </div>
+    <p class="mail">ou écrivez-nous à <a href="mailto:contact@goonystudio.com">contact@goonystudio.com</a></p>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>GOONY Studio · Monaco · <a href="https://www.goonystudio.com">goonystudio.com</a></span><span>Prévisualisation de travail, réalisée pour GIRAF</span></div></footer>
+
+<script>
+  const FPS = 25, TOTAL = 20;
+  const SHOTS = [
+    {t:"Arrivée par les airs", space:"Vue aérienne", a:0, b:3.0, move:"Drone en descente lente vers la piscine", why:"Situer le mas dans son écrin de verdure, la vue dégagée et le terrain plat de 1 890 m².", out:"Raccord image", sfx:"Souffle aérien"},
+    {t:"Le long de la piscine", space:"Piscine miroir", a:3.0, b:5.4, move:"Travelling avant à hauteur d'homme, cadré sous la branche", why:"Prendre le temps de la piscine miroir avec le mas en fond, plein sud-ouest.", out:"Coupe sur la façade", sfx:"Whoosh doux"},
+    {t:"Entrée par la baie vitrée", space:"Façade et salle à manger", a:5.4, b:7.8, move:"Dolly avant qui franchit la baie ouverte", why:"Faire le lien entre jardin et intérieur, comme le vivent les propriétaires.", out:"Raccord image", sfx:"Whoosh sur la coupe"},
+    {t:"Vers le séjour", space:"Salle à manger et salon", a:7.8, b:10.2, move:"Demi-tour fluide et recul vers le salon", why:"Révéler les volumes et les poutres blanchies du séjour de 55 m².", out:"Raccord image", sfx:"Souffle léger"},
+    {t:"Le salon, contrechamp", space:"Salon", a:10.2, b:12.6, move:"Panoramique vers la droite, puis whip pan", why:"Montrer l'autre face du salon : colonne, cheminée, arche et accès au jardin.", out:"Whip pan", sfx:"Whoosh et whip"},
+    {t:"La suite parentale", space:"Chambre", a:12.6, b:17.6, move:"Push très lent vers la fenêtre ouverte sur le jardin", why:"Plan le plus long du film : on termine au calme, de plain-pied sur le jardin.", out:"Fondu enchaîné", sfx:"Ambiance, puis impact logo"},
+    {t:"Signature GIRAF", space:"Carton de fin", a:17.6, b:20.0, move:"Logo sur fond crème", why:"L'immobilier qui prend de la hauteur : on termine sur la signature de l'agence.", out:"Fondu au noir", sfx:"Impact doux"}
+  ];
+  const SFX = [["Souffle aérien",0.28],["Whoosh doux",3.0],["Whoosh sur la coupe",4.64],["Souffle léger",8.12],["Whoosh",10.68],["Whip pan",12.32],["Impact logo",17.52]];
+
+  const tc = s => { const m=Math.floor(s/60), r=s-m*60; return String(m).padStart(2,"0")+":"+r.toFixed(1).padStart(4,"0"); };
+  const v=document.getElementById('v'), b=document.getElementById('snd');
+  const tl=document.getElementById('tl'), head=document.getElementById('head');
+  const board=document.getElementById('board'), rows=document.getElementById('rows');
+
+  SHOTS.forEach((s,i)=>{
+    const n=i+1, d=(s.b-s.a).toFixed(1).replace('.',',')+" s";
+    const seg=document.createElement('div');
+    seg.className='seg'; seg.style.flex=(s.b-s.a); seg.style.backgroundImage=`url(s${n}a.jpg)`;
+    seg.innerHTML=`<i>${n}</i>`; seg.title=`Plan ${n} · ${s.t}`;
+    seg.onclick=()=>go(i,false); tl.insertBefore(seg, head);
+
+    const c=document.createElement('article');
+    c.className='shot';
+    c.innerHTML=`<div class="frames"><img src="s${n}a.jpg" alt="Plan ${n}, image de départ" loading="lazy"><span class="arr">›</span><img src="s${n}b.jpg" alt="Plan ${n}, image d'arrivée" loading="lazy"></div>
+      <div class="body"><div class="meta"><span>Plan ${n} · ${s.space}</span><span class="tc">${tc(s.a)} › ${tc(s.b)}</span></div>
+      <h3>${s.t}</h3><p>${s.why}</p>
+      <dl><dt>Caméra</dt><dd>${s.move}</dd><dt>Durée</dt><dd>${d}</dd><dt>Sortie</dt><dd>${s.out}</dd><dt>Son</dt><dd>${s.sfx}</dd></dl></div>`;
+    c.onclick=()=>go(i,true); board.appendChild(c);
+
+    const r=document.createElement('tr');
+    r.innerHTML=`<td class="n">${n}</td><td class="tc">${tc(s.a)} › ${tc(s.b)}</td><td class="tc">${d}</td><td><b>${s.space}</b></td><td>${s.move}</td><td>${s.out}</td><td>${s.sfx}</td>`;
+    r.onclick=()=>go(i,true); rows.appendChild(r);
+  });
+  document.getElementById('sfx').innerHTML = SFX.map(([l,t])=>`<li>${l}<span>${tc(t)}</span></li>`).join('');
+
+  function go(i, scroll){
+    v.currentTime = SHOTS[i].a + 0.02; v.play().catch(()=>{});
+    if(scroll) document.getElementById('film').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto':'smooth'});
+  }
+  tl.addEventListener('click', e=>{ if(e.target===tl){ const r=tl.getBoundingClientRect(); v.currentTime=(e.clientX-r.left)/r.width*TOTAL; } });
+
+  let last=-1;
+  function tick(){
+    const t=Math.min(v.currentTime||0, TOTAL);
+    head.style.left=(t/TOTAL*100)+'%';
+    const i=Math.max(0, SHOTS.findIndex(s=>t>=s.a && t<s.b));
+    document.getElementById('nowTc').textContent=tc(t)+" / "+tc(TOTAL);
+    if(i!==last){
+      last=i;
+      document.getElementById('nowT').textContent=`Plan ${i+1} · ${SHOTS[i].t}`;
+      [...tl.querySelectorAll('.seg')].forEach((el,k)=>el.classList.toggle('on',k===i));
+      [...board.children].forEach((el,k)=>el.classList.toggle('on',k===i));
+      [...rows.children].forEach((el,k)=>el.classList.toggle('on',k===i));
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  b.addEventListener('click',()=>{v.muted=!v.muted; if(!v.muted){v.currentTime=0;v.play()} b.textContent=v.muted?'Activer le son':'Couper le son'});
+  v.addEventListener('volumechange',()=>{b.textContent=v.muted?'Activer le son':'Couper le son'});
+</script>
+</body>
+</html>
