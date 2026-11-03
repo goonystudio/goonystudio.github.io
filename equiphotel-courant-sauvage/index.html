@@ -1,0 +1,175 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Courant Sauvage × GOONY Studio | La Riviera au ralenti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6efe4;--soft:#efe4d3;--ink:#2b211a;--mute:#7a6a5c;--accent:#b4532a;--line:#e2d4bf;--inv:#fffaf2;--head:'Cormorant Garamond', serif;--body:'Jost', sans-serif;--r:40px;--ht:none;--hs:0}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}img,video{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--head);font-weight:500;text-transform:var(--ht);letter-spacing:var(--hs);line-height:1.12}
+h1 em,h2 em{font-style:italic;color:var(--accent)}
+header{position:fixed;top:0;left:0;right:0;z-index:20;padding:18px 0;color:#fff;transition:background .3s,color .3s}
+header.s{background:var(--bg);color:var(--ink);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+header .pill{border:1px solid currentColor;padding:6px 12px;border-radius:var(--r)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url(hero.jpg) center/cover;animation:zoom 22s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1.09)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,0) 35%,rgba(43,33,26,.5) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:9vh;width:100%}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px;opacity:.9}
+.hero h1{font-size:clamp(40px,6.4vw,88px);max-width:14ch}.hero h1 em{color:#fff;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:8px}
+.hero p{max-width:560px;margin:22px 0 30px;font-size:17px;opacity:.92}
+.btn{display:inline-block;padding:15px 28px;margin:0 10px 10px 0;background:var(--accent);color:#fff;text-decoration:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border-radius:var(--r);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}.btn.ghost{background:transparent;border:1px solid currentColor}
+section{padding:110px 0}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;font-weight:500}
+h2{font-size:clamp(30px,4vw,52px);margin-bottom:22px;max-width:20ch}
+.lead{font-size:18px;color:var(--mute);max-width:720px}
+.pitch{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+.log{font-family:var(--head);font-size:clamp(20px,2.1vw,26px);line-height:1.5;border-left:2px solid var(--accent);padding-left:26px;margin-top:8px}
+.ints{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:70px}
+.int{border-top:1px solid var(--line);padding-top:22px}.int .n{color:var(--accent);font-size:13px;letter-spacing:.2em;margin-bottom:10px}.int h3{font-size:22px;margin-bottom:8px}.int p{color:var(--mute);font-size:15px}
+.film{background:var(--soft)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.duo figure{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000;border-radius:min(var(--r),18px)}
+.duo video{width:100%;height:100%;object-fit:cover}
+.duo figcaption{position:absolute;left:14px;bottom:12px;color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:rgba(0,0,0,.45);padding:6px 10px;border-radius:min(var(--r),14px)}
+.note{font-size:13px;color:var(--mute);margin-top:18px}
+.stats{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:40px 0 60px}
+.stats div{flex:1;min-width:140px;padding:22px 0}.stats b{display:block;font-family:var(--head);font-size:30px;font-weight:500}.stats span{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute)}
+.tl{display:flex;gap:3px;height:92px}
+.seg{position:relative;background:var(--soft) center/cover;text-decoration:none;color:#fff;overflow:hidden;border-radius:min(var(--r),10px)}
+.seg:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,.05))}
+.seg.md-seg{background:var(--accent)}
+.seg b,.seg span{position:relative;display:block;padding:0 10px}.seg b{padding-top:8px;font-size:13px}.seg span{position:absolute;bottom:8px;font-size:11px;letter-spacing:.06em;white-space:nowrap}
+.seg:hover{filter:brightness(1.12)}
+.ticks{position:relative;height:24px;margin-top:6px;font-size:11px;color:var(--mute)}.ticks span{position:absolute;transform:translateX(-50%)}.ticks span:first-child{transform:none}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:60px}
+.shot{border:1px solid var(--line);background:var(--bg);border-radius:min(var(--r),18px);overflow:hidden}
+.shot .media{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--soft)}
+.shot .media img,.shot .media video{width:100%;height:100%;object-fit:cover}
+.kb{animation:kb 12s ease-in-out infinite alternate}@keyframes kb{to{transform:scale(1.1) translateX(-2%)}}
+.tag{position:absolute;top:12px;left:12px;font-style:normal;font-size:10px;letter-spacing:.2em;text-transform:uppercase;background:var(--bg);color:var(--ink);padding:5px 9px;border-radius:min(var(--r),12px);z-index:3}
+.sb{padding:24px 26px 26px}
+.meta{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;gap:10px}
+.sb h3{font-size:24px;margin-bottom:8px}.sb p{color:var(--mute);font-size:15px}
+.sb dl{display:grid;grid-template-columns:2fr .7fr 1.3fr;gap:14px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.sb dt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:3px}.sb dd{font-size:13px}
+
+.md{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--soft)}
+.md svg{width:80%;height:auto}
+.md .brushp{stroke:var(--accent);stroke-width:3;fill:none;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 4s ease-in-out infinite}
+@keyframes draw{0%{stroke-dashoffset:900}60%,100%{stroke-dashoffset:0}}
+.md .sign{font-family:var(--head);color:var(--ink);font-size:clamp(22px,3.4vw,40px);letter-spacing:.12em;text-transform:var(--ht)}
+.md .sign span{display:inline-block;opacity:0;animation:lt 4s infinite}
+@keyframes lt{0%{opacity:0;transform:translateY(8px)}25%,85%{opacity:1;transform:none}100%{opacity:0}}
+.md .sign small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.25em;color:var(--accent);margin-top:10px;text-align:center;text-transform:uppercase}
+.md .stripes{width:62%;aspect-ratio:1;border-radius:50%;background:repeating-conic-gradient(var(--accent) 0 22.5deg,var(--inv) 22.5deg 45deg);animation:spin 6s linear infinite;box-shadow:0 20px 40px rgba(0,0,0,.12)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.md .fr{display:flex;flex-direction:column;align-items:center}
+.md .fringe{display:flex;gap:5px;margin-top:10px}
+.md .fringe i{display:block;width:2px;height:34px;background:var(--accent);transform-origin:top;animation:sw 1.6s ease-in-out infinite}
+.md .fringe i:nth-child(odd){animation-delay:.2s}.md .fringe i:nth-child(3n){animation-delay:.45s}
+@keyframes sw{0%,100%{transform:rotate(9deg)}50%{transform:rotate(-9deg)}}
+.md .orb{width:34%;aspect-ratio:1;border-radius:50%;animation:cool 4s ease-in-out infinite}
+@keyframes cool{0%,15%{background:radial-gradient(circle at 35% 35%,#ffd38a,#ff7a1a 45%,#b83200);box-shadow:0 0 60px #ff7a1a}70%,100%{background:radial-gradient(circle at 35% 30%,#fff,rgba(220,235,248,.5) 40%,rgba(28,111,176,.25));box-shadow:inset -8px -10px 24px rgba(28,111,176,.25),0 10px 30px rgba(16,35,58,.12)}}
+.md .candy{display:flex;gap:6%;width:80%;justify-content:center}
+.md .candy b{width:16%;aspect-ratio:1;border-radius:50%;animation:bounce 1.4s cubic-bezier(.3,0,.3,1) infinite}
+.md .candy b:nth-child(1){background:#ff6a2b}.md .candy b:nth-child(2){background:#f47e6e;animation-delay:.15s}.md .candy b:nth-child(3){background:#f3d34a;animation-delay:.3s}.md .candy b:nth-child(4){background:#1d2a5a;animation-delay:.45s}
+@keyframes bounce{0%,100%{transform:translateY(0) scale(1.05,.95)}45%{transform:translateY(-40%) scale(.95,1.05)}}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.card{background:var(--bg);padding:32px;border:1px solid var(--line);border-radius:min(var(--r),18px)}.card h3{font-size:22px;margin-bottom:10px}.card p{color:var(--mute);font-size:15px}
+.uses{background:var(--soft)}
+.studio{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.studio ul{list-style:none;margin:26px 0 34px}.studio li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}.studio li:before{content:"";display:inline-block;width:7px;height:7px;background:var(--accent);border-radius:50%;margin-right:12px;vertical-align:middle}
+.studio .pic{aspect-ratio:4/5;background:url(s5.jpg) center/cover;border-radius:min(var(--r),18px)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}.steps div{border-top:2px solid var(--ink);padding-top:18px}.steps b{font-family:var(--head);font-size:22px;font-weight:500;display:block;margin-bottom:6px}.steps p{color:var(--mute);font-size:15px}
+.cta{background:var(--ink);color:var(--inv);text-align:center}.cta h2{margin:0 auto 18px;color:var(--inv)}.cta p{opacity:.75;margin-bottom:34px}.cta .kicker{color:var(--accent)}
+footer{padding:34px 0;font-size:12px;color:var(--mute);letter-spacing:.06em}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:860px){
+.wrap{padding:0 18px}section{padding:72px 0}
+.pitch,.ints,.duo,.board,.cards,.studio,.steps{grid-template-columns:1fr;gap:26px}
+header .wrap > span:last-child{display:none}
+.tl{height:70px}.seg span{display:none}.ticks span:nth-child(even){display:none}
+.sb dl{grid-template-columns:1fr 1fr}.studio .pic{aspect-ratio:16/10}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
+</style></head><body>
+<header id="hd"><div class="wrap"><span>GOONY Studio × Courant Sauvage</span><span class="pill">Storyboard · EquipHotel 2026</span></div></header>
+<section class="hero" style="padding:0"><div class="bg"></div><div class="wrap">
+<div class="eyebrow">Pour Courant Sauvage · Projet « L&#x27;Heure des franges »</div>
+<h1>La Riviera,<br><em>au ralenti</em>.</h1>
+<p>Un film court qui fait de chaque parasol un personnage : il s&#x27;ouvre comme une fleur, ses franges dansent dans le vent, et vu du ciel la terrasse devient une affiche. Le format idéal pour séduire les hôtels et beach clubs de la côte.</p>
+<a class="btn" href="#film">Voir les plans animés</a><a class="btn ghost" href="#storyboard">Le storyboard</a>
+</div></section>
+
+<section id="pitch"><div class="wrap">
+<div class="pitch"><div><div class="kicker">Le pitch</div><h2>L&#x27;Heure des franges</h2><p class="lead">Un film de 21 secondes en 6 plans, au format 16:9 et 9:16, pour vos réseaux, votre site et vos salons.</p></div>
+<p class="log">Matin sur une terrasse de la Riviera. Les parasols sont fermés. Une brise se lève, le premier s&#x27;ouvre au ralenti, franges au vent. Vue du ciel, la rangée dessine un motif parfait sur la piscine. Le soleil descend, une lectrice s&#x27;installe à l&#x27;ombre.</p></div>
+<div class="ints"><div class="int"><div class="n">01</div><h3>Le mouvement</h3><p>Les franges sont votre signature : le ralenti les rend hypnotiques, presque musicales.</p></div><div class="int"><div class="n">02</div><h3>Le graphisme</h3><p>Le plan zénithal transforme la terrasse en composition, comme une affiche des années 60.</p></div><div class="int"><div class="n">03</div><h3>Le désir</h3><p>Donner aux hôteliers l&#x27;image finie de leur terrasse, avant même la commande.</p></div></div>
+</div></section>
+
+<section class="film" id="film"><div class="wrap">
+<div class="kicker">Deux plans, déjà animés</div><h2>L'idée, en <em>mouvement</em></h2>
+<p class="lead">Pour vous montrer le rendu, nous avons déjà animé deux plans clés du storyboard.</p>
+<div class="duo"><figure><video autoplay muted loop playsinline preload="metadata" poster="s5.jpg"><source src="clipA.mp4" type="video/mp4"></video><figcaption>Plan 3 · L&#x27;ouverture</figcaption></figure><figure><video autoplay muted loop playsinline preload="metadata" poster="s6.jpg"><source src="clipB.mp4" type="video/mp4"></video><figcaption>Plan 4 · Vu du ciel</figcaption></figure></div>
+<p class="note">Démonstration réalisée par GOONY Studio pour illustrer l'idée. Les décors et objets présentés sont des créations d'illustration : le film final serait réalisé à partir de vos propres pièces et collections.</p>
+</div></section>
+
+<section id="storyboard"><div class="wrap">
+<div class="kicker">Le storyboard</div><h2>Le film, <em>plan par plan</em></h2>
+<div class="stats"><div><b>21 s</b><span>Durée</span></div><div><b>6</b><span>Plans</span></div><div><b>16:9 · 9:16</b><span>Formats</span></div><div><b>4K</b><span>Définition</span></div></div>
+<div class="tl"><a class="seg md-seg" href="#plan1" style="flex:3;"><b>1</b><span>Rayures</span></a><a class="seg" href="#plan2" style="flex:3;background-image:url(s4.jpg)"><b>2</b><span>Le matin</span></a><a class="seg" href="#plan3" style="flex:5;background-image:url(s5.jpg)"><b>3</b><span>L&#x27;ouverture</span></a><a class="seg" href="#plan4" style="flex:5;background-image:url(s6.jpg)"><b>4</b><span>Vu du ciel</span></a><a class="seg" href="#plan5" style="flex:3;background-image:url(s7.jpg)"><b>5</b><span>L&#x27;heure dorée</span></a><a class="seg md-seg" href="#plan6" style="flex:2;"><b>6</b><span>Signature</span></a></div><div class="ticks"><span style="left:0.00%">0:00</span><span style="left:14.29%">0:03</span><span style="left:28.57%">0:06</span><span style="left:42.86%">0:09</span><span style="left:57.14%">0:12</span><span style="left:71.43%">0:15</span><span style="left:85.71%">0:18</span><span style="left:100.00%">0:21</span></div>
+<div class="board"><article class="shot" id="plan1"><div class="media"><div class="md"><div class="stripes"></div></div><em class="tag">Motion design</em></div><div class="sb">
+<div class="meta"><span>Plan 1 · Motion design</span><span>0:00 › 0:03</span></div>
+<h3>Rayures</h3><p>Ouverture graphique, rythmée par vos rayures.</p>
+<dl><div><dt>Caméra</dt><dd>Des rayures crème et terracotta tournent et forment un parasol vu du dessus</dd></div><div><dt>Durée</dt><dd>3 s</dd></div><div><dt>Sortie</dt><dd>Fondu sur la terrasse</dd></div></dl></div></article><article class="shot" id="plan2"><div class="media"><img src="s4.jpg" alt="" loading="lazy" class="kb"><em class="tag">Image clé</em></div><div class="sb">
+<div class="meta"><span>Plan 2 · Bord de piscine</span><span>0:03 › 0:06</span></div>
+<h3>Le matin</h3><p>Les parasols fermés attendent, la mer scintille derrière les pins.</p>
+<dl><div><dt>Caméra</dt><dd>Travelling latéral lent</dd></div><div><dt>Durée</dt><dd>3 s</dd></div><div><dt>Sortie</dt><dd>Coupe sur le premier parasol</dd></div></dl></div></article><article class="shot" id="plan3"><div class="media"><video autoplay muted loop playsinline preload="metadata" poster="s5.jpg"><source src="clipA.mp4" type="video/mp4"></video><em class="tag">Plan animé</em></div><div class="sb">
+<div class="meta"><span>Plan 3 · Contre-plongée</span><span>0:06 › 0:11</span></div>
+<h3>L&#x27;ouverture</h3><p>Le parasol s&#x27;ouvre contre le ciel, les franges dansent dans la brise.</p>
+<dl><div><dt>Caméra</dt><dd>Ralenti, légère bascule</dd></div><div><dt>Durée</dt><dd>5 s</dd></div><div><dt>Sortie</dt><dd>Raccord mouvement vers le ciel</dd></div></dl></div></article><article class="shot" id="plan4"><div class="media"><video autoplay muted loop playsinline preload="metadata" poster="s6.jpg"><source src="clipB.mp4" type="video/mp4"></video><em class="tag">Plan animé</em></div><div class="sb">
+<div class="meta"><span>Plan 4 · Zénithal</span><span>0:11 › 0:16</span></div>
+<h3>Vu du ciel</h3><p>La rangée de parasols et leurs ombres dessinent un motif parfait sur la pierre et l&#x27;eau.</p>
+<dl><div><dt>Caméra</dt><dd>Drone qui s&#x27;élève doucement</dd></div><div><dt>Durée</dt><dd>5 s</dd></div><div><dt>Sortie</dt><dd>Fondu enchaîné</dd></div></dl></div></article><article class="shot" id="plan5"><div class="media"><img src="s7.jpg" alt="" loading="lazy" class="kb"><em class="tag">Image clé</em></div><div class="sb">
+<div class="meta"><span>Plan 5 · Terrasse beach club</span><span>0:16 › 0:19</span></div>
+<h3>L&#x27;heure dorée</h3><p>Fin de journée, une lectrice à l&#x27;ombre des franges, la mer en feu.</p>
+<dl><div><dt>Caméra</dt><dd>Léger push-in</dd></div><div><dt>Durée</dt><dd>3 s</dd></div><div><dt>Sortie</dt><dd>Fondu au crème</dd></div></dl></div></article><article class="shot" id="plan6"><div class="media"><div class="md"><div class="fr"><div class="sign"><span style="animation-delay:0.00s">C</span><span style="animation-delay:0.06s">o</span><span style="animation-delay:0.12s">u</span><span style="animation-delay:0.18s">r</span><span style="animation-delay:0.24s">a</span><span style="animation-delay:0.30s">n</span><span style="animation-delay:0.36s">t</span><span style="animation-delay:0.42s">&nbsp;</span><span style="animation-delay:0.48s">S</span><span style="animation-delay:0.54s">a</span><span style="animation-delay:0.60s">u</span><span style="animation-delay:0.66s">v</span><span style="animation-delay:0.72s">a</span><span style="animation-delay:0.78s">g</span><span style="animation-delay:0.84s">e</span></div><div class="fringe"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div><em class="tag">Motion design</em></div><div class="sb">
+<div class="meta"><span>Plan 6 · Carton final</span><span>0:19 › 0:21</span></div>
+<h3>Signature</h3><p>Carton final, comme une étiquette brodée.</p>
+<dl><div><dt>Caméra</dt><dd>Une frange de fils se balance sous le nom</dd></div><div><dt>Durée</dt><dd>2 s</dd></div><div><dt>Sortie</dt><dd>Fin</dd></div></dl></div></article></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="kicker">Comment on travaille</div><h2>Simple, rapide, <em>sans tournage</em></h2>
+<div class="steps"><div><b>1. Vos pièces</b><p>Vous nous envoyez des photos de vos produits ou de vos réalisations. Pas besoin de nouveau shooting.</p></div>
+<div><b>2. Nos pistes</b><p>Nous proposons plusieurs concepts et un storyboard comme celui-ci, à vos couleurs.</p></div>
+<div><b>3. Votre film</b><p>Réalisation, montage, musique originale et déclinaisons pour chaque réseau, livrés en quelques jours.</p></div></div>
+</div></section>
+
+<section class="uses"><div class="wrap">
+<div class="kicker">Ce qu'on peut faire ensemble</div><h2>Pour <em>Courant Sauvage</em></h2>
+<div class="cards"><div class="card"><h3>Collections de saison</h3><p>Un film par collection de parasols et bains de soleil, pour lancer la saison sur Instagram.</p></div><div class="card"><h3>Hôtels et beach clubs</h3><p>Votre mobilier projeté dans la terrasse d&#x27;un futur client, pour l&#x27;aider à décider.</p></div><div class="card"><h3>Salons</h3><p>Une boucle pour l&#x27;écran du stand, qui fait sentir la Riviera en plein mois de novembre.</p></div></div>
+</div></section>
+
+<section><div class="wrap"><div class="studio"><div>
+<div class="kicker">Le studio</div><h2>Pourquoi <em>GOONY Studio</em></h2>
+<p class="lead">Studio de production basé à Monaco, spécialisé dans le design, la décoration et l'art de vivre.</p>
+<ul><li>Tournage réel, IA générative, ou un mélange des deux</li><li>Contenus pour vos réseaux sociaux, votre site et vos salons</li><li>Livraison rapide, sans mobiliser vos équipes</li><li>Ils nous font confiance : Sifas, L&#x27;Artelier, La Vallière, Kaze</li></ul>
+<a class="btn" href="https://www.goonystudio.com" target="_blank" rel="noopener">Voir le portfolio</a></div>
+<div class="pic"></div></div></div></section>
+
+<section class="cta"><div class="wrap">
+<div class="kicker">Parlons-en</div><h2>On en parle 15 minutes ?</h2>
+<p>Ravi d'avoir échangé avec vous sur EquipHotel. Choisissez un créneau, ou écrivez-nous à contact@goonystudio.com</p>
+<a class="btn" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+</div></section>
+<footer><div class="wrap"><span>GOONY Studio · Monaco · goonystudio.com</span><span>Démo non commerciale, réalisée pour Courant Sauvage</span></div></footer>
+<script>const h=document.getElementById('hd');addEventListener('scroll',()=>h.classList.toggle('s',scrollY>60));
+document.querySelectorAll('video').forEach(v=>{v.muted=true;const p=v.play();if(p)p.catch(()=>{})});</script>
+</body></html>
