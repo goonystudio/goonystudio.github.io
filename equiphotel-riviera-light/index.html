@@ -79,8 +79,44 @@ h2{font-size:clamp(30px,4vw,52px);margin-bottom:22px;max-width:20ch}
 .md .candy{display:flex;gap:6%;width:80%;justify-content:center}
 .md .candy b{width:16%;aspect-ratio:1;border-radius:50%;animation:bounce 1.4s cubic-bezier(.3,0,.3,1) infinite}
 .md .candy b:nth-child(1){background:#ff6a2b}.md .candy b:nth-child(2){background:#f47e6e;animation-delay:.15s}.md .candy b:nth-child(3){background:#f3d34a;animation-delay:.3s}.md .candy b:nth-child(4){background:#1d2a5a;animation-delay:.45s}
+.md .pat{position:absolute;inset:0;background-image:radial-gradient(circle at 25% 25%,var(--accent) 0 9%,transparent 10%),radial-gradient(circle at 75% 75%,var(--ink) 0 6%,transparent 7%),linear-gradient(45deg,transparent 46%,var(--line) 47% 53%,transparent 54%);background-size:60px 60px;animation:unroll 5s ease-in-out infinite}
+@keyframes unroll{0%{clip-path:inset(0 0 100% 0)}50%,85%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(100% 0 0 0)}}
+.md .chk{position:absolute;inset:0;background:conic-gradient(var(--ink) 25%,var(--inv) 0 50%,var(--ink) 0 75%,var(--inv) 0) 0 0/40px 40px;display:flex;align-items:flex-end;justify-content:center;gap:8%;padding-bottom:18%;animation:slide 4s linear infinite}
+@keyframes slide{to{background-position:40px 0}}
+.md .chk b{width:5px;height:40%;border-radius:3px;transform-origin:bottom;animation:tap 1s ease-in-out infinite}
+.md .chk b:nth-child(1){background:#e8a3a8}.md .chk b:nth-child(2){background:#c8452e;animation-delay:.25s}.md .chk b:nth-child(3){background:#375543;animation-delay:.5s}.md .chk b:nth-child(4){background:#e8b44a;animation-delay:.75s}
+@keyframes tap{0%,100%{transform:rotate(0)}50%{transform:rotate(-14deg) translateY(-12%)}}
+.md .str{width:70%;display:flex;flex-direction:column;gap:6px}
+.md .str i{display:block;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--line),var(--accent),var(--line));background-size:200% 100%;transform-origin:left;animation:strata 4s ease-in-out infinite}
+.md .str i:nth-child(2n){width:86%;animation-delay:.2s}.md .str i:nth-child(3n){width:93%;animation-delay:.4s}
+@keyframes strata{0%{transform:scaleX(0);background-position:0 0}40%,80%{transform:scaleX(1);background-position:100% 0}100%{transform:scaleX(1);opacity:0}}
+.md .leather{fill:var(--accent);opacity:0;animation:leath 4s ease-in-out infinite}
+@keyframes leath{0%,45%{opacity:0}70%,100%{opacity:.9}}
+.md .yr{position:absolute;bottom:12%;font-family:var(--head);font-size:clamp(18px,2.4vw,28px);letter-spacing:.3em;color:var(--ink);opacity:0;animation:leath 4s infinite}
 @keyframes bounce{0%,100%{transform:translateY(0) scale(1.05,.95)}45%{transform:translateY(-40%) scale(.95,1.05)}}
 
+.show{background:var(--soft)}
+.show .md{background:var(--bg)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
+.tile h3{font-size:21px;margin:16px 0 6px}.tile p{color:var(--mute);font-size:14px}
+.tm{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg);border-radius:min(var(--r),18px)}
+.tm img,.tm video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba video{clip-path:inset(0 0 0 50%);animation:wipe 6s ease-in-out infinite}
+@keyframes wipe{0%,10%{clip-path:inset(0 0 0 100%)}45%,65%{clip-path:inset(0 0 0 0)}95%,100%{clip-path:inset(0 0 0 100%)}}
+.ba .bal,.ba .bar{position:absolute;top:12px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;background:var(--bg);color:var(--ink);padding:5px 9px;border-radius:min(var(--r),12px);z-index:2}.ba .bal{left:12px}.ba .bar{right:12px;background:var(--accent);color:#fff}
+.logo{display:flex;align-items:center;justify-content:center;background:var(--ink)}
+.lg{text-align:center;color:var(--inv)}
+.lw{display:block;font-family:var(--head);font-size:clamp(20px,2.2vw,30px);letter-spacing:.14em;text-transform:var(--ht);white-space:nowrap}
+.lw i{font-style:normal;display:inline-block;opacity:0;filter:blur(6px);animation:lgin 5s infinite}
+@keyframes lgin{0%{opacity:0;filter:blur(6px);transform:translateY(10px)}20%,80%{opacity:1;filter:blur(0);transform:none}100%{opacity:0;filter:blur(4px)}}
+.ll{display:block;height:1px;background:var(--accent);margin:14px auto 10px;width:0;animation:lgl 5s infinite}@keyframes lgl{0%,15%{width:0}40%,80%{width:70%}100%{width:0}}
+.ls{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:0;animation:lgs 5s infinite}@keyframes lgs{0%,35%{opacity:0}50%,80%{opacity:.8}100%{opacity:0}}
+.phone{display:flex;align-items:center;justify-content:center;background:var(--bg)}
+.ph{position:relative;width:52%;aspect-ratio:9/19;border-radius:26px;border:6px solid var(--ink);overflow:hidden;background:#000;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+.ph b{position:absolute;left:10px;bottom:12px;color:#fff;font-size:11px;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.contact{display:flex;justify-content:center;align-items:center;gap:14px 34px;flex-wrap:wrap;margin:0 auto 34px;padding:22px 0;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);max-width:820px}
+.contact .who{text-align:left}.contact .who b{display:block;font-family:var(--head);font-weight:500;font-size:20px}.contact .who span{font-size:12px;opacity:.7;letter-spacing:.08em}
+.contact .ci{font-size:18px;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
 .card{background:var(--bg);padding:32px;border:1px solid var(--line);border-radius:min(var(--r),18px)}.card h3{font-size:22px;margin-bottom:10px}.card p{color:var(--mute);font-size:15px}
 .uses{background:var(--soft)}
@@ -93,6 +129,7 @@ footer{padding:34px 0;font-size:12px;color:var(--mute);letter-spacing:.06em}foot
 @media(max-width:860px){
 .wrap{padding:0 18px}section{padding:72px 0}
 .pitch,.ints,.duo,.board,.cards,.studio,.steps{grid-template-columns:1fr;gap:26px}
+.tiles{grid-template-columns:1fr 1fr;gap:16px}.tile p{font-size:13px}.contact{flex-direction:column}.contact .who{text-align:center}
 header .wrap > span:last-child{display:none}
 .tl{height:70px}.seg span{display:none}.ticks span:nth-child(even){display:none}
 .sb dl{grid-template-columns:1fr 1fr}.studio .pic{aspect-ratio:16/10}
@@ -104,7 +141,7 @@ header .wrap > span:last-child{display:none}
 <div class="eyebrow">Pour Riviera Light · Projet « Lumière de Nice »</div>
 <h1>Du feu de l&#x27;atelier<br>à la Baie des <em>Anges</em></h1>
 <p>Un film court qui raconte la vie d&#x27;une pièce de verre : née dans le four de l&#x27;atelier, elle capte la lumière méditerranéenne, la fait danser sur un mur blanc, puis s&#x27;allume au-dessus d&#x27;une table face à la mer. Le verre comme une goutte de Côte d&#x27;Azur.</p>
-<a class="btn" href="#film">Voir les plans animés</a><a class="btn ghost" href="#storyboard">Le storyboard</a>
+<a class="btn" href="#storyboard">Le storyboard</a><a class="btn ghost" href="#savoir-faire">Ce qu'on peut faire</a>
 </div></section>
 
 <section id="pitch"><div class="wrap">
@@ -113,15 +150,9 @@ header .wrap > span:last-child{display:none}
 <div class="ints"><div class="int"><div class="n">01</div><h3>Le savoir-faire</h3><p>Montrer la main et le feu : ce qui distingue une pièce soufflée d&#x27;un luminaire industriel.</p></div><div class="int"><div class="n">02</div><h3>La lumière</h3><p>Filmer ce que le verre fait à la lumière : caustiques, reflets, transparence.</p></div><div class="int"><div class="n">03</div><h3>Nice</h3><p>Ancrer la marque dans son territoire, un argument fort pour l&#x27;hôtellerie de la Riviera.</p></div></div>
 </div></section>
 
-<section class="film" id="film"><div class="wrap">
-<div class="kicker">Deux plans, déjà animés</div><h2>L'idée, en <em>mouvement</em></h2>
-<p class="lead">Pour vous montrer le rendu, nous avons déjà animé deux plans clés du storyboard.</p>
-<div class="duo"><figure><video autoplay muted loop playsinline preload="metadata" poster="s9.jpg"><source src="clipA.mp4" type="video/mp4"></video><figcaption>Plan 3 · La lumière d&#x27;eau</figcaption></figure><figure><video autoplay muted loop playsinline preload="metadata" poster="s11.jpg"><source src="clipB.mp4" type="video/mp4"></video><figcaption>Plan 5 · L&#x27;heure bleue</figcaption></figure></div>
-<p class="note">Démonstration réalisée par GOONY Studio pour illustrer l'idée. Les décors et objets présentés sont des créations d'illustration : le film final serait réalisé à partir de vos propres pièces et collections.</p>
-</div></section>
-
 <section id="storyboard"><div class="wrap">
 <div class="kicker">Le storyboard</div><h2>Le film, <em>plan par plan</em></h2>
+<p class="lead">Les plans marqués « Plan animé » sont déjà réalisés : c'est le rendu réel du film.</p>
 <div class="stats"><div><b>20 s</b><span>Durée</span></div><div><b>6</b><span>Plans</span></div><div><b>16:9 · 9:16</b><span>Formats</span></div><div><b>4K</b><span>Définition</span></div></div>
 <div class="tl"><a class="seg" href="#plan1" style="flex:3;background-image:url(s10.jpg)"><b>1</b><span>Le feu</span></a><a class="seg md-seg" href="#plan2" style="flex:2;"><b>2</b><span>Refroidir</span></a><a class="seg" href="#plan3" style="flex:5;background-image:url(s9.jpg)"><b>3</b><span>La lumière d&#x27;eau</span></a><a class="seg" href="#plan4" style="flex:3;background-image:url(s8.jpg)"><b>4</b><span>Le nuage</span></a><a class="seg" href="#plan5" style="flex:5;background-image:url(s11.jpg)"><b>5</b><span>L&#x27;heure bleue</span></a><a class="seg md-seg" href="#plan6" style="flex:2;"><b>6</b><span>Signature</span></a></div><div class="ticks"><span style="left:0.00%">0:00</span><span style="left:15.00%">0:03</span><span style="left:30.00%">0:06</span><span style="left:45.00%">0:09</span><span style="left:60.00%">0:12</span><span style="left:75.00%">0:15</span><span style="left:90.00%">0:18</span></div>
 <div class="board"><article class="shot" id="plan1"><div class="media"><img src="s10.jpg" alt="" loading="lazy" class="kb"><em class="tag">Image clé</em></div><div class="sb">
@@ -143,6 +174,23 @@ header .wrap > span:last-child{display:none}
 <div class="meta"><span>Plan 6 · Carton final</span><span>0:18 › 0:20</span></div>
 <h3>Signature</h3><p>Carton final lumineux, bleu méditerranée sur blanc.</p>
 <dl><div><dt>Caméra</dt><dd>Le nom se dévoile derrière un reflet</dd></div><div><dt>Durée</dt><dd>2 s</dd></div><div><dt>Sortie</dt><dd>Fin</dd></div></dl></div></article></div>
+<p class="note">Démonstration réalisée par GOONY Studio pour illustrer l'idée. Les décors et objets présentés sont des créations d'illustration : le film final serait réalisé à partir de vos propres pièces et collections.</p>
+</div></section>
+
+<section class="show" id="savoir-faire"><div class="wrap">
+<div class="kicker">Ce qu'on peut faire pour vous</div><h2>Quatre façons de <em>faire bouger</em> Riviera Light</h2>
+<p class="lead">Tout ce que vous voyez ici tourne en direct sur cette page.</p>
+<div class="tiles">
+<div class="tile"><div class="tm ba"><img src="s9.jpg" alt=""><video autoplay muted loop playsinline preload="metadata" poster="s9.jpg"><source src="clipA.mp4" type="video/mp4"></video><span class="bal">Photo</span><span class="bar">Vidéo</span></div>
+<h3>Une photo suffit</h3><p>À partir d'une simple photo de vos pièces, nous créons un plan animé, sans tournage ni shooting.</p></div>
+<div class="tile"><div class="tm"><div class="md"><div class="orb"></div></div></div>
+<h3>Motion design</h3><p>Des animations graphiques à vos couleurs pour les ouvertures, transitions, chiffres clés et nouveautés.</p></div>
+<div class="tile"><div class="tm logo"><div class="lg"><span class="lw"><i style="animation-delay:0.00s">R</i><i style="animation-delay:0.05s">i</i><i style="animation-delay:0.10s">v</i><i style="animation-delay:0.15s">i</i><i style="animation-delay:0.20s">e</i><i style="animation-delay:0.25s">r</i><i style="animation-delay:0.30s">a</i><i style="animation-delay:0.35s">&nbsp;</i><i style="animation-delay:0.40s">L</i><i style="animation-delay:0.45s">i</i><i style="animation-delay:0.50s">g</i><i style="animation-delay:0.55s">h</i><i style="animation-delay:0.60s">t</i></span><span class="ll"></span><span class="ls">Verre soufflé · Nice</span></div></div>
+<h3>Logo animé</h3><p>Votre logo mis en mouvement pour la signature de vos vidéos, vos écrans de salon et vos réseaux.</p></div>
+<div class="tile"><div class="tm phone"><div class="ph"><video autoplay muted loop playsinline preload="metadata" poster="s11.jpg"><source src="clipB.mp4" type="video/mp4"></video><b>Riviera Light</b></div></div>
+<h3>Tous les formats</h3><p>Chaque film est décliné en 16:9, 9:16 et carré, prêt pour Instagram, TikTok, LinkedIn et votre site.</p></div>
+</div>
+<p class="note">Le logo animé ci-dessus est une évocation typographique : avec votre logo vectoriel, nous l'animons à l'identique.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -166,10 +214,12 @@ header .wrap > span:last-child{display:none}
 
 <section class="cta"><div class="wrap">
 <div class="kicker">Parlons-en</div><h2>On en parle 15 minutes ?</h2>
-<p>Ravi d'avoir échangé avec vous sur EquipHotel. Choisissez un créneau, ou écrivez-nous à contact@goonystudio.com</p>
+<p>Ravi d'avoir échangé avec vous sur EquipHotel. Appelez-moi, écrivez-moi, ou choisissez un créneau.</p>
+<div class="contact"><div class="who"><b>Archibald Benhamou</b><span>Fondateur, GOONY Studio</span></div>
+<a class="ci" href="tel:+33627151750">+33 6 27 15 17 50</a><a class="ci" href="mailto:contact@goonystudio.com">contact@goonystudio.com</a></div>
 <a class="btn" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
 </div></section>
-<footer><div class="wrap"><span>GOONY Studio · Monaco · goonystudio.com</span><span>Démo non commerciale, réalisée pour Riviera Light</span></div></footer>
+<footer><div class="wrap"><span>GOONY Studio · Monaco · goonystudio.com · +33 6 27 15 17 50 · contact@goonystudio.com</span><span>Démo non commerciale, réalisée pour Riviera Light</span></div></footer>
 <script>const h=document.getElementById('hd');addEventListener('scroll',()=>h.classList.toggle('s',scrollY>60));
 document.querySelectorAll('video').forEach(v=>{v.muted=true;const p=v.play();if(p)p.catch(()=>{})});</script>
 </body></html>
