@@ -27,10 +27,12 @@
   header nav a{text-decoration:none}
   header nav a:hover,header nav a.on{color:var(--blue)}
 
-  .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;background:#2a2a2a}
+  .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;background:#2a2a2a}
+  .hero .clip{position:absolute;inset:0;overflow:hidden}
   .hero .bg{position:absolute;inset:0;background:url("hero.jpg") center/cover;animation:kb 26s ease-in-out infinite alternate}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.45) 100%)}
+  .hero .clip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.45) 100%)}
   @keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.12) translate(-1.5%,-1%)}}
+  .hero>.wrap{position:relative;z-index:2;width:100%}
   .card-hero{position:relative;z-index:2;background:#fff;max-width:760px;padding:40px 44px;margin-bottom:-60px;box-shadow:0 10px 40px rgba(0,0,0,.18)}
   .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
   h1{font-weight:800;font-size:clamp(30px,4.4vw,48px);line-height:1.12}
@@ -102,7 +104,7 @@
 <header><div class="wrap"><div class="brand"><span class="dot">G</span><span>GOONY Studio × Norait Immobilier</span></div><nav><a class="on" href="#demos">Les démos</a><a href="#comment">Comment ça marche</a><a href="#contact">Contactez-nous</a></nav></div></header>
 
 <div class="hero">
-  <div class="bg" role="img" aria-label="Villa avec piscine vue du ciel, extrait d'une démo"></div>
+  <div class="clip"><div class="bg" role="img" aria-label="Villa avec piscine vue du ciel, extrait d'une démo"></div></div>
   <div class="wrap">
     <div class="card-hero">
       <div class="eyebrow">Pour Norait Immobilier · Nice</div>
