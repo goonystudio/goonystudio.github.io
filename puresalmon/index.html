@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pure Salmon France × GOONY Studio | Votre ferme aquacole, en vidéo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0080c3; --blue-d:#0a638a; --sky:#2db3e7; --deep:#06263a; --ink:#333333; --muted:#6e6e6e;
+    --bg:#ffffff; --mist:#f2f7fa; --line:#dbe5eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Mulish,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  .topbar{background:linear-gradient(90deg,var(--blue-d),var(--sky));color:#fff;font-size:12px;font-weight:700;text-align:right}
+  .topbar .wrap{padding-top:7px;padding-bottom:7px}
+
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden;color:#fff;
+    background:radial-gradient(ellipse at 75% 0%,rgba(45,179,231,.55),transparent 55%),radial-gradient(ellipse at 10% 100%,rgba(0,128,195,.45),transparent 60%),linear-gradient(180deg,#0b4a6b 0%,var(--deep) 100%)}
+  .bubbles span{position:absolute;bottom:-40px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.55),rgba(255,255,255,.06));animation:rise linear infinite}
+  @keyframes rise{to{transform:translateY(-110vh) translateX(20px);opacity:0}}
+  .brand{position:absolute;top:24px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;letter-spacing:.04em;z-index:3}
+  .brand .pill{border:1px solid rgba(255,255,255,.7);border-radius:3px;padding:6px 14px;font-weight:500;text-decoration:none}
+  .hero .wrap{position:relative;z-index:2;width:100%}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#bfe9fa;margin-bottom:14px}
+  h1{font-weight:300;font-size:clamp(36px,5vw,58px);line-height:1.15;max-width:18ch}
+  h1 b{font-weight:700}
+  .hero p{max-width:56ch;margin-top:20px;font-size:17px;font-weight:400;opacity:.95}
+  .btns{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--blue);color:#fff;border:1px solid var(--blue);padding:9px 22px;border-radius:3px;text-decoration:none;font-weight:500;font-size:15px;transition:background .2s,color .2s}
+  .btn:hover{background:var(--blue-d);border-color:var(--blue-d)}
+  .btn.line{background:transparent;color:var(--blue-d);border-color:var(--blue-d)}
+  .btn.line:hover{background:var(--blue-d);color:#fff}
+  .hero .btn.line{color:#fff;border-color:rgba(255,255,255,.8)}
+  .hero .btn.line:hover{background:#fff;color:var(--blue-d)}
+
+  .band{background:linear-gradient(90deg,var(--blue-d),var(--blue));color:#fff;text-align:center;padding:60px 0}
+  .band h2{color:#fff;font-weight:800;text-transform:uppercase;font-size:clamp(22px,2.6vw,28px);letter-spacing:.02em}
+  .band p{max-width:70ch;margin:18px auto 0;font-size:17px}
+
+  section{padding:96px 0}
+  .center{text-align:center}
+  h2{font-weight:400;font-size:clamp(28px,3.2vw,36px);line-height:1.2;color:var(--ink)}
+  h2.blue{color:var(--sky);font-weight:700}
+  .lead{color:var(--muted);max-width:66ch;font-size:16.5px;margin-top:18px}
+  .center .lead{margin-left:auto;margin-right:auto}
+
+  .videos{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:50px;text-align:left}
+  .player{position:relative;background:#111;aspect-ratio:16/9;overflow:hidden;border-radius:3px}
+  .player video{width:100%;height:100%;object-fit:cover;display:block}
+  .snd{position:absolute;right:12px;top:12px;z-index:2;background:var(--blue);color:#fff;border:none;font:500 12px Mulish,sans-serif;padding:7px 14px;cursor:pointer;border-radius:3px}
+  .snd:hover{background:var(--blue-d)}
+  .vid h3{font-size:19px;font-weight:700;color:var(--ink);margin-top:18px}
+  .vid p{color:var(--muted);font-size:15px;margin-top:4px}
+  .note{margin-top:34px;font-size:14px;color:var(--muted)}
+
+  .mist{background:var(--mist)}
+  .uses{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;text-align:left}
+  .use{background:#fff;padding:32px 28px;border-radius:3px;border-top:3px solid var(--sky);box-shadow:0 6px 24px rgba(6,38,58,.06)}
+  .use .lbl{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+  .use h3{font-size:20px;font-weight:700;margin:8px 0 8px;color:var(--ink)}
+  .use p{color:var(--muted);font-size:15px}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+  .step{text-align:center;padding:10px 14px}
+  .num{width:56px;height:56px;border-radius:50%;border:2px solid var(--sky);color:var(--blue);display:grid;place-items:center;margin:0 auto 16px;font-weight:800;font-size:20px}
+  .step h3{font-size:17px;font-weight:700;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:15px}
+
+  .why{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+  ul.check{list-style:none;margin-top:22px}
+  ul.check li{padding:12px 0 12px 30px;border-bottom:1px solid var(--line);position:relative;font-size:15.5px}
+  ul.check li::before{content:"";position:absolute;left:4px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--sky)}
+  .why .btn{margin-top:26px}
+  .quote{background:linear-gradient(160deg,#0b4a6b,var(--deep));color:#fff;padding:44px 40px;border-radius:3px}
+  .quote p{font-size:19px;font-weight:300;line-height:1.6}
+  .quote span{display:block;margin-top:18px;font-size:13px;font-weight:700;color:#bfe9fa;letter-spacing:.04em;text-transform:uppercase}
+
+  .cta{background:linear-gradient(90deg,var(--blue-d),var(--blue));color:#fff}
+  .cta h2{color:#fff;font-weight:800;text-transform:uppercase;font-size:clamp(22px,2.6vw,30px)}
+  .cta .lead{color:#e3f4fb}
+  .cta .btns{justify-content:center}
+  .cta .btn{background:#fff;color:var(--blue-d);border-color:#fff}
+  .cta .btn:hover{background:transparent;color:#fff}
+  .contact{margin-top:22px;font-size:15px;color:#e3f4fb}
+  .contact a{color:#fff;font-weight:700;text-decoration:none}
+  footer{padding:24px 0;font-size:13px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .videos,.uses,.steps,.why{grid-template-columns:1fr}
+    section{padding:70px 0}
+    .brand .pill{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){.bubbles{display:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">GOONY Studio × Pure Salmon France</div></div>
+
+<div class="hero">
+  <div class="bubbles" aria-hidden="true">
+    <span style="left:8%;width:14px;height:14px;animation-duration:14s"></span>
+    <span style="left:22%;width:8px;height:8px;animation-duration:10s;animation-delay:3s"></span>
+    <span style="left:38%;width:20px;height:20px;animation-duration:18s;animation-delay:1s"></span>
+    <span style="left:57%;width:10px;height:10px;animation-duration:12s;animation-delay:5s"></span>
+    <span style="left:71%;width:16px;height:16px;animation-duration:16s;animation-delay:2s"></span>
+    <span style="left:86%;width:9px;height:9px;animation-duration:11s;animation-delay:7s"></span>
+    <span style="left:93%;width:22px;height:22px;animation-duration:20s;animation-delay:4s"></span>
+  </div>
+  <div class="brand"><span>GOONY Studio</span><a class="pill" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a></div>
+  <div class="wrap">
+    <div class="eyebrow">Pour Pure Salmon France</div>
+    <h1>Montrer votre ferme aquacole <b>avant même qu'elle existe</b></h1>
+    <p>À partir de vos perspectives 3D, de vos plans et des photos du chantier au Verdon-sur-Mer, nous créons une vidéo fluide et cinématographique de votre futur site.</p>
+    <div class="btns">
+      <a class="btn" href="#exemples">Voir des exemples</a>
+      <a class="btn line" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+    </div>
+  </div>
+</div>
+
+<div class="band"><div class="wrap">
+  <h2>L'idée</h2>
+  <p>Un projet en construction est difficile à se représenter. Une vidéo permet au public, aux élus, aux partenaires et aux futurs collaborateurs de voir dès aujourd'hui ce que sera la ferme : le bâtiment, son intégration dans le paysage, et ce qui se passe à l'intérieur.</p>
+</div></div>
+
+<section class="center" id="exemples">
+  <div class="wrap">
+    <h2 class="blue">Des images fixes qui prennent vie</h2>
+    <p class="lead">Voici deux exemples de notre méthode : chaque plan de ces vidéos a été créé uniquement à partir de photos. Aucune caméra, aucun drone ne s'est déplacé sur place. Nous appliquons exactement la même approche à vos rendus 3D et à vos images de chantier.</p>
+    <div class="videos">
+      <div class="vid">
+        <div class="player">
+          <video id="v1" autoplay muted loop playsinline controls preload="metadata" poster="poster1.jpg"><source src="villa1.mp4" type="video/mp4"></video>
+          <button class="snd" data-v="v1" type="button">Activer le son</button>
+        </div>
+        <h3>Survol et intégration dans le site</h3>
+        <p>Vue aérienne, abords, puis passage de l'extérieur à l'intérieur : la même logique pour présenter vos bâtiments dans leur environnement.</p>
+      </div>
+      <div class="vid">
+        <div class="player">
+          <video id="v2" autoplay muted loop playsinline controls preload="metadata" poster="poster2.jpg"><source src="villa2.mp4" type="video/mp4"></video>
+          <button class="snd" data-v="v2" type="button">Activer le son</button>
+        </div>
+        <h3>Une architecture contemporaine mise en valeur</h3>
+        <p>Des mouvements de caméra lents qui soulignent les volumes et les matériaux, comme pour une perspective d'architecte animée.</p>
+      </div>
+    </div>
+    <p class="note">Exemples réalisés par GOONY Studio pour des clients de l'immobilier sur la Côte d'Azur.</p>
+  </div>
+</section>
+
+<section class="mist center">
+  <div class="wrap">
+    <h2 class="blue">Ce qu'on peut faire pour Pure Salmon</h2>
+    <p class="lead">Un même film, décliné selon vos besoins de communication pendant toute la durée du projet.</p>
+    <div class="uses">
+      <div class="use"><div class="lbl">Le futur site</div><h3>La ferme, avant sa livraison</h3><p>Survol du bâtiment au Verdon-sur-Mer, insertion dans le paysage de l'estuaire, à partir de vos perspectives d'architecte.</p></div>
+      <div class="use"><div class="lbl">Le procédé</div><h3>Le circuit de l'eau, expliqué</h3><p>Bassins, recirculation, traitement et purification de l'eau : une visite pédagogique de l'intérieur, compréhensible par tous.</p></div>
+      <div class="use"><div class="lbl">Le chantier</div><h3>Le projet qui avance</h3><p>Des capsules régulières à partir de vos photos de chantier, pour vos actualités, la presse et les réseaux sociaux.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="center">
+  <div class="wrap">
+    <h2 class="blue">Comment ça marche</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Vous nous transmettez vos visuels</h3><p>Perspectives 3D, plans, photos du terrain ou du chantier : ce que vous avez déjà suffit.</p></div>
+      <div class="step"><div class="num">2</div><h3>Nous créons les plans animés</h3><p>Chaque image devient un plan en mouvement, avec un montage, une musique et des textes si besoin.</p></div>
+      <div class="step"><div class="num">3</div><h3>Vous diffusez</h3><p>Une version pour votre site et vos présentations, une version verticale pour les réseaux sociaux.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="mist">
+  <div class="wrap why">
+    <div>
+      <h2 class="blue">Pourquoi GOONY Studio</h2>
+      <p class="lead">Notre studio de production est basé à Monaco. Nous produisons des vidéos pour des marques de secteurs variés, de l'immobilier à la tech.</p>
+      <ul class="check">
+        <li>Tournage réel, IA générative, ou un mélange des deux</li>
+        <li>Une vidéo possible dès aujourd'hui, sans attendre la fin des travaux</li>
+        <li>Livraison rapide, sans mobiliser vos équipes</li>
+        <li>Ils nous font confiance&nbsp;: L'Artelier, Sifas, Cede Arena, Ezus</li>
+      </ul>
+      <a class="btn line" href="https://www.goonystudio.com" target="_blank" rel="noopener">Voir le portfolio</a>
+    </div>
+    <div class="quote"><p>Faire voir un projet qui n'existe pas encore, c'est la meilleure façon de le faire comprendre et de le faire accepter.</p><span>L'approche GOONY Studio</span></div>
+  </div>
+</section>
+
+<section class="cta center" id="contact">
+  <div class="wrap">
+    <h2>On en parle 15 minutes&nbsp;?</h2>
+    <p class="lead">Envoyez-nous quelques perspectives du projet : nous vous montrons ce que cela donne en vidéo.</p>
+    <div class="btns" style="margin-top:28px">
+      <a class="btn" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+    </div>
+    <p class="contact">Archibald Benhamou, GOONY Studio · <a href="tel:+33627151750">+33 6 27 15 17 50</a> · <a href="mailto:contact@goonystudio.com">contact@goonystudio.com</a></p>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>GOONY Studio · Monaco · <a href="https://www.goonystudio.com">goonystudio.com</a></span><span>Démo non commerciale, réalisée pour Pure Salmon France</span></div></footer>
+
+<script>
+  document.querySelectorAll('.snd').forEach(b=>{
+    const v=document.getElementById(b.dataset.v);
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('video').forEach(o=>{if(o!==v)o.muted=true});
+      v.muted=!v.muted; if(!v.muted){v.currentTime=0;v.play()}
+    });
+    v.addEventListener('volumechange',()=>{document.querySelectorAll('.snd').forEach(x=>{const vv=document.getElementById(x.dataset.v);x.textContent=vv.muted?'Activer le son':'Couper le son'})});
+  });
+</script>
+</body>
+</html>
