@@ -189,6 +189,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .grid .lb{font-size:14px;line-height:1.3;margin-top:10px}
 .grid .hd{font-size:12px;color:var(--muted);margin-top:2px}
 @media (max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}.mbox{padding:28px 18px}}
+
+/* mobile accordion calendar */
+.macc{display:none;margin-top:28px;border-top:1px solid var(--line)}
+.macc details.mo{border-bottom:1px solid var(--line)}
+.macc summary{list-style:none;cursor:pointer}
+.macc summary::-webkit-details-marker{display:none}
+.macc .ms{display:flex;align-items:center;gap:12px;padding:18px 0}
+.macc .ms b{font-family:"Shippori Mincho",serif;font-weight:500;font-size:24px}
+.macc .ms .sd{font-size:12px;color:var(--red);letter-spacing:.06em}
+.macc .ms .tg{font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:var(--amber);color:var(--night);padding:2px 7px;font-weight:500}
+.macc .chev{margin-left:auto;width:28px;height:28px;border:1px solid #5a5246;display:flex;align-items:center;justify-content:center;transition:transform .25s;font-size:12px;color:var(--muted)}
+.macc details[open] > summary .chev{transform:rotate(180deg)}
+.macc .ev{display:flex;flex-wrap:wrap;gap:6px;padding:0 0 14px}
+.macc .ev span{font-size:12px;border:1px solid var(--line);padding:4px 9px;color:#d9d1c2}
+.macc .ev span.s{border-color:var(--red);color:var(--cream)}
+.macc details.wq{border-top:1px solid var(--line)}
+.macc .ws{display:flex;align-items:baseline;gap:10px;padding:13px 0;flex-wrap:wrap}
+.macc .ws b{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.macc .ws span{font-size:13px;color:var(--muted)}
+.macc .ws em{font-style:normal;font-size:13px;color:var(--amber);width:100%}
+.macc .ws em.soi{color:var(--red)}
+.macc .ws .dots{margin-left:auto;display:flex;gap:4px}
+.macc .ws .dots i{width:7px;height:7px;border-radius:50%}
+.macc .posts{margin:0 0 14px}
+.macc .st{font-size:13px;color:var(--muted);margin:-4px 0 14px}
+.macc .last{padding-bottom:16px}
+@media (max-width:860px){.macc{display:block}.months,.month{display:none}}
 </style>
 </head>
 <body>
@@ -262,6 +289,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="legend"><span><i class="c-t"></i>Tournage</span><span><i class="c-ia"></i>Création IA</span><span><i class="c-b"></i>Votre base</span></div>
   </div>
   <div class="months" id="months"></div>
+  <div class="macc" id="macc"></div>
   <div class="month">
     <aside class="mside">
       <div class="mname" id="mname"></div>
@@ -288,7 +316,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <h3>Styles de vidéos</h3>
   <p class="intro">Des formats repérés sur Instagram, que nous pouvons décliner pour Moshi Moshi avec vos plats, votre salle et vos soirées. Cliquez pour voir la vidéo.</p>
   <h4>En tournage</h4><div class="grid"><a href="https://www.instagram.com/reel/DObczjOACMz/" target="_blank" rel="noopener"><figure><img src="styles/DObczjOACMz.jpg" alt="La table vue du dessus" loading="lazy"></figure><div class="lb">La table vue du dessus</div><div class="hd">@decadentdepictions</div></a><a href="https://www.instagram.com/reel/DZcD3iHOFzE/" target="_blank" rel="noopener"><figure><img src="styles/DZcD3iHOFzE.jpg" alt="Le format « assiette vide »" loading="lazy"></figure><div class="lb">Le format « assiette vide »</div><div class="hd">@kitchen.branding</div></a><a href="https://www.instagram.com/reel/DK5D3XxILa0/" target="_blank" rel="noopener"><figure><img src="styles/DK5D3XxILa0.jpg" alt="Vibe, drink, food" loading="lazy"></figure><div class="lb">Vibe, drink, food</div><div class="hd">@twins_alternative</div></a><a href="https://www.instagram.com/reel/DZ-e1fMMx2l/" target="_blank" rel="noopener"><figure><img src="styles/DZ-e1fMMx2l.jpg" alt="Poser son téléphone, savourer" loading="lazy"></figure><div class="lb">Poser son téléphone, savourer</div><div class="hd">@eatandgo.erbil</div></a><a href="https://www.instagram.com/reel/DatRpo-T0Oc/" target="_blank" rel="noopener"><figure><img src="styles/DatRpo-T0Oc.jpg" alt="La nouvelle carte, plat par plat" loading="lazy"></figure><div class="lb">La nouvelle carte, plat par plat</div><div class="hd">@clarencetauranga</div></a></div>
-  <h4>En IA</h4><div class="grid"><a href="https://www.instagram.com/reel/DY28eNLv-wZ/" target="_blank" rel="noopener"><figure><img src="styles/DY28eNLv-wZ.jpg" alt="Le plat qui donne envie" loading="lazy"></figure><div class="lb">Le plat qui donne envie</div><div class="hd">@sohokitchenfortlauderdale</div></a><a href="https://www.instagram.com/reel/DJ4JvScvSc5/" target="_blank" rel="noopener"><figure><img src="styles/DJ4JvScvSc5.jpg" alt="Le cocktail en lecteur de musique" loading="lazy"></figure><div class="lb">Le cocktail en lecteur de musique</div><div class="hd">@nofluff.in</div></a><a href="https://www.instagram.com/reel/Ddy9sfrv3pO/" target="_blank" rel="noopener"><figure><img src="styles/Ddy9sfrv3pO.jpg" alt="Le décor réinventé" loading="lazy"></figure><div class="lb">Le décor réinventé</div><div class="hd">@veronix.studios</div></a></div>
+  <h4>En IA</h4><div class="grid"><a href="https://www.instagram.com/reel/DY28eNLv-wZ/" target="_blank" rel="noopener"><figure><img src="styles/DY28eNLv-wZ.jpg" alt="Le plat qui donne envie" loading="lazy"></figure><div class="lb">Le plat qui donne envie</div><div class="hd">@sohokitchenfortlauderdale</div></a><a href="https://www.instagram.com/reel/DJ4JvScvSc5/" target="_blank" rel="noopener"><figure><img src="styles/DJ4JvScvSc5.jpg" alt="Le cocktail en lecteur de musique" loading="lazy"></figure><div class="lb">Le cocktail en lecteur de musique</div><div class="hd">@nofluff.in</div></a><a href="https://www.instagram.com/reel/Ddy9sfrv3pO/" target="_blank" rel="noopener"><figure><img src="styles/Ddy9sfrv3pO.jpg" alt="Le décor réinventé" loading="lazy"></figure><div class="lb">Le décor réinventé</div><div class="hd">@veronix.studios</div></a><a href="https://www.instagram.com/reel/Dd6L34AuisV/" target="_blank" rel="noopener"><figure><img src="styles/Dd6L34AuisV.jpg" alt="Le sushi mis en scène" loading="lazy"></figure><div class="lb">Le sushi mis en scène</div><div class="hd">@artistiksushi</div></a><a href="https://www.instagram.com/reel/DfOe3KUijIL/" target="_blank" rel="noopener"><figure><img src="styles/DfOe3KUijIL.jpg" alt="Le nouveau plat en surprise" loading="lazy"></figure><div class="lb">Le nouveau plat en surprise</div><div class="hd">@puertovallartausa</div></a></div>
 </div></div>
 
 <section id="tarif" class="price"><div class="wrap">
@@ -381,7 +409,7 @@ function show(m){
     ? 'Janvier est détaillé post par post : cliquez sur un post pour voir le visuel prévu et la proposition de légende. Ce sont des idées de contenus, à affiner avec vous.'
     : 'Idées de contenus, à affiner avec vous. Le détail de chaque post (visuel, légende) est préparé le mois précédent, comme pour janvier.';
 }
-$('weeks').addEventListener('click', e => {
+document.addEventListener('click', e => {
   const b = e.target.closest('.post'); if (!b) return;
   const w = WEEKS[+b.dataset.w], p = w.posts[+b.dataset.p];
   $('dd').textContent = `${p.d} · ${p.fmt}`;
@@ -402,6 +430,22 @@ document.addEventListener('keydown', e => {
   const r = $('calendrier').getBoundingClientRect();
   if (r.top < innerHeight && r.bottom > 0) { if (e.key==='ArrowLeft') show(cur-1); if (e.key==='ArrowRight') show(cur+1); }
 });
+function postsHTML(w){ return `<div class="posts">${w.posts.map((p,j)=>`
+        <button class="post" data-w="${w.i}" data-p="${j}">
+          <div class="ph"><span>${p.d}</span><i class="${SRC[p.src]}">${p.src}</i></div>
+          <div class="tt">${esc(p.t)}</div>
+          <div class="fm">${p.fmt}</div>
+        </button>`).join('')}</div>`; }
+const DOT = {'t':'var(--cream)','ia':'var(--amber)','b':'var(--sage)'};
+$('macc').innerHTML = MN.map((name,mi) => {
+  const m = mi+1, ws = WEEKS.map((w,i)=>({...w,i})).filter(w => w.m===m);
+  const soi = EV[m].find(e=>e[1]);
+  return `<details class="mo" ${m===1?'open':''}><summary class="ms"><b>${name}</b>${TOUR.includes(m)?'<span class="tg">Tournage</span>':''}<span class="sd">${soi?esc(soi[0].replace('Soirée Shibuya','Shibuya')):''}</span><span class="chev">&#9662;</span></summary>
+    <div class="ev">${EV[m].map(e=>`<span class="${e[1]?'s':''}">${esc(e[0])}</span>`).join('')}</div>
+    ${ws.map((w,k)=>`<details class="wq" ${m===1&&k===0?'open':''}><summary class="ws"><b>Semaine ${k+1}</b><span>${w.r}</span><span class="dots">${w.posts.map(p=>`<i style="background:${DOT[SRC[p.src]]}"></i>`).join('')}</span>${w.tf?`<em class="${w.soiree?'soi':''}">${esc(w.tf)}</em>`:''}</summary>${postsHTML(w)}${w.st?`<p class="st">${esc(w.st)}</p>`:''}</details>`).join('')}
+    <p class="ideas last">${m===1?'Touchez un post pour voir le visuel prévu et la légende.':'Idées de contenus, à affiner avec vous.'}</p>
+  </details>`;
+}).join('');
 const SM=$('styles');
 $('openStyles').onclick=()=>{SM.classList.add('on');SM.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'};
 function closeS(){SM.classList.remove('on');SM.setAttribute('aria-hidden','true');document.body.style.overflow=''}
