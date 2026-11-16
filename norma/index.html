@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1c3d32">
+<meta name="robots" content="noindex, nofollow">
+<title>Norma · Proposition GOONY Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:ital,wght@1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#1c3d32; --night2:#22493c; --line:#355f51; --cream:#f7f1e3; --muted:#aec2b5;
+  --amber:#f3843a; --red:#f2cf5b; --sage:#9fc6ac;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--cream);font-family:"Jost",system-ui,sans-serif;font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Josefin Sans",sans-serif}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+h2{font-family:"Josefin Sans",sans-serif;font-weight:500;font-size:clamp(28px,4vw,44px);line-height:1.15;margin-top:12px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+.btn{font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid var(--amber);color:var(--night);background:var(--amber);text-decoration:none;font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:.2s}
+.btn:hover{background:var(--cream);border-color:var(--cream)}
+.btn.ghost{background:transparent;color:var(--cream);border-color:#5a5246}
+.btn.ghost:hover{border-color:var(--cream)}
+.btn svg{width:16px;height:16px}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(28,61,50,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.top .brand{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.top .brand img{height:26px}
+.top .btn{padding:9px 14px;font-size:12px}
+
+/* hero */
+.hero{padding:72px 0 96px;border-top:0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-family:"Josefin Sans",sans-serif;font-weight:500;font-size:clamp(38px,5.6vw,68px);line-height:1.06;margin:18px 0 24px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{font-size:18px;color:#d9d1c2;max-width:520px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.reels{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.reels figure{aspect-ratio:9/16;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#000}
+.reels figure:nth-child(2){transform:translateY(40px)}
+.reels img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 14s ease-in-out infinite alternate}
+.reels figure:nth-child(2) img{animation-delay:-7s}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12) translate(-2%,-2%)}}
+.hero{position:relative;overflow:hidden}
+.lemons{position:absolute;right:-60px;top:-40px;width:260px;opacity:.9;pointer-events:none;transform:rotate(18deg)}
+.hero h1 em{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;letter-spacing:0}
+.hero h1{letter-spacing:-.01em}
+@media (max-width:860px){.lemons{width:150px;right:-40px;top:-20px}}
+
+/* figures */
+.figs{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.figs div{padding:28px 20px;text-align:center}
+.figs div+div{border-left:1px solid var(--line)}
+.figs b{display:block;font-family:"Josefin Sans",sans-serif;font-weight:500;font-size:52px;line-height:1}
+.figs span{display:block;margin-top:8px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.note{color:var(--muted);font-size:14px;margin-top:16px}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.svc > div{padding:32px 28px 32px 0}
+.svc > div+div{padding-left:28px;border-left:1px solid var(--line)}
+.svc .n{font-size:12px;color:var(--amber);letter-spacing:.2em}
+.svc h3{font-family:"Josefin Sans",sans-serif;font-weight:500;font-size:24px;margin:8px 0 16px}
+.svc ul{list-style:none}
+.svc li{position:relative;padding:6px 0 6px 22px;color:#d9d1c2}
+.svc li::before{content:"";position:absolute;left:0;top:17px;width:12px;border-top:1px solid var(--amber)}
+.spons{margin-top:8px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+
+.shoot{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:40px;align-items:start}
+.shoot p{color:#d9d1c2}
+.shoot ul{list-style:none;border-top:1px solid var(--line);margin-top:4px}
+.shoot li{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)}
+.shoot li span{color:var(--amber)}
+.shoot small{display:block;color:var(--muted);font-size:14px;margin-top:16px}
+
+/* calendar */
+.cal-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.c-t{background:var(--cream)} .c-ia{background:var(--amber)} .c-b{background:var(--sage)}
+.months{display:flex;gap:4px;margin-top:32px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.months::-webkit-scrollbar{display:none}
+.months button{flex:0 0 auto;background:none;border:0;color:var(--muted);font:inherit;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:14px 14px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.months button:hover{color:var(--cream)}
+.months button.on{color:var(--cream);border-bottom-color:var(--amber)}
+.month{display:grid;grid-template-columns:280px 1fr;gap:40px;margin-top:36px}
+.mside .mname{font-family:"Josefin Sans",sans-serif;font-size:44px;line-height:1}
+.mside .tour{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:var(--amber);color:var(--night);padding:4px 10px;font-weight:500}
+.mside ul{list-style:none;margin-top:22px;border-top:1px solid var(--line)}
+.mside li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;color:#d9d1c2}
+.mside li.s{color:var(--amber)}
+.mnav{display:flex;gap:8px;margin-top:24px}
+.mnav button{background:none;border:1px solid #5a5246;color:var(--cream);width:44px;height:44px;cursor:pointer;font-size:18px}
+.mnav button:hover{border-color:var(--cream)}
+.mnav button:disabled{opacity:.3;cursor:default}
+.wk{border-top:1px solid var(--line);padding:18px 0}
+.wk:last-child{border-bottom:1px solid var(--line)}
+.wk-h{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+.wk-h b{font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.wk-h span{color:var(--muted);font-size:14px}
+.wk-h em{font-style:normal;color:var(--amber);font-size:14px;margin-left:auto}
+.wk-h em.soi{color:var(--red)}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.post{text-align:left;background:var(--night2);border:1px solid var(--line);color:var(--cream);font:inherit;padding:14px 14px 12px;cursor:pointer;transition:.2s;display:flex;flex-direction:column;gap:6px;min-height:92px}
+.post:hover{border-color:#6b6253;transform:translateY(-2px)}
+.post .ph{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.post .ph i{font-style:normal;display:flex;align-items:center;gap:6px}
+.post .ph i::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.post .ph i.t{color:var(--cream)} .post .ph i.ia{color:var(--amber)} .post .ph i.b{color:var(--sage)}
+.post .tt{font-size:15px;line-height:1.35}
+.post .fm{font-size:12px;color:var(--muted)}
+.wk .st{font-size:13px;color:var(--muted);margin-top:10px}
+.ideas{margin-top:20px;font-size:13px;color:var(--muted)}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:.25s;z-index:40}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:#183429;border-left:1px solid var(--line);z-index:50;transform:translateX(100%);transition:transform .3s ease;padding:32px 28px;overflow-y:auto}
+.drawer.on{transform:none}
+.drawer .x{position:absolute;top:18px;right:18px;background:none;border:1px solid #5a5246;color:var(--cream);width:40px;height:40px;cursor:pointer;font-size:18px}
+.drawer .dd{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+.drawer h4{font-family:"Josefin Sans",sans-serif;font-weight:500;font-size:30px;line-height:1.15;margin:12px 0 22px;padding-right:40px}
+.drawer dl{border-top:1px solid var(--line)}
+.drawer dl div{padding:14px 0;border-bottom:1px solid var(--line)}
+.drawer dt{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.drawer dd{margin-top:4px;font-size:15px}
+.drawer dd.leg{font-family:"Josefin Sans",sans-serif;font-size:17px}
+
+/* price */
+.price{text-align:center}
+.price .amt{font-family:"Josefin Sans",sans-serif;font-weight:500;font-size:clamp(44px,7vw,72px);line-height:1;margin-top:26px}
+.price .amt small{font-size:.4em;color:var(--muted);font-family:"Jost";letter-spacing:.08em}
+.price .ttc{color:var(--muted);margin-top:12px}
+.price .pub{margin-top:20px;color:#d9d1c2}
+.price .all{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);color:var(--amber);font-size:15px;max-width:620px;margin-left:auto;margin-right:auto}
+
+/* needs */
+.needs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:36px;border-top:1px solid var(--line)}
+.needs div{padding:28px 24px 28px 0}
+.needs div+div{padding-left:24px;border-left:1px solid var(--line)}
+.needs b{font-family:"Josefin Sans",sans-serif;font-size:36px;color:var(--amber);display:block;line-height:1}
+.needs h4{font-size:18px;font-weight:500;margin:14px 0 6px}
+.needs p{color:#d9d1c2;font-size:15px}
+.contact{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-top:56px;padding-top:32px;border-top:1px solid var(--line)}
+.contact .who{font-family:"Josefin Sans",sans-serif;font-size:30px}
+.contact .who span{display:block;font-family:"Jost";font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.contact .lines{margin-top:16px;line-height:1.9}
+.contact .lines a{text-decoration:none;border-bottom:1px solid #5a5246}
+footer{padding:28px 0 40px;color:#6f675b;font-size:13px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  section{padding:68px 0}
+  .hero .wrap,.shoot,.month{grid-template-columns:1fr;gap:32px}
+  .reels{max-width:420px}
+  .figs{grid-template-columns:repeat(2,1fr)}
+  .figs div:nth-child(3){border-left:0}
+  .figs div:nth-child(n+3){border-top:1px solid var(--line)}
+  .svc,.needs{grid-template-columns:1fr}
+  .svc > div+div,.needs div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .posts{grid-template-columns:1fr}
+  .post{min-height:0}
+  .wk-h em{margin-left:0;width:100%}
+  .top .brand span{display:none}
+}
+
+/* styles band + modal */
+.band{padding:40px 0;border-top:1px solid var(--line)}
+.band .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.band .t{display:flex;align-items:center;gap:20px}
+.stack{display:flex}
+.stack img{width:44px;height:78px;object-fit:cover;border-radius:6px;border:2px solid var(--night);box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.stack img+img{margin-left:-16px}
+.stack img:nth-child(1){transform:rotate(-6deg)} .stack img:nth-child(3){transform:rotate(6deg)}
+.band h3{font-family:"Josefin Sans",sans-serif;font-weight:500;font-size:22px}
+.band p{color:var(--muted);font-size:14px;margin-top:2px}
+.modal{position:fixed;inset:0;z-index:60;display:none;align-items:flex-start;justify-content:center;background:rgba(0,0,0,.72);overflow-y:auto;padding:40px 16px}
+.modal.on{display:flex}
+.mbox{background:#183429;border:1px solid var(--line);max-width:1000px;width:100%;padding:36px 32px;position:relative}
+.mbox .x{position:absolute;top:16px;right:16px;background:none;border:1px solid #5a5246;color:var(--cream);width:40px;height:40px;cursor:pointer;font-size:18px}
+.mbox h3{font-family:"Josefin Sans",sans-serif;font-weight:500;font-size:30px;margin-top:8px}
+.mbox .intro{color:var(--muted);font-size:14px;margin-top:8px;max-width:620px}
+.mbox h4{margin-top:30px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:14px}
+.grid a{text-decoration:none;display:block}
+.grid figure{aspect-ratio:9/16;overflow:hidden;border-radius:10px;border:1px solid var(--line);background:#000;position:relative}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.grid a:hover img{transform:scale(1.04)}
+.grid .lb{font-size:14px;line-height:1.3;margin-top:10px}
+.grid .hd{font-size:12px;color:var(--muted);margin-top:2px}
+@media (max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}.mbox{padding:28px 18px}}
+
+/* mobile accordion calendar */
+.macc{display:none;margin-top:28px;border-top:1px solid var(--line)}
+.macc details.mo{border-bottom:1px solid var(--line)}
+.macc summary{list-style:none;cursor:pointer}
+.macc summary::-webkit-details-marker{display:none}
+.macc .ms{display:flex;align-items:center;gap:12px;padding:18px 0}
+.macc .ms b{font-family:"Josefin Sans",sans-serif;font-weight:500;font-size:24px}
+.macc .ms .sd{font-size:12px;color:var(--red);letter-spacing:.06em}
+.macc .ms .tg{font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:var(--amber);color:var(--night);padding:2px 7px;font-weight:500}
+.macc .chev{margin-left:auto;width:28px;height:28px;border:1px solid #5a5246;display:flex;align-items:center;justify-content:center;transition:transform .25s;font-size:12px;color:var(--muted)}
+.macc details[open] > summary .chev{transform:rotate(180deg)}
+.macc .ev{display:flex;flex-wrap:wrap;gap:6px;padding:0 0 14px}
+.macc .ev span{font-size:12px;border:1px solid var(--line);padding:4px 9px;color:#d9d1c2}
+.macc .ev span.s{border-color:var(--red);color:var(--cream)}
+.macc details.wq{border-top:1px solid var(--line)}
+.macc .ws{display:flex;align-items:baseline;gap:10px;padding:13px 0;flex-wrap:wrap}
+.macc .ws b{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.macc .ws span{font-size:13px;color:var(--muted)}
+.macc .ws em{font-style:normal;font-size:13px;color:var(--amber);width:100%}
+.macc .ws em.soi{color:var(--red)}
+.macc .ws .dots{margin-left:auto;display:flex;gap:4px}
+.macc .ws .dots i{width:7px;height:7px;border-radius:50%}
+.macc .posts{margin:0 0 14px}
+.macc .st{font-size:13px;color:var(--muted);margin:-4px 0 14px}
+.macc .last{padding-bottom:16px}
+@media (max-width:860px){.macc{display:block}.months,.month{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand"><img src="logo.png" alt="Norma"><span>× GOONY Studio</span></div>
+  <a class="btn" href="GOONY_Proposition_Norma.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>PDF</a>
+</div></header>
+
+<div class="hero"><img class="lemons" src="citrons.png" alt=""><div class="wrap">
+  <div>
+    <div class="eyebrow">Proposition GOONY Studio · Novembre 2026</div>
+    <h1>Le contenu de <em>Norma</em>, toute l'année.</h1>
+    <p class="lead">Voici ce que nous mettons en place pour un restaurant du groupe, ici Norma. La même approche s'adapte à chacune de vos adresses.</p>
+    <div class="ctas">
+      <a class="btn" href="#calendrier">Voir le calendrier</a>
+      <a class="btn ghost" href="GOONY_Proposition_Norma.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Télécharger le PDF</a>
+    </div>
+  </div>
+  <div class="reels">
+    <figure><img src="hero1.jpg" alt="Pinsa et bière sur la terrasse de Norma"></figure>
+    <figure><img src="hero2.jpg" alt="Le chef prépare des ravioli"></figure>
+  </div>
+</div></div>
+
+<section id="mois"><div class="wrap">
+  <div class="eyebrow">Chaque mois</div>
+  <h2>Un compte vivant, toutes les semaines.</h2>
+  <div class="figs">
+    <div><b>13</b><span>posts</span></div>
+    <div><b>30</b><span>stories minimum</span></div>
+    <div><b>9</b><span>photos</span></div>
+    <div><b>4</b><span>vidéos</span></div>
+  </div>
+  <p class="note">Soit 3 posts par semaine (2 photos et 1 vidéo) et au moins 1 story par jour.</p>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="eyebrow">Ce que nous prenons en charge</div>
+  <h2>Les services</h2>
+  <div class="svc">
+    <div><div class="n">01</div><h3>Création de contenu</h3><ul><li>Tournages photo et vidéo sur place</li><li>Montage des vidéos et retouche des photos</li><li>Visuels et vidéos IA pour les événements, à partir de vraies photos du lieu et des plats</li><li>Sponsorisation des vidéos</li></ul></div>
+    <div><div class="n">02</div><h3>Publication et communauté</h3><ul><li>3 posts par semaine</li><li>1 story par jour au minimum</li><li>Gestion de la communauté : messages privés et commentaires</li></ul></div>
+    <div><div class="n">03</div><h3>Site internet</h3><ul><li>Mise à jour de la carte, des horaires et des événements</li><li>Suivi du référencement (SEO et GEO)</li></ul></div>
+  </div>
+  <p class="spons">Certaines vidéos seront sponsorisées, le budget publicitaire restant à votre charge.</p>
+
+  <div class="shoot">
+    <div>
+      <div class="eyebrow">À chaque tournage</div>
+      <h2 style="font-size:30px">Une matière pour deux mois.</h2>
+      <p style="margin-top:16px">Un vidéaste professionnel vient tourner à un moment choisi avec vous : une nouvelle carte, un service, une soirée d'été. Soit 6 à 10 tournages par an, à définir.</p>
+    </div>
+    <div>
+      <ul>
+        <li>Photos retouchées <span>25 à 30</span></li>
+        <li>Vidéos montées <span>environ 12</span></li>
+        <li>Rushes pour les stories <span>inclus</span></li>
+      </ul>
+      <small>Cette matière alimente les photos et vidéos en prise de vue réelle, les stories, et sert de base aux créations IA : annonces, teasers, visuels d'événements et formats tendance.</small>
+    </div>
+  </div>
+</div></section>
+
+<section id="calendrier"><div class="wrap">
+  <div class="cal-head">
+    <div>
+      <div class="eyebrow">Planning de publication 2027</div>
+      <h2>Semaine par semaine</h2>
+    </div>
+    <div class="legend"><span><i class="c-t"></i>Tournage</span><span><i class="c-ia"></i>Création IA</span><span><i class="c-b"></i>Votre base</span></div>
+  </div>
+  <div class="months" id="months"></div>
+  <div class="macc" id="macc"></div>
+  <div class="month">
+    <aside class="mside">
+      <div class="mname" id="mname"></div>
+      <div id="mtour"></div>
+      <ul id="mevents"></ul>
+      <div class="mnav"><button id="prev" aria-label="Mois précédent">&#8592;</button><button id="next" aria-label="Mois suivant">&#8594;</button></div>
+    </aside>
+    <div>
+      <div id="weeks"></div>
+      <p class="ideas" id="ideas"></p>
+    </div>
+  </div>
+</div></section>
+
+<div class="band"><div class="wrap">
+  <div class="t"><div class="stack"><img src="styles/DZcD3iHOFzE.jpg" alt=""><img src="styles/DJ4JvScvSc5.jpg" alt=""><img src="styles/Ddy9sfrv3pO.jpg" alt=""></div>
+  <div><h3>Et d'autres formats possibles</h3><p>Quelques styles de vidéos que nous pouvons adapter à Norma.</p></div></div>
+  <button class="btn ghost" id="openStyles" type="button">Voir les styles de vidéos</button>
+</div></div>
+
+<div class="modal" id="styles" aria-hidden="true"><div class="mbox">
+  <button class="x" id="closeStyles" aria-label="Fermer">&#10005;</button>
+  <div class="eyebrow">Inspirations</div>
+  <h3>Styles de vidéos</h3>
+  <p class="intro">Des formats repérés sur Instagram, que nous pouvons décliner pour Norma avec vos plats, votre terrasse et le Spritz Bar. Cliquez pour voir la vidéo.</p>
+  <h4>En tournage</h4><div class="grid"><a href="https://www.instagram.com/reel/DObczjOACMz/" target="_blank" rel="noopener"><figure><img src="styles/DObczjOACMz.jpg" alt="La table vue du dessus" loading="lazy"></figure><div class="lb">La table vue du dessus</div><div class="hd">@decadentdepictions</div></a><a href="https://www.instagram.com/reel/DZcD3iHOFzE/" target="_blank" rel="noopener"><figure><img src="styles/DZcD3iHOFzE.jpg" alt="Le format « assiette vide »" loading="lazy"></figure><div class="lb">Le format « assiette vide »</div><div class="hd">@kitchen.branding</div></a><a href="https://www.instagram.com/reel/DK5D3XxILa0/" target="_blank" rel="noopener"><figure><img src="styles/DK5D3XxILa0.jpg" alt="Vibe, drink, food" loading="lazy"></figure><div class="lb">Vibe, drink, food</div><div class="hd">@twins_alternative</div></a><a href="https://www.instagram.com/reel/DZ-e1fMMx2l/" target="_blank" rel="noopener"><figure><img src="styles/DZ-e1fMMx2l.jpg" alt="Poser son téléphone, savourer" loading="lazy"></figure><div class="lb">Poser son téléphone, savourer</div><div class="hd">@eatandgo.erbil</div></a><a href="https://www.instagram.com/reel/DatRpo-T0Oc/" target="_blank" rel="noopener"><figure><img src="styles/DatRpo-T0Oc.jpg" alt="La nouvelle carte, plat par plat" loading="lazy"></figure><div class="lb">La nouvelle carte, plat par plat</div><div class="hd">@clarencetauranga</div></a></div>
+  <h4>En IA</h4><div class="grid"><a href="https://www.instagram.com/reel/DY28eNLv-wZ/" target="_blank" rel="noopener"><figure><img src="styles/DY28eNLv-wZ.jpg" alt="Le plat qui donne envie" loading="lazy"></figure><div class="lb">Le plat qui donne envie</div><div class="hd">@sohokitchenfortlauderdale</div></a><a href="https://www.instagram.com/reel/DJ4JvScvSc5/" target="_blank" rel="noopener"><figure><img src="styles/DJ4JvScvSc5.jpg" alt="Le cocktail en lecteur de musique" loading="lazy"></figure><div class="lb">Le cocktail en lecteur de musique</div><div class="hd">@nofluff.in</div></a><a href="https://www.instagram.com/reel/Ddy9sfrv3pO/" target="_blank" rel="noopener"><figure><img src="styles/Ddy9sfrv3pO.jpg" alt="Le décor réinventé" loading="lazy"></figure><div class="lb">Le décor réinventé</div><div class="hd">@veronix.studios</div></a><a href="https://www.instagram.com/reel/Dd6L34AuisV/" target="_blank" rel="noopener"><figure><img src="styles/Dd6L34AuisV.jpg" alt="Le produit mis en scène" loading="lazy"></figure><div class="lb">Le produit mis en scène</div><div class="hd">@artistiksushi</div></a><a href="https://www.instagram.com/reel/DfOe3KUijIL/" target="_blank" rel="noopener"><figure><img src="styles/DfOe3KUijIL.jpg" alt="Le nouveau plat en surprise" loading="lazy"></figure><div class="lb">Le nouveau plat en surprise</div><div class="hd">@puertovallartausa</div></a></div>
+</div></div>
+
+<section id="tarif" class="price"><div class="wrap">
+  <div class="eyebrow">Tarif</div>
+  <div class="amt">1 500 € HT <small>par restaurant, par mois</small></div>
+  <div class="ttc">soit 1 800 € TTC</div>
+  <p class="pub">Budget publicitaire des vidéos sponsorisées en supplément.</p>
+  <p class="all">La même formule s'applique à chacun des restaurants du groupe.</p>
+</div></section>
+
+<section id="demarrer"><div class="wrap">
+  <div class="eyebrow">Pour démarrer</div>
+  <h2>De votre côté</h2>
+  <div class="needs">
+    <div><b>01</b><h4>Les accès</h4><p>Comptes Instagram et Facebook, Meta Business, fiche Google, nom de domaine et hébergeur du site.</p></div>
+    <div><b>02</b><h4>Votre base de contenus</h4><p>L'accès à vos photos, vidéos, visuels et menus déjà produits, pour démarrer vite.</p></div>
+    <div><b>03</b><h4>Votre calendrier</h4><p>Nouvelles cartes, événements et soirées, pour planifier les tournages et les publications.</p></div>
+  </div>
+  <div class="contact">
+    <div>
+      <div class="who">Archibald Benhamou<span>Fondateur, GOONY Studio</span></div>
+      <div class="lines"><a href="mailto:contact@goonystudio.com">contact@goonystudio.com</a><br><a href="tel:+33627151750">+33 6 27 15 17 50</a><br><a href="https://goonystudio.com" target="_blank">goonystudio.com</a></div>
+    </div>
+    <a class="btn" href="GOONY_Proposition_Norma.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Télécharger le PDF</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>GOONY Studio · Monaco</span><span>Proposition préparée pour le groupe, non contractuelle</span></div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="x" id="dx" aria-label="Fermer">&#10005;</button>
+  <div class="dd" id="dd"></div>
+  <h4 id="dt"></h4>
+  <dl id="dl"></dl>
+</aside>
+
+<script>
+const WEEKS = [{"m": 1, "r": "4 au 10 janv.", "tf": "La Befana, mer. 6", "soiree": false, "posts": [{"d": "Mar. 5 janv.", "fmt": "Photo", "t": "Vœux 2027", "src": "IA", "vis": "La terrasse au-dessus du marché, décorée pour le Nouvel An, créée à partir d'une vraie photo du lieu.", "leg": "Buon anno da Norma ! Toute l'équipe vous souhaite une belle année 2027.", "obj": "Fidélité"}, {"d": "Jeu. 7 janv.", "fmt": "Reel 15 s", "t": "Best of 2026", "src": "Votre base", "vis": "Montage rythmé des plus beaux moments de 2026 : pinse, Spritz, terrasse pleine.", "leg": "2026 en 15 secondes. Grazie mille.", "obj": "Notoriété"}, {"d": "Sam. 9 janv.", "fmt": "Photo", "t": "Le tiramisù maison", "src": "Votre base", "vis": "Le tiramisù en gros plan, cuillère qui entre dans la crème.", "leg": "On commence l'année avec douceur : le tiramisù de la maison.", "obj": "Réservation"}], "st": "Stories : coulisses de la reprise, arrivée des produits, l'équipe qui souhaite la bonne année."}, {"m": 1, "r": "11 au 17 janv.", "tf": "Journée de la pizza, dim. 17 (midi) · tournage", "soiree": true, "posts": [{"d": "Mar. 12 janv.", "fmt": "Photo", "t": "La pizza Norma", "src": "Votre base", "vis": "La pizza signature : aubergines grillées, ricotta salée, fior di latte.", "leg": "Notre pizza porte notre nom. Aubergines grillées et ricotta salée.", "obj": "Réservation"}, {"d": "Jeu. 14 janv.", "fmt": "Reel 10 s", "t": "Teaser Journée de la pizza", "src": "IA", "vis": "La pâte qui s'étire, la sauce, le four, carton final avec la date.", "leg": "Dimanche, c'est la Journée mondiale de la pizza. On vous attend à midi.", "obj": "Réservation"}, {"d": "Sam. 16 janv.", "fmt": "Photo", "t": "Visuel Journée de la pizza", "src": "IA", "vis": "Les pizzas de la carte vues du dessus, sur une table en marbre.", "leg": "Margherita, Norma, Tartufata... Laquelle sera la vôtre demain ?", "obj": "Engagement"}], "st": "Stories : le four, la pâte qui lève, les pizzas qui sortent, une journée avec Marius."}, {"m": 1, "r": "18 au 24 janv.", "tf": "Rallye Monte-Carlo, 21 au 24", "soiree": false, "posts": [{"d": "Mar. 19 janv.", "fmt": "Reel 15 s", "t": "Étirer la pâte, ASMR", "src": "Tournage", "vis": "Gros plans sur les mains de Marius Bors qui étirent la pâte, son du four.", "leg": "Mettez le son. Marius, notre chef pizzaiolo, au travail.", "obj": "Notoriété"}, {"d": "Jeu. 21 janv.", "fmt": "Photo", "t": "Le pizzaiolo en action", "src": "Tournage", "vis": "Marius devant le four, pelle en main.", "leg": "Derrière chaque pizza, il y a Marius.", "obj": "Engagement"}, {"d": "Sam. 23 janv.", "fmt": "Photo", "t": "Pinsa tartufo nero", "src": "Tournage", "vis": "La pinsa à la truffe noire et à la burrata, lumière du midi.", "leg": "Après le Rallye, une pinsa à la truffe s'impose.", "obj": "Réservation"}], "st": "Stories : les meilleurs moments du tournage, repost des clients qui nous ont identifiés."}, {"m": 1, "r": "25 au 31 janv.", "tf": "Festival du Cirque, Sainte-Dévote 27", "soiree": false, "posts": [{"d": "Mar. 26 janv.", "fmt": "Photo", "t": "Portrait du chef Leone Piazza", "src": "Tournage", "vis": "Le chef au plan de travail, farine sur les mains.", "leg": "Le chef Leone Piazza signe une cuisine généreuse, inspirée des traditions italiennes.", "obj": "Engagement"}, {"d": "Jeu. 28 janv.", "fmt": "Reel 15 s", "t": "Ravioli faits main", "src": "Tournage", "vis": "Le chef garnit et ferme les ravioli un à un, plan serré.", "leg": "Faits main, un par un : nos ravioli alla daube.", "obj": "Notoriété"}, {"d": "Sam. 30 janv.", "fmt": "Photo", "t": "Ravioli alla daube", "src": "Tournage", "vis": "L'assiette de ravioli à la daube, vapeur visible.", "leg": "Un classique de la maison, parfait pour l'hiver.", "obj": "Réservation"}], "st": "Stories : une journée avec le chef Leone Piazza, du marché aux pâtes fraîches."}, {"m": 2, "r": "1 au 7 fév.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 2 fév.", "fmt": "Photo", "t": "Ossobuco et risotto", "src": "Tournage"}, {"d": "Jeu. 4 fév.", "fmt": "Reel", "t": "Le dressage de l'ossobuco", "src": "Tournage"}, {"d": "Sam. 6 fév.", "fmt": "Photo", "t": "La salle, murs en pierre", "src": "Tournage"}], "st": null}, {"m": 2, "r": "8 au 14 fév.", "tf": "Carnevale, mar. 9 · Saint-Valentin, sam. 13", "soiree": true, "posts": [{"d": "Mar. 9 fév.", "fmt": "Photo", "t": "Visuel Carnevale", "src": "IA"}, {"d": "Jeu. 11 fév.", "fmt": "Reel", "t": "Saint-Valentin samedi 13, réservez", "src": "IA"}, {"d": "Sam. 13 fév.", "fmt": "Photo", "t": "Dîner à deux", "src": "Tournage"}], "st": null}, {"m": 2, "r": "15 au 21 fév.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 16 fév.", "fmt": "Photo", "t": "Panna cotta", "src": "Tournage"}, {"d": "Jeu. 18 fév.", "fmt": "Reel", "t": "La truffe râpée sur les tagliolini", "src": "Tournage"}, {"d": "Sam. 20 fév.", "fmt": "Photo", "t": "Tagliolini al tartufo nero", "src": "Tournage"}], "st": null}, {"m": 2, "r": "22 au 28 fév.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 23 fév.", "fmt": "Photo", "t": "Le Spritz Bar en hiver", "src": "Votre base"}, {"d": "Jeu. 25 fév.", "fmt": "Reel", "t": "Un service en cuisine", "src": "Tournage"}, {"d": "Sam. 27 fév.", "fmt": "Photo", "t": "Vitello tonnato", "src": "Tournage"}], "st": null}, {"m": 3, "r": "1 au 7 mars", "tf": "", "soiree": false, "posts": [{"d": "Mar. 2 mars", "fmt": "Photo", "t": "Rigatoni alla Norma", "src": "Tournage"}, {"d": "Jeu. 4 mars", "fmt": "Reel", "t": "Du marché à l'assiette", "src": "Tournage"}, {"d": "Sam. 6 mars", "fmt": "Photo", "t": "Le marché de la Condamine", "src": "Votre base"}], "st": null}, {"m": 3, "r": "8 au 14 mars", "tf": "Festa della donna, lun. 8 (midi)", "soiree": false, "posts": [{"d": "Mar. 9 mars", "fmt": "Photo", "t": "Mimosa de la Festa della donna", "src": "IA"}, {"d": "Jeu. 11 mars", "fmt": "Reel", "t": "Spaghettoni alle vongole", "src": "Tournage"}, {"d": "Sam. 13 mars", "fmt": "Photo", "t": "Torta al limone", "src": "Tournage"}], "st": null}, {"m": 3, "r": "15 au 21 mars", "tf": "Journée du tiramisù, dim. 21 (midi) · printemps · tournage", "soiree": true, "posts": [{"d": "Mar. 16 mars", "fmt": "Photo", "t": "Visuel Tiramisù Day", "src": "IA"}, {"d": "Jeu. 18 mars", "fmt": "Reel", "t": "Teaser Journée du tiramisù", "src": "IA"}, {"d": "Sam. 20 mars", "fmt": "Photo", "t": "La terrasse au printemps", "src": "Votre base"}], "st": null}, {"m": 3, "r": "22 au 28 mars", "tf": "Pâques, dim. 28 (midi)", "soiree": false, "posts": [{"d": "Mar. 23 mars", "fmt": "Photo", "t": "La table de Pâques", "src": "Tournage"}, {"d": "Jeu. 25 mars", "fmt": "Reel", "t": "Le montage du tiramisù", "src": "Tournage"}, {"d": "Sam. 27 mars", "fmt": "Photo", "t": "La carte de printemps", "src": "Tournage"}], "st": null}, {"m": 3, "r": "29 mars au 4 avr.", "tf": "Pasquetta, lun. 29", "soiree": false, "posts": [{"d": "Mar. 30 mars", "fmt": "Photo", "t": "Pinsa mortadella e burrata", "src": "Tournage"}, {"d": "Jeu. 1 avr.", "fmt": "Reel", "t": "Le premier Spritz de la saison", "src": "Tournage"}, {"d": "Sam. 3 avr.", "fmt": "Photo", "t": "Apéritif en terrasse", "src": "Tournage"}], "st": null}, {"m": 4, "r": "5 au 11 avr.", "tf": "Rolex Masters, 3 au 11", "soiree": false, "posts": [{"d": "Mar. 6 avr.", "fmt": "Photo", "t": "Terrasse au soleil", "src": "Tournage"}, {"d": "Jeu. 8 avr.", "fmt": "Reel", "t": "Un déjeuner au-dessus du marché", "src": "Tournage"}, {"d": "Sam. 10 avr.", "fmt": "Photo", "t": "Insalata di carciofi", "src": "Tournage"}], "st": null}, {"m": 4, "r": "12 au 18 avr.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 13 avr.", "fmt": "Photo", "t": "Le Negroni", "src": "Votre base"}, {"d": "Jeu. 15 avr.", "fmt": "Reel", "t": "Le geste du barman", "src": "Tournage"}, {"d": "Sam. 17 avr.", "fmt": "Photo", "t": "Polpo alla griglia", "src": "Tournage"}], "st": null}, {"m": 4, "r": "19 au 25 avr.", "tf": "Happy hour au Spritz Bar, 17 h à 20 h", "soiree": true, "posts": [{"d": "Mar. 20 avr.", "fmt": "Photo", "t": "Visuel happy hour", "src": "IA"}, {"d": "Jeu. 22 avr.", "fmt": "Reel", "t": "Happy hour au Spritz Bar", "src": "IA"}, {"d": "Sam. 24 avr.", "fmt": "Photo", "t": "Planche charcuteries et fromages", "src": "Tournage"}], "st": null}, {"m": 4, "r": "26 avr. au 2 mai", "tf": "E-Prix, 1er et 2 mai", "soiree": false, "posts": [{"d": "Mar. 27 avr.", "fmt": "Photo", "t": "Vue sur le Rocher", "src": "Tournage"}, {"d": "Jeu. 29 avr.", "fmt": "Reel", "t": "Week-end E-Prix, réservez", "src": "Tournage"}, {"d": "Sam. 1 mai", "fmt": "Photo", "t": "Pizza Fresca", "src": "Tournage"}], "st": null}, {"m": 5, "r": "3 au 9 mai", "tf": "", "soiree": false, "posts": [{"d": "Mar. 4 mai", "fmt": "Photo", "t": "Burrata et tomates confites", "src": "Tournage"}, {"d": "Jeu. 6 mai", "fmt": "Reel", "t": "Coulisses de la cuisine", "src": "Tournage"}, {"d": "Sam. 8 mai", "fmt": "Photo", "t": "L'équipe", "src": "Tournage"}], "st": null}, {"m": 5, "r": "10 au 16 mai", "tf": "", "soiree": false, "posts": [{"d": "Mar. 11 mai", "fmt": "Photo", "t": "Teaser carte d'été", "src": "Votre base"}, {"d": "Jeu. 13 mai", "fmt": "Reel", "t": "La pâte à pinsa", "src": "Tournage"}, {"d": "Sam. 15 mai", "fmt": "Photo", "t": "Spritz en terrasse", "src": "Tournage"}], "st": null}, {"m": 5, "r": "17 au 23 mai", "tf": "Tournage sur place", "soiree": false, "posts": [{"d": "Mar. 18 mai", "fmt": "Photo", "t": "Milanese di vitello", "src": "Tournage"}, {"d": "Jeu. 20 mai", "fmt": "Reel", "t": "L'affogato, ASMR", "src": "Tournage"}, {"d": "Sam. 22 mai", "fmt": "Photo", "t": "Affogato", "src": "Tournage"}], "st": null}, {"m": 5, "r": "24 au 30 mai", "tf": "Fête des mères, dim. 30 (midi)", "soiree": true, "posts": [{"d": "Mar. 25 mai", "fmt": "Photo", "t": "Visuel Fête des mères", "src": "IA"}, {"d": "Jeu. 27 mai", "fmt": "Reel", "t": "Fête des mères, réservez", "src": "IA"}, {"d": "Sam. 29 mai", "fmt": "Photo", "t": "Déjeuner en famille", "src": "Tournage"}], "st": null}, {"m": 5, "r": "31 mai au 6 juin", "tf": "Festa della Repubblica, mer. 2 · Grand Prix, 4 au 6", "soiree": false, "posts": [{"d": "Mar. 1 juin", "fmt": "Photo", "t": "Visuel tricolore", "src": "IA"}, {"d": "Jeu. 3 juin", "fmt": "Reel", "t": "Week-end Grand Prix", "src": "Tournage"}, {"d": "Sam. 5 juin", "fmt": "Photo", "t": "La terrasse du Grand Prix", "src": "Tournage"}], "st": null}, {"m": 6, "r": "7 au 13 juin", "tf": "Carte d'été", "soiree": false, "posts": [{"d": "Mar. 8 juin", "fmt": "Photo", "t": "Plat de la carte d'été", "src": "Tournage"}, {"d": "Jeu. 10 juin", "fmt": "Reel", "t": "La nouvelle carte d'été", "src": "Tournage"}, {"d": "Sam. 12 juin", "fmt": "Photo", "t": "Salade de fruits", "src": "Tournage"}], "st": null}, {"m": 6, "r": "14 au 20 juin", "tf": "Fête des pères, dim. 20 (midi)", "soiree": true, "posts": [{"d": "Mar. 15 juin", "fmt": "Photo", "t": "Visuel Fête des pères", "src": "IA"}, {"d": "Jeu. 17 juin", "fmt": "Reel", "t": "Fête des pères, réservez", "src": "IA"}, {"d": "Sam. 19 juin", "fmt": "Photo", "t": "Filetto di manzo", "src": "Tournage"}], "st": null}, {"m": 6, "r": "21 au 27 juin", "tf": "Soirées d'été en musique", "soiree": false, "posts": [{"d": "Mar. 22 juin", "fmt": "Photo", "t": "Soirée en terrasse", "src": "Tournage"}, {"d": "Jeu. 24 juin", "fmt": "Reel", "t": "Musique live en terrasse", "src": "Tournage"}, {"d": "Sam. 26 juin", "fmt": "Photo", "t": "Pizza Diavola", "src": "Tournage"}], "st": null}, {"m": 6, "r": "28 juin au 4 juil.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 29 juin", "fmt": "Photo", "t": "Spritz au coucher du soleil", "src": "Tournage"}, {"d": "Jeu. 1 juil.", "fmt": "Reel", "t": "La friture en gros plan", "src": "Tournage"}, {"d": "Sam. 3 juil.", "fmt": "Photo", "t": "Frittura di calamari", "src": "Tournage"}], "st": null}, {"m": 7, "r": "5 au 11 juil.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 6 juil.", "fmt": "Photo", "t": "Privatiser la terrasse", "src": "Votre base"}, {"d": "Jeu. 8 juil.", "fmt": "Reel", "t": "La terrasse en été", "src": "Tournage"}, {"d": "Sam. 10 juil.", "fmt": "Photo", "t": "Insalata Caesar", "src": "Tournage"}], "st": null}, {"m": 7, "r": "12 au 18 juil.", "tf": "Soirées d'été · tournage", "soiree": true, "posts": [{"d": "Mar. 13 juil.", "fmt": "Photo", "t": "Visuel soirée musique live", "src": "IA"}, {"d": "Jeu. 15 juil.", "fmt": "Reel", "t": "Teaser soirée d'été", "src": "IA"}, {"d": "Sam. 17 juil.", "fmt": "Photo", "t": "Pinsa stracciatella", "src": "Tournage"}], "st": null}, {"m": 7, "r": "19 au 25 juil.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 20 juil.", "fmt": "Photo", "t": "Ambiance du soir", "src": "Tournage"}, {"d": "Jeu. 22 juil.", "fmt": "Reel", "t": "Une soirée en musique", "src": "Tournage"}, {"d": "Sam. 24 juil.", "fmt": "Photo", "t": "Mousse al cioccolato", "src": "Tournage"}], "st": null}, {"m": 7, "r": "26 juil. au 1 août", "tf": "", "soiree": false, "posts": [{"d": "Mar. 27 juil.", "fmt": "Photo", "t": "Cocktail italien", "src": "Tournage"}, {"d": "Jeu. 29 juil.", "fmt": "Reel", "t": "Le Spritz, préparé", "src": "Tournage"}, {"d": "Sam. 31 juil.", "fmt": "Photo", "t": "Rigatoni alla Norma", "src": "Tournage"}], "st": null}, {"m": 8, "r": "2 au 8 août", "tf": "", "soiree": false, "posts": [{"d": "Mar. 3 août", "fmt": "Photo", "t": "Coucher de soleil sur le Rocher", "src": "Tournage"}, {"d": "Jeu. 5 août", "fmt": "Reel", "t": "Une soirée chez Norma", "src": "Tournage"}, {"d": "Sam. 7 août", "fmt": "Photo", "t": "Panna cotta", "src": "Tournage"}], "st": null}, {"m": 8, "r": "9 au 15 août", "tf": "Ferragosto, dim. 15 (midi)", "soiree": true, "posts": [{"d": "Mar. 10 août", "fmt": "Photo", "t": "Visuel Ferragosto", "src": "IA"}, {"d": "Jeu. 12 août", "fmt": "Reel", "t": "Ferragosto, buone vacanze", "src": "IA"}, {"d": "Sam. 14 août", "fmt": "Photo", "t": "La pêche du jour", "src": "Tournage"}], "st": null}, {"m": 8, "r": "16 au 22 août", "tf": "", "soiree": false, "posts": [{"d": "Mar. 17 août", "fmt": "Photo", "t": "Happy hour en terrasse", "src": "Tournage"}, {"d": "Jeu. 19 août", "fmt": "Reel", "t": "La Margherita sort du four", "src": "Tournage"}, {"d": "Sam. 21 août", "fmt": "Photo", "t": "Pizza Margherita", "src": "Tournage"}], "st": null}, {"m": 8, "r": "23 au 29 août", "tf": "", "soiree": false, "posts": [{"d": "Mar. 24 août", "fmt": "Photo", "t": "Vue sur le marché", "src": "Tournage"}, {"d": "Jeu. 26 août", "fmt": "Reel", "t": "Coulisses de la cuisine", "src": "Tournage"}, {"d": "Sam. 28 août", "fmt": "Photo", "t": "Torta al limone", "src": "Tournage"}], "st": null}, {"m": 8, "r": "30 août au 5 sept.", "tf": "La rentrée", "soiree": false, "posts": [{"d": "Mar. 31 août", "fmt": "Photo", "t": "Le déjeuner de la rentrée", "src": "Tournage"}, {"d": "Jeu. 2 sept.", "fmt": "Reel", "t": "La rentrée chez Norma", "src": "Votre base"}, {"d": "Sam. 4 sept.", "fmt": "Photo", "t": "L'équipe", "src": "Tournage"}], "st": null}, {"m": 9, "r": "6 au 12 sept.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 7 sept.", "fmt": "Photo", "t": "Teaser carte d'automne", "src": "Votre base"}, {"d": "Jeu. 9 sept.", "fmt": "Reel", "t": "Les cèpes arrivent", "src": "Tournage"}, {"d": "Sam. 11 sept.", "fmt": "Photo", "t": "Tagliatelle ai funghi porcini", "src": "Tournage"}], "st": null}, {"m": 9, "r": "13 au 19 sept.", "tf": "Carte d'automne · tournage", "soiree": true, "posts": [{"d": "Mar. 14 sept.", "fmt": "Photo", "t": "Visuel carte d'automne", "src": "IA"}, {"d": "Jeu. 16 sept.", "fmt": "Reel", "t": "Teaser carte d'automne", "src": "IA"}, {"d": "Sam. 18 sept.", "fmt": "Photo", "t": "Ravioli alla daube", "src": "Tournage"}], "st": null}, {"m": 9, "r": "20 au 26 sept.", "tf": "Automne, 23 · Negroni Week (à confirmer)", "soiree": false, "posts": [{"d": "Mar. 21 sept.", "fmt": "Photo", "t": "Le Negroni", "src": "Tournage"}, {"d": "Jeu. 23 sept.", "fmt": "Reel", "t": "Le Negroni, préparé", "src": "Tournage"}, {"d": "Sam. 25 sept.", "fmt": "Photo", "t": "La carte d'automne", "src": "Tournage"}], "st": null}, {"m": 9, "r": "27 sept. au 3 oct.", "tf": "Yacht Show · Journée du café, 1er oct.", "soiree": false, "posts": [{"d": "Mar. 28 sept.", "fmt": "Photo", "t": "Caffè gourmand", "src": "Tournage"}, {"d": "Jeu. 30 sept.", "fmt": "Reel", "t": "L'affogato", "src": "Tournage"}, {"d": "Sam. 2 oct.", "fmt": "Photo", "t": "Groupes et événements", "src": "Tournage"}], "st": null}, {"m": 10, "r": "4 au 10 oct.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 5 oct.", "fmt": "Photo", "t": "Ossobuco alla milanese", "src": "Tournage"}, {"d": "Jeu. 7 oct.", "fmt": "Reel", "t": "Le risotto à la milanaise", "src": "Tournage"}, {"d": "Sam. 9 oct.", "fmt": "Photo", "t": "La salle le soir", "src": "Tournage"}], "st": null}, {"m": 10, "r": "11 au 17 oct.", "tf": "Saison de la truffe", "soiree": true, "posts": [{"d": "Mar. 12 oct.", "fmt": "Photo", "t": "Visuel saison de la truffe", "src": "IA"}, {"d": "Jeu. 14 oct.", "fmt": "Reel", "t": "Teaser saison de la truffe", "src": "IA"}, {"d": "Sam. 16 oct.", "fmt": "Photo", "t": "Pizza Tartufata", "src": "Tournage"}], "st": null}, {"m": 10, "r": "18 au 24 oct.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 19 oct.", "fmt": "Photo", "t": "Tagliolini al tartufo nero", "src": "Tournage"}, {"d": "Jeu. 21 oct.", "fmt": "Reel", "t": "Le geste du chef", "src": "Tournage"}, {"d": "Sam. 23 oct.", "fmt": "Photo", "t": "Portrait du chef", "src": "Tournage"}], "st": null}, {"m": 10, "r": "25 au 31 oct.", "tf": "World Pasta Day, lun. 25 (midi)", "soiree": false, "posts": [{"d": "Mar. 26 oct.", "fmt": "Photo", "t": "Visuel World Pasta Day", "src": "IA"}, {"d": "Jeu. 28 oct.", "fmt": "Reel", "t": "Pâtes fraîches faites main", "src": "Tournage"}, {"d": "Sam. 30 oct.", "fmt": "Photo", "t": "Mezze maniche alla carbonara", "src": "Tournage"}], "st": null}, {"m": 11, "r": "1 au 7 nov.", "tf": "Anniversaire de Bellini, 3 nov.", "soiree": false, "posts": [{"d": "Mar. 2 nov.", "fmt": "Photo", "t": "D'où vient le nom Norma", "src": "IA"}, {"d": "Jeu. 4 nov.", "fmt": "Reel", "t": "L'histoire de Norma en 15 s", "src": "Tournage"}, {"d": "Sam. 6 nov.", "fmt": "Photo", "t": "Le vin du moment", "src": "Votre base"}], "st": null}, {"m": 11, "r": "8 au 14 nov.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 9 nov.", "fmt": "Photo", "t": "Polpo e fagioli di Pigna", "src": "Tournage"}, {"d": "Jeu. 11 nov.", "fmt": "Reel", "t": "Un service en cuisine", "src": "Tournage"}, {"d": "Sam. 13 nov.", "fmt": "Photo", "t": "Le Spritz Bar en automne", "src": "Tournage"}], "st": null}, {"m": 11, "r": "15 au 21 nov.", "tf": "Fête du Prince, ven. 19 · tournage", "soiree": true, "posts": [{"d": "Mar. 16 nov.", "fmt": "Photo", "t": "Visuel Fête du Prince", "src": "IA"}, {"d": "Jeu. 18 nov.", "fmt": "Reel", "t": "Fête du Prince chez Norma", "src": "IA"}, {"d": "Sam. 20 nov.", "fmt": "Photo", "t": "Suggestions monégasques du chef", "src": "Votre base"}], "st": null}, {"m": 11, "r": "22 au 28 nov.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 23 nov.", "fmt": "Photo", "t": "Les suggestions du 19", "src": "Tournage"}, {"d": "Jeu. 25 nov.", "fmt": "Reel", "t": "Retour sur la Fête du Prince", "src": "Tournage"}, {"d": "Sam. 27 nov.", "fmt": "Photo", "t": "Tiramisù", "src": "Tournage"}], "st": null}, {"m": 11, "r": "29 nov. au 5 déc.", "tf": "Avent", "soiree": false, "posts": [{"d": "Mar. 30 nov.", "fmt": "Photo", "t": "Privatiser pour les fêtes", "src": "Votre base"}, {"d": "Jeu. 2 déc.", "fmt": "Reel", "t": "Vos repas de fin d'année", "src": "Tournage"}, {"d": "Sam. 4 déc.", "fmt": "Photo", "t": "Table de groupe", "src": "Tournage"}], "st": null}, {"m": 12, "r": "6 au 12 déc.", "tf": "", "soiree": false, "posts": [{"d": "Mar. 7 déc.", "fmt": "Photo", "t": "Teaser menu des fêtes", "src": "Tournage"}, {"d": "Jeu. 9 déc.", "fmt": "Reel", "t": "Préparer les fêtes", "src": "Tournage"}, {"d": "Sam. 11 déc.", "fmt": "Photo", "t": "Planche des fêtes", "src": "Tournage"}], "st": null}, {"m": 12, "r": "13 au 19 déc.", "tf": "Les fêtes", "soiree": true, "posts": [{"d": "Mar. 14 déc.", "fmt": "Photo", "t": "Visuel de Noël", "src": "IA"}, {"d": "Jeu. 16 déc.", "fmt": "Reel", "t": "Teaser Vigilia et Réveillon", "src": "IA"}, {"d": "Sam. 18 déc.", "fmt": "Photo", "t": "Tagliolini al tartufo", "src": "Tournage"}], "st": null}, {"m": 12, "r": "20 au 26 déc.", "tf": "La Vigilia, ven. 24 · Noël", "soiree": false, "posts": [{"d": "Mar. 21 déc.", "fmt": "Photo", "t": "La table de la Vigilia", "src": "Tournage"}, {"d": "Jeu. 23 déc.", "fmt": "Reel", "t": "Noël chez Norma", "src": "Tournage"}, {"d": "Sam. 25 déc.", "fmt": "Photo", "t": "Buon Natale", "src": "IA"}], "st": null}, {"m": 12, "r": "27 déc. au 2 janv.", "tf": "Réveillon, ven. 31", "soiree": false, "posts": [{"d": "Mar. 28 déc.", "fmt": "Photo", "t": "Menu du Réveillon", "src": "Tournage"}, {"d": "Jeu. 30 déc.", "fmt": "Reel", "t": "Best of 2027", "src": "Votre base"}, {"d": "Sam. 1 janv.", "fmt": "Photo", "t": "Spritz du Nouvel An", "src": "Tournage"}], "st": null}];
+const MN = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const TOUR = [1,3,5,7,9,11];
+const EV = {
+ 1:[["Journée de la pizza, 17", 1], ["La Befana, 6"], ["Rallye Monte-Carlo, 21 au 24"], ["Festival du Cirque, 22 au 31"], ["Sainte-Dévote, 27"]],
+ 2:[["Carnevale, 9", 1], ["Saint-Valentin, samedi 13"]],
+ 3:[["Journée du tiramisù, 21", 1], ["Festa della donna, 8"], ["Printemps, 20"], ["Pâques, 28"], ["Pasquetta, 29"]],
+ 4:[["Happy hour au Spritz Bar", 1], ["Rolex Masters, 3 au 11"], ["Ouverture de la saison terrasse"]],
+ 5:[["Fête des mères, 30", 1], ["E-Prix, 1er et 2"]],
+ 6:[["Fête des pères, 20", 1], ["Festa della Repubblica, 2"], ["Grand Prix F1, 4 au 6"], ["Carte d'été"]],
+ 7:[["Soirées d'été en musique", 1], ["Saison du Spritz"]],
+ 8:[["Ferragosto, 15", 1], ["Soirées d'été"]],
+ 9:[["Carte d'automne", 1], ["Negroni Week (à confirmer)"], ["Monaco Yacht Show"]],
+ 10:[["Saison de la truffe", 1], ["Journée du café, 1er"], ["World Pasta Day, 25"]],
+ 11:[["Fête du Prince, 19", 1], ["Anniversaire de Bellini, 3"], ["Début de l'Avent"]],
+ 12:[["Vigilia et Réveillon", 1], ["Noël"]]
+};
+const SRC = {'Tournage':'t','IA':'ia','Votre base':'b'};
+const SRC_TXT = {
+ 'Tournage':'Photo ou vidéo issue du dernier tournage sur place, retouchée ou montée par nos soins.',
+ 'IA':'Création GOONY à partir de vraies photos du lieu et des plats : affiche, teaser ou visuel d\'événement.',
+ 'Votre base':'Contenu tiré de votre base existante, retravaillé pour le format du post.'
+};
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+let cur = 1;
+const $ = id => document.getElementById(id);
+$('months').innerHTML = MN.map((m,i)=>`<button data-m="${i+1}">${m}</button>`).join('');
+$('months').addEventListener('click', e => { const b = e.target.closest('button'); if (b) show(+b.dataset.m); });
+$('prev').onclick = () => show(cur-1);
+$('next').onclick = () => show(cur+1);
+function show(m){
+  if (m<1||m>12) return; cur = m;
+  document.querySelectorAll('#months button').forEach(b => b.classList.toggle('on', +b.dataset.m===m));
+  const on = document.querySelector('#months button.on'); if (on) on.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+  $('mname').textContent = MN[m-1];
+  $('mtour').innerHTML = TOUR.includes(m) ? '<span class="tour">Tournage sur place</span>' : '';
+  $('mevents').innerHTML = EV[m].map(e => `<li class="${e[1]?'s':''}">${esc(e[0])}</li>`).join('');
+  $('prev').disabled = m===1; $('next').disabled = m===12;
+  const ws = WEEKS.map((w,i)=>({...w,i})).filter(w => w.m===m);
+  $('weeks').innerHTML = ws.map((w,k) => `
+    <div class="wk">
+      <div class="wk-h"><b>Semaine ${k+1}</b><span>${w.r}</span>${w.tf?`<em class="${w.soiree?'soi':''}">${esc(w.tf)}</em>`:''}</div>
+      <div class="posts">${w.posts.map((p,j)=>`
+        <button class="post" data-w="${w.i}" data-p="${j}">
+          <div class="ph"><span>${p.d}</span><i class="${SRC[p.src]}">${p.src}</i></div>
+          <div class="tt">${esc(p.t)}</div>
+          <div class="fm">${p.fmt}</div>
+        </button>`).join('')}</div>
+      ${w.st?`<p class="st">${esc(w.st)}</p>`:''}
+    </div>`).join('');
+  $('ideas').textContent = m===1
+    ? 'Janvier est détaillé post par post : cliquez sur un post pour voir le visuel prévu et la proposition de légende. Ce sont des idées de contenus, à affiner avec vous.'
+    : 'Idées de contenus, à affiner avec vous. Le détail de chaque post (visuel, légende) est préparé le mois précédent, comme pour janvier. Norma étant fermé le dimanche et le lundi soir, les temps forts de ces jours-là sont proposés au déjeuner.';
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.post'); if (!b) return;
+  const w = WEEKS[+b.dataset.w], p = w.posts[+b.dataset.p];
+  $('dd').textContent = `${p.d} · ${p.fmt}`;
+  $('dt').textContent = p.t;
+  const rows = [['Source', p.src]];
+  if (p.vis) rows.push(['Visuel prévu', p.vis]); else rows.push(['Contenu', SRC_TXT[p.src]]);
+  if (p.leg) rows.push(['Proposition de légende', '« '+p.leg+' »', 'leg']);
+  if (p.obj) rows.push(['Objectif', p.obj]);
+  if (w.tf) rows.push(['Temps fort de la semaine', w.tf]);
+  $('dl').innerHTML = rows.map(r => `<div><dt>${r[0]}</dt><dd class="${r[2]||''}">${esc(r[1])}</dd></div>`).join('');
+  $('drawer').classList.add('on'); $('scrim').classList.add('on'); $('drawer').setAttribute('aria-hidden','false');
+});
+function closeD(){ $('drawer').classList.remove('on'); $('scrim').classList.remove('on'); $('drawer').setAttribute('aria-hidden','true'); }
+$('dx').onclick = closeD; $('scrim').onclick = closeD;
+document.addEventListener('keydown', e => {
+  if (e.key==='Escape') closeD();
+  if ($('drawer').classList.contains('on')) return;
+  const r = $('calendrier').getBoundingClientRect();
+  if (r.top < innerHeight && r.bottom > 0) { if (e.key==='ArrowLeft') show(cur-1); if (e.key==='ArrowRight') show(cur+1); }
+});
+function postsHTML(w){ return `<div class="posts">${w.posts.map((p,j)=>`
+        <button class="post" data-w="${w.i}" data-p="${j}">
+          <div class="ph"><span>${p.d}</span><i class="${SRC[p.src]}">${p.src}</i></div>
+          <div class="tt">${esc(p.t)}</div>
+          <div class="fm">${p.fmt}</div>
+        </button>`).join('')}</div>`; }
+const DOT = {'t':'var(--cream)','ia':'var(--amber)','b':'var(--sage)'};
+$('macc').innerHTML = MN.map((name,mi) => {
+  const m = mi+1, ws = WEEKS.map((w,i)=>({...w,i})).filter(w => w.m===m);
+  const soi = EV[m].find(e=>e[1]);
+  return `<details class="mo" ${m===1?'open':''}><summary class="ms"><b>${name}</b>${TOUR.includes(m)?'<span class="tg">Tournage</span>':''}<span class="sd">${soi?esc(soi[0]):''}</span><span class="chev">&#9662;</span></summary>
+    <div class="ev">${EV[m].map(e=>`<span class="${e[1]?'s':''}">${esc(e[0])}</span>`).join('')}</div>
+    ${ws.map((w,k)=>`<details class="wq" ${m===1&&k===0?'open':''}><summary class="ws"><b>Semaine ${k+1}</b><span>${w.r}</span><span class="dots">${w.posts.map(p=>`<i style="background:${DOT[SRC[p.src]]}"></i>`).join('')}</span>${w.tf?`<em class="${w.soiree?'soi':''}">${esc(w.tf)}</em>`:''}</summary>${postsHTML(w)}${w.st?`<p class="st">${esc(w.st)}</p>`:''}</details>`).join('')}
+    <p class="ideas last">${m===1?'Touchez un post pour voir le visuel prévu et la légende.':'Idées de contenus, à affiner avec vous.'}</p>
+  </details>`;
+}).join('');
+const SM=$('styles');
+$('openStyles').onclick=()=>{SM.classList.add('on');SM.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'};
+function closeS(){SM.classList.remove('on');SM.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+$('closeStyles').onclick=closeS; SM.addEventListener('click',e=>{if(e.target===SM)closeS()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeS()});
+show(1);
+</script>
+</body>
+</html>
