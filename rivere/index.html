@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rivere Group × GOONY Studio | Vos biens, en vidéo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#000000; --night:#0f212b; --ink:#222222; --grey:#5b5b5b; --soft:#a9a9a9; --line:rgba(255,255,255,.16);
+    --white:#ffffff; --paper:#f9f9f9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Figtree,system-ui,sans-serif;font-weight:300;color:#e9e9e9;background:var(--black);line-height:1.75;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300}
+
+  header{position:absolute;top:0;left:0;right:0;z-index:5}
+  header .wrap{max-width:none;display:flex;justify-content:space-between;align-items:center;padding:26px 34px;gap:16px}
+  .brand{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-weight:400}
+  header nav{display:flex;gap:40px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+  header nav a{text-decoration:none;opacity:.9}
+  header nav a:hover{opacity:1}
+  .box{border:1px solid rgba(255,255,255,.85);padding:9px 24px;text-decoration:none;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+  .box:hover{background:rgba(255,255,255,.1)}
+
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#111}
+  .hero .bg{position:absolute;inset:0;background:url("hero.jpg") center/cover;animation:kb 28s ease-in-out infinite alternate}
+  .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
+  @keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.12) translate(-1.5%,-1%)}}
+  .hero .wrap{position:relative;z-index:2;color:#fff}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px;opacity:.85}
+  h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;font-size:clamp(38px,5.4vw,64px);line-height:1.12;max-width:20ch;margin:0 auto}
+  h1 em{font-style:italic}
+  .hero p{max-width:54ch;margin:24px auto 0;font-size:16px;opacity:.9}
+  .btns{margin-top:36px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;background:#fff;color:var(--ink);border:1px solid #fff;padding:11px 22px;border-radius:0;text-decoration:none;font-size:12.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;transition:background .25s,color .25s}
+  .btn:hover{background:transparent;color:#fff}
+  .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.85)}
+  .btn.ghost:hover{background:#fff;color:var(--ink)}
+
+  section{padding:110px 0}
+  .center{text-align:center}
+  h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;font-size:clamp(32px,3.8vw,46px);line-height:1.15;color:#fff}
+  .kick{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-top:12px}
+  .lead{color:#cfcfcf;max-width:66ch;font-size:16px;margin-top:26px}
+  .center .lead{margin-left:auto;margin-right:auto}
+
+  .videos{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:60px;text-align:left}
+  .player{position:relative;background:#111;aspect-ratio:16/9;overflow:hidden}
+  .player video{width:100%;height:100%;object-fit:cover;display:block}
+  .snd{position:absolute;right:14px;top:14px;z-index:2;background:rgba(0,0,0,.45);color:#fff;border:1px solid rgba(255,255,255,.8);font:400 11px Figtree,sans-serif;padding:7px 14px;cursor:pointer;text-transform:uppercase;letter-spacing:.1em}
+  .snd:hover{background:#fff;color:var(--ink)}
+  .vid h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;font-size:26px;color:#fff;margin-top:20px}
+  .vid .sub{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:2px 0 8px}
+  .vid p{color:#bdbdbd;font-size:15px}
+
+  .light{background:var(--paper);color:var(--grey)}
+  .light h2{color:var(--ink)}
+  .light .kick{color:#8a8a8a}
+  .light .lead{color:var(--grey)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:60px;border-top:1px solid #dedede}
+  .step{padding:36px 30px 6px;border-right:1px solid #dedede;text-align:left}
+  .step:last-child{border-right:none}
+  .step .n{font-family:"Cormorant Garamond",Georgia,serif;font-size:44px;font-weight:300;color:var(--ink);line-height:1}
+  .step h3{font-family:Figtree,sans-serif;font-weight:400;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin:18px 0 8px}
+  .step p{font-size:15px}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .split img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+  ul.pros{list-style:none;margin-top:28px}
+  ul.pros li{padding:15px 0;border-bottom:1px solid var(--line);font-size:15px;color:#d8d8d8}
+  ul.pros li b{display:block;font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:2px}
+
+  .cta{background:var(--night)}
+  .cta .btns{margin-top:34px}
+  .contact{margin-top:26px;font-size:15px;color:#c3c9cd}
+  .contact a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+  footer{padding:28px 0;font-size:13px;color:#cfcfcf;text-align:center}
+  footer .wrap{display:flex;justify-content:center;gap:50px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .videos,.steps,.split{grid-template-columns:1fr}
+    .step{border-right:none;border-bottom:1px solid #dedede}
+    header nav{display:none}
+    header .wrap{padding:22px 20px}
+    section{padding:76px 0}
+  }
+  @media (max-width:520px){header .wrap > a:last-child{display:none}}
+  @media (prefers-reduced-motion:reduce){.hero .bg{animation:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><span class="brand">GOONY Studio × Rivere Group</span><nav><a href="#demos">Les démos</a><a href="#methode">La méthode</a><a href="#contact">Contact</a></nav><a class="box" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a></div></header>
+
+<div class="hero">
+  <div class="bg" role="img" aria-label="Villa contemporaine avec piscine vue du ciel, extrait d'une démo"></div>
+  <div class="wrap">
+    <div class="eyebrow">Pour Rivere Group</div>
+    <h1>Vos biens d'exception, <em>en mouvement.</em></h1>
+    <p>À partir des seules photos d'une annonce, nous créons une visite vidéo fluide et cinématographique, livrée rapidement. Sans tournage, sans drone, sans déplacement.</p>
+    <div class="btns">
+      <a class="btn" href="#demos">Voir les démos</a>
+      <a class="btn ghost" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+    </div>
+  </div>
+</div>
+
+<section class="center" id="demos">
+  <div class="wrap">
+    <h2>Deux villas, deux atmosphères</h2>
+    <div class="kick">Créées uniquement à partir de photos</div>
+    <p class="lead">Chaque plan de ces vidéos a été animé à partir des photos de l'annonce. Aucune caméra ne s'est déplacée sur place.</p>
+    <div class="videos">
+      <div class="vid">
+        <div class="player">
+          <video id="v1" autoplay muted loop playsinline controls preload="metadata" poster="poster1.jpg"><source src="villa1.mp4" type="video/mp4"></video>
+          <button class="snd" data-v="v1" type="button">Activer le son</button>
+        </div>
+        <h3>La silhouette méditerranéenne</h3>
+        <div class="sub">Villa provençale · Côte d'Azur</div>
+        <p>Survol du jardin, piscine, terrasse puis pièces de vie : une visite lumineuse et chaleureuse.</p>
+      </div>
+      <div class="vid">
+        <div class="player">
+          <video id="v2" autoplay muted loop playsinline controls preload="metadata" poster="poster2.jpg"><source src="villa2.mp4" type="video/mp4"></video>
+          <button class="snd" data-v="v2" type="button">Activer le son</button>
+        </div>
+        <h3>L'ultramoderne</h3>
+        <div class="sub">Villa contemporaine · Côte d'Azur</div>
+        <p>Vue aérienne, piscine, séjour ouvert et chambre : des mouvements lents, au service de l'architecture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light center" id="methode">
+  <div class="wrap">
+    <h2>De l'annonce à la vidéo</h2>
+    <div class="kick">Simple, rapide, discret</div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Vous nous envoyez les photos</h3><p>Celles de l'annonce suffisent. Pas de nouveau shooting, rien à organiser chez le propriétaire.</p></div>
+      <div class="step"><div class="n">02</div><h3>Nous créons la visite</h3><p>Chaque photo devient un plan animé, avec des mouvements fluides et un montage soigné.</p></div>
+      <div class="step"><div class="n">03</div><h3>Vous la diffusez</h3><p>Une version pour votre site, une version verticale pour Instagram, prêtes à publier.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>Pourquoi GOONY Studio</h2>
+      <div class="kick">Studio de production basé à Monaco</div>
+      <p class="lead">Nous produisons des vidéos pour des marques de secteurs variés, et accompagnons aujourd'hui l'immobilier de prestige sur la Côte d'Azur.</p>
+      <ul class="pros">
+        <li><b>Rapide</b>Une vidéo livrée en quelques jours, sans mobiliser vos équipes.</li>
+        <li><b>Élégant</b>Des plans stables et lumineux, à la hauteur de vos réalisations.</li>
+        <li><b>Discret</b>Aucun déplacement, aucun créneau à caler avec le propriétaire.</li>
+        <li><b>Pour chaque bien</b>Des villas d'exception aux appartements de caractère au cœur de Nice.</li>
+      </ul>
+      <div class="btns" style="justify-content:flex-start"><a class="btn ghost" href="https://www.goonystudio.com" target="_blank" rel="noopener">Voir le portfolio</a></div>
+    </div>
+    <img src="side.jpg" alt="Séjour ouvert sur la terrasse, extrait d'une démo" loading="lazy">
+  </div>
+</section>
+
+<section class="cta center" id="contact">
+  <div class="wrap">
+    <h2>On en parle 15 minutes&nbsp;?</h2>
+    <p class="lead">Envoyez-nous les photos d'un de vos biens : nous vous montrons ce que cela donne.</p>
+    <div class="btns">
+      <a class="btn" href="https://calendar.app.google/nVRF7yZRFycGiUhM9" target="_blank" rel="noopener">Réserver un appel</a>
+    </div>
+    <p class="contact">Archibald Benhamou, GOONY Studio · <a href="tel:+33627151750">+33 6 27 15 17 50</a> · <a href="mailto:contact@goonystudio.com">contact@goonystudio.com</a></p>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>GOONY Studio · Monaco · <a href="https://www.goonystudio.com">goonystudio.com</a></span><span>Démo non commerciale, réalisée pour Rivere Group</span></div></footer>
+
+<script>
+  document.querySelectorAll('.snd').forEach(b=>{
+    const v=document.getElementById(b.dataset.v);
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('video').forEach(o=>{if(o!==v)o.muted=true});
+      v.muted=!v.muted; if(!v.muted){v.currentTime=0;v.play()}
+    });
+    v.addEventListener('volumechange',()=>{document.querySelectorAll('.snd').forEach(x=>{const vv=document.getElementById(x.dataset.v);x.textContent=vv.muted?'Activer le son':'Couper le son'})});
+  });
+</script>
+</body>
+</html>
