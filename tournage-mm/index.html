@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#100f0d">
+<title>Brief tournage · Moshi Moshi · GOONY Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--night:#100f0d;--night2:#191714;--line:#2e2a24;--cream:#f2ebdd;--muted:#a39a8a;--amber:#d9a35b;--red:#c7362b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--cream);font-family:"Jost",system-ui,sans-serif;font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+h1,h2,h3{font-family:"Shippori Mincho",serif;font-weight:500}
+h2{font-size:clamp(28px,4vw,44px);line-height:1.15;margin-top:12px}
+section{padding:88px 0;border-top:1px solid var(--line)}
+p.lead2{color:#d9d1c2;max-width:700px;margin-top:16px;font-size:17px}
+.top{position:sticky;top:0;z-index:20;background:rgba(16,15,13,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.brand img{height:26px}
+.nav{display:flex;gap:22px;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.nav a{color:var(--muted);text-decoration:none}.nav a:hover{color:var(--cream)}
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.06;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p{font-size:18px;color:#d9d1c2;max-width:520px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.facts span{font-size:12px;letter-spacing:.08em;border:1px solid #5a5246;padding:7px 12px}
+.reels{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.reels figure{aspect-ratio:9/16;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#000}
+.reels figure:nth-child(2){transform:translateY(40px)}
+.reels img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 14s ease-in-out infinite alternate}
+.reels figure:nth-child(2) img{animation-delay:-7s}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1) translate(-2%,-1%)}}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.figs div{padding:26px 18px;text-align:center}
+.figs div+div{border-left:1px solid var(--line)}
+.figs b{display:block;font-family:"Shippori Mincho",serif;font-weight:500;font-size:46px;line-height:1}
+.figs span{display:block;margin-top:8px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.day{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.day > div{background:var(--night2);border:1px solid var(--line);padding:26px}
+.day .h{display:flex;justify-content:space-between;align-items:baseline}
+.day h3{font-size:24px}
+.day .t{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+.day ul{list-style:none;margin-top:14px}
+.day li{position:relative;padding:7px 0 7px 22px;color:#d9d1c2;font-size:15px}
+.day li::before{content:"";position:absolute;left:0;top:18px;width:12px;border-top:1px solid var(--amber)}
+.note{color:var(--muted);font-size:14px;margin-top:18px}
+.mood{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:36px;border-top:1px solid var(--line)}
+.mood > div{padding:24px 18px 24px 0}
+.mood > div + div{padding-left:18px;border-left:1px solid var(--line)}
+.mood b{font-family:"Shippori Mincho",serif;font-size:22px;font-weight:500;display:block}
+.mood p{color:#d9d1c2;font-size:14px;margin-top:8px}
+.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:32px;border-top:1px solid var(--line)}
+.shots > div{padding:18px 24px 18px 0;border-bottom:1px solid var(--line)}
+.shots > div:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}
+.shots b{font-weight:500}
+.shots p{color:#d9d1c2;font-size:15px;margin-top:2px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:32px}
+.gal figure{aspect-ratio:16/10;overflow:hidden;border-radius:8px;border:1px solid var(--line);position:relative}
+.gal figure.w{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal figcaption{position:absolute;left:10px;bottom:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.ex-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}
+.ex-grid a{text-decoration:none;display:block}
+.ex-grid figure{aspect-ratio:9/16;overflow:hidden;border-radius:10px;border:1px solid var(--line);background:#000}
+.ex-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.ex-grid a:hover img{transform:scale(1.04)}
+.ex-grid .lb{font-size:14px;line-height:1.3;margin-top:10px}
+.ex-grid .hd{font-size:12px;color:var(--muted);margin-top:2px}
+.tech{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;border-top:1px solid var(--line)}
+.tech > div{padding:22px 22px 22px 0;border-bottom:1px solid var(--line)}
+.tech > div:not(:nth-child(3n+1)){padding-left:22px;border-left:1px solid var(--line)}
+.tech .k{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+.tech p{margin-top:6px;color:#d9d1c2;font-size:15px}
+.cal{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:28px}
+.cal div{border:1px solid var(--line);padding:18px 14px;text-align:center}
+.cal div.first{border-color:var(--amber)}
+.cal b{font-family:"Shippori Mincho",serif;font-size:22px;font-weight:500;display:block}
+.cal span{font-size:12px;color:var(--muted)}
+.info{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;margin-top:32px}
+.info dl{border-top:1px solid var(--line)}
+.info dl div{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line)}
+.info dt{color:var(--muted);font-size:14px}
+.info dd{text-align:right}
+.info dd a{text-decoration:none;border-bottom:1px solid #5a5246}
+.contact .who{font-family:"Shippori Mincho",serif;font-size:30px}
+.contact .who span{display:block;font-family:"Jost";font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.contact .lines{margin-top:16px;line-height:1.9}
+.contact .lines a{text-decoration:none;border-bottom:1px solid #5a5246}
+.flex{margin-top:28px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:"Shippori Mincho",serif;font-size:21px;max-width:860px}
+footer{padding:28px 0 40px;color:#6f675b;font-size:13px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:960px){.nav{display:none}}
+@media (max-width:860px){
+  section{padding:64px 0}
+  .hero .wrap,.day,.info{grid-template-columns:1fr;gap:32px}
+  .reels{max-width:420px}
+  .figs{grid-template-columns:repeat(2,1fr)}
+  .figs div:nth-child(3){border-left:0}
+  .figs div:nth-child(n+3){border-top:1px solid var(--line)}
+  .mood,.shots,.tech{grid-template-columns:1fr}
+  .mood > div + div,.shots > div:nth-child(even),.tech > div:not(:nth-child(3n+1)){padding-left:0;border-left:0}
+  .mood > div + div{border-top:1px solid var(--line)}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .ex-grid{grid-template-columns:repeat(2,1fr)}
+  .cal{grid-template-columns:repeat(2,1fr)}
+  .cal div{padding:14px 8px}
+  .cal b{font-size:19px}
+  .info dl div{flex-direction:column;gap:2px}.info dd{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand"><img src="logo.png" alt="Moshi Moshi"><span>× GOONY Studio</span></div>
+  <nav class="nav"><a href="#format">Le format</a><a href="#ambiance">L'ambiance</a><a href="#plans">Les plans</a><a href="#exemples">Exemples</a><a href="#infos">Infos pratiques</a></nav>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">Brief tournage · À partir de janvier 2027</div>
+    <h1>Filmer <em>Moshi Moshi</em>, tous les deux mois.</h1>
+    <p>Moshi Moshi est un restaurant japonais haut de gamme à Monaco. On cherche un vidéaste pour réaliser régulièrement des reels cinématiques : cuisine, gestes du chef, ambiance de la salle, le tout avec une belle lumière et un vrai soin du détail.</p>
+    <div class="facts"><span>1 tournage tous les 2 mois</span><span>3 à 4 h sur place</span><span>6 à 8 reels de 20 s</span><span>Montage inclus</span></div>
+  </div>
+  <div class="reels">
+    <figure><img src="v1.jpg" alt="La terrasse de Moshi Moshi le soir"></figure>
+    <figure><img src="v2.jpg" alt="Les rolls au comptoir"></figure>
+  </div>
+</div></div>
+
+<section id="format"><div class="wrap">
+  <div class="eyebrow">Le format</div>
+  <h2>Une journée de travail, tous les deux mois.</h2>
+  <div class="figs">
+    <div><b>3-4 h</b><span>de tournage</span></div>
+    <div><b>≈ 4 h</b><span>de montage</span></div>
+    <div><b>6 à 8</b><span>reels livrés</span></div>
+    <div><b>≈ 20 s</b><span>par reel</span></div>
+  </div>
+  <div class="day">
+    <div><div class="h"><h3>Le tournage</h3><span class="t">3 à 4 h</span></div><ul>
+      <li>Sur place, pendant le service ou la mise en place, selon ce qu'on veut montrer</li>
+      <li>Un moment choisi ensemble : Soirée Shibuya, nouvelle carte, service du soir</li>
+      <li>De quoi alimenter les réseaux pendant deux mois</li></ul></div>
+    <div><div class="h"><h3>Le montage</h3><span class="t">≈ 4 h</span></div><ul>
+      <li>6 à 8 reels verticaux d'environ 20 secondes, prêts à publier</li>
+      <li>Environ 30 minutes par reel : sélection, rythme, étalonnage, son</li>
+      <li>Les rushes bruts en plus, pour les stories</li></ul></div>
+  </div>
+  <p class="note">Les reels sont publiés et sponsorisés par nos soins. Le premier tournage sert aussi à caler le style ensemble.</p>
+</div></section>
+
+<section id="ambiance"><div class="wrap">
+  <div class="eyebrow">Ce qu'on veut montrer</div>
+  <h2>La qualité, le prestige,<br>et l'envie de venir.</h2>
+  <p class="lead2">Le compte actuel est propre mais un peu sombre et générique : beaucoup de plats seuls, une salle souvent vide. On veut garder le côté chic et monégasque, mais avec plus de vie, plus de mouvement et plus de détails qui accrochent l'œil dès la première seconde.</p>
+  <div class="mood">
+    <div><b>La qualité</b><p>Le poisson, la découpe, la précision du geste. Des plans serrés et nets.</p></div>
+    <div><b>Le prestige</b><p>Le comptoir en marbre, le lustre, la cave, le service soigné.</p></div>
+    <div><b>Le luxe</b><p>Une lumière chaude et maîtrisée, des noirs profonds, aucun plan banal.</p></div>
+    <div><b>La gastronomie</b><p>Le travail du chef, de la planche à l'assiette, comme une publicité.</p></div>
+    <div><b>Monaco</b><p>La terrasse le soir, la place d'Armes, la salle pleine et l'énergie des Soirées Shibuya.</p></div>
+  </div>
+</div></section>
+
+<section id="plans"><div class="wrap">
+  <div class="eyebrow">Les plans qu'on aime</div>
+  <h2>Satisfaisant, ASMR, minutieux.</h2>
+  <div class="shots">
+    <div><b>La découpe</b><p>Saumon, thon, sériole : la lame qui glisse, le son du couteau, au ralenti.</p></div>
+    <div><b>L'assemblage</b><p>Les doigts qui façonnent un nigiri, les rolls coupés et alignés.</p></div>
+    <div><b>Le chalumeau</b><p>L'aburi en macro, la flamme, le gras qui grésille.</p></div>
+    <div><b>Le dressage</b><p>La pince, les finitions, l'assiette qui part en salle.</p></div>
+    <div><b>Les boissons</b><p>Le saké versé, les cocktails au bar, la glace, les reflets.</p></div>
+    <div><b>Le service</b><p>Les plateaux qui traversent la salle, les baguettes, la sauce soja.</p></div>
+    <div><b>Le lieu</b><p>Travellings lents dans la salle, la terrasse, la cave, le lustre.</p></div>
+    <div><b>La soirée</b><p>Le DJ, les mains sur les platines, la salle qui se remplit.</p></div>
+  </div>
+  <div class="gal">
+    <figure class="w"><img src="terrasse.jpg" alt=""><figcaption>La terrasse</figcaption></figure>
+    <figure><img src="poisson.jpg" alt=""><figcaption>Le poisson</figcaption></figure>
+    <figure><img src="rolls.jpg" alt=""><figcaption>Le comptoir</figcaption></figure>
+    <figure><img src="dessert.jpg" alt=""><figcaption>Les desserts</figcaption></figure>
+    <figure><img src="dj.jpg" alt=""><figcaption>Le DJ</figcaption></figure>
+    <figure><img src="lustre.jpg" alt=""><figcaption>La salle</figcaption></figure>
+    <figure><img src="cave.jpg" alt=""><figcaption>La cave</figcaption></figure>
+    <figure><img src="cuisine.jpg" alt=""><figcaption>La cuisine</figcaption></figure>
+    <figure><img src="bar.jpg" alt=""><figcaption>Le bar</figcaption></figure>
+  </div>
+  <p class="note">Images tirées de rushes déjà tournés sur place.</p>
+</div></section>
+
+<section id="exemples"><div class="wrap">
+  <div class="eyebrow">Références</div>
+  <h2>Le niveau qu'on vise</h2>
+  <p class="lead2">Quelques reels qui donnent le ton : la cuisine filmée comme une publicité, une lumière travaillée, des gestes au ralenti. Cliquez pour voir la vidéo.</p>
+  <div class="ex-grid">
+    <a href="https://www.instagram.com/reel/DZuBuqJpycY/" target="_blank" rel="noopener"><figure><img src="ex/DZuBuqJpycY.jpg" alt="" loading="lazy"></figure><div class="lb">Le dressage à la pince</div><div class="hd">@showmo.films</div></a>
+    <a href="https://www.instagram.com/reel/DbV1rzXvzmJ/" target="_blank" rel="noopener"><figure><img src="ex/DbV1rzXvzmJ.jpg" alt="" loading="lazy"></figure><div class="lb">Le rythme d'un service</div><div class="hd">@decadentdepictions</div></a>
+    <a href="https://www.instagram.com/reel/DNij5gsuBzP/" target="_blank" rel="noopener"><figure><img src="ex/DNij5gsuBzP.jpg" alt="" loading="lazy"></figure><div class="lb">Dîner et cocktails, version cinéma</div><div class="hd">@decadentdepictions</div></a>
+    <a href="https://www.instagram.com/reel/DKmXvWnSNuJ/" target="_blank" rel="noopener"><figure><img src="ex/DKmXvWnSNuJ.jpg" alt="" loading="lazy"></figure><div class="lb">Les pâtes, en gros plan</div><div class="hd">@uncltrdmedia</div></a>
+    <a href="https://www.instagram.com/reel/DObczjOACMz/" target="_blank" rel="noopener"><figure><img src="ex/DObczjOACMz.jpg" alt="" loading="lazy"></figure><div class="lb">La table vue du dessus</div><div class="hd">@decadentdepictions</div></a>
+  </div>
+</div></section>
+
+<section id="technique"><div class="wrap">
+  <div class="eyebrow">Côté technique</div>
+  <h2>Nos préférences, pas des règles.</h2>
+  <div class="tech">
+    <div><div class="k">Format</div><p>Vertical 9:16 pour la livraison. Tourner en 4K pour garder de la marge au recadrage.</p></div>
+    <div><div class="k">Ralentis</div><p>50 à 120 images par seconde sur les gestes et les liquides.</p></div>
+    <div><div class="k">Optiques</div><p>Une macro pour les détails, une focale plus large pour la salle et la terrasse.</p></div>
+    <div><div class="k">Mouvement</div><p>Stabilisateur ou slider : travellings lents, approches, plans qui respirent.</p></div>
+    <div><div class="k">Lumière</div><p>La salle est sombre et chaude : une petite source d'appoint sur les plats est bienvenue.</p></div>
+    <div><div class="k">Son</div><p>Prise de son proche pour l'ASMR : couteau, chalumeau, verre, glaçons.</p></div>
+  </div>
+  <p class="flex">Dans tous les cas, on est flexibles et ouverts à tes idées : si tu vois un meilleur angle ou une autre façon de faire, on en parle.</p>
+</div></section>
+
+<section id="calendrier"><div class="wrap">
+  <div class="eyebrow">Le rythme</div>
+  <h2>Six tournages par an</h2>
+  <div class="cal">
+    <div class="first"><b>Janvier</b><span>Premier tournage</span></div>
+    <div><b>Mars</b><span>Printemps</span></div>
+    <div><b>Mai</b><span>Avant le Grand Prix</span></div>
+    <div><b>Juillet</b><span>L'été en terrasse</span></div>
+    <div><b>Septembre</b><span>Carte d'automne</span></div>
+    <div><b>Novembre</b><span>Fête du Prince</span></div>
+  </div>
+  <p class="note">Les dates exactes sont à caler ensemble, souvent autour d'une Soirée Shibuya ou d'une nouvelle carte.</p>
+</div></section>
+
+<section id="infos"><div class="wrap">
+  <div class="eyebrow">Infos pratiques</div>
+  <h2>Le restaurant</h2>
+  <div class="info">
+    <dl>
+      <div><dt>Restaurant</dt><dd>Moshi Moshi, restaurant japonais</dd></div>
+      <div><dt>Adresse</dt><dd><a href="https://maps.google.com/?q=Moshi+Moshi+March%C3%A9+de+la+Condamine+Monaco" target="_blank" rel="noopener">1er étage du Marché de la Condamine, place d'Armes, Monaco</a></dd></div>
+      <div><dt>Téléphone</dt><dd><a href="tel:+37793254343">+377 93 25 43 43</a></dd></div>
+      <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/moshimoshi_mc/" target="_blank" rel="noopener">@moshimoshi_mc</a></dd></div>
+      <div><dt>Ouverture</dt><dd>Tous les jours, sauf le samedi midi et le dimanche</dd></div>
+      <div><dt>À ne pas manquer</dt><dd>Les Soirées Shibuya, une fois par mois, avec DJ</dd></div>
+    </dl>
+    <div class="contact">
+      <div class="eyebrow">Contact</div>
+      <div class="who" style="margin-top:12px">Archibald Benhamou<span>Direction artistique, GOONY Studio</span></div>
+      <div class="lines"><a href="mailto:contact@goonystudio.com">contact@goonystudio.com</a><br><a href="tel:+33627151750">+33 6 27 15 17 50</a><br><a href="https://goonystudio.com" target="_blank" rel="noopener">goonystudio.com</a></div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>GOONY Studio · Monaco</span><span>Brief de tournage, document de travail</span></div></footer>
+</body>
+</html>
