@@ -200,11 +200,13 @@ addEventListener("keydown",e=>{if(e.key==="Escape"){if($("#light").classList.con
 
 /* ---------- chargement (toutes les 15 s) ---------- */
 let loading=false;
+let again=false;
 async function load(force){
-  if(loading||(document.hidden&&!force))return;loading=true;const asked=me;
+  if(loading){if(force)again=true;return}
+  if(document.hidden&&!force)return;loading=true;const asked=me;
   try{
     const r=await fetch(API+"?who="+encodeURIComponent(me)+"&t="+Date.now());const j=await r.json();if(!j.ok)throw 0;
-    if(asked!==me){loading=false;return}
+    if(asked!==me){loading=false;load(true);return}
     VB={};for(const [id,l] of Object.entries(j.validatedBy||{}))if(Array.isArray(l))VB[id]=l.map(String);
     const busy=k=>W[k]?.busy||W[k]?.next||failed.has(k);
     for(const [id,x] of Object.entries(j.mine?.reviews||{})){
@@ -219,7 +221,7 @@ async function load(force){
     for(const [k,w] of Object.entries(W))if(w.next||w.busy){}
     conn="ok";renderGrid();if(cur)renderView();
   }catch(e){if(conn!=="ok"){conn="off";showErr("Impossible de joindre la base des retours. Vérifiez la connexion internet puis rechargez la page.")}}
-  loading=false;paintSync();
+  loading=false;paintSync();if(again){again=false;load(true)}
 }
 try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith("sifas:q:")){const body=JSON.parse(localStorage.getItem(k));if(body&&body.who)save(k.slice(8),body)}}}catch(e){}
 paintWho();renderGrid();route();paintSync();load(true);setInterval(load,15000);
