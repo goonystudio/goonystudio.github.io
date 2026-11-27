@@ -353,6 +353,8 @@ function renderView(){
   const ta=$("#notes");if(document.activeElement!==ta||!dirtyNotes)ta.value=r.notes;
     paintSaved();drawAll();
 }
+const IL=Object.fromEntries(ISS),LI=Object.fromEntries(ISS.map(([k,l])=>[l,k]));
+function meta(v){const i=cur.ver.indexOf(v);return{id:v,coll:COLL[cur.c],title:cur.t,version:cur.ver.length>1?"Version "+LET[i]:"Unique"}}
 function paintSaved(){
   if(!cur)return;const r=R[vid()],el=$("#savedLine");
   if(!r||!r.at){el.textContent="Rien de noté pour l'instant.";return}
