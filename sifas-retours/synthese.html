@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sifas 2027 · Synthèse des retours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Synthèse privée pour Archi : même planche d'épreuves, cette fois avec les traits de chacun superposés */
+:root{color-scheme:light dark;--bg:light-dark(#fff,#131210);--paper:light-dark(#f5f2ec,#1c1a17);--ink:light-dark(#1d1b18,#f1ede6);--mute:light-dark(#6f6a62,#a8a196);--line:light-dark(#e4dfd6,#34302a);--teak:light-dark(#a8692d,#d39a5c);--ok:#1f9a5a;--warn:light-dark(#b8620a,#f0a04a);--warnbg:light-dark(#fdf0e1,#33230f)}
+*{box-sizing:border-box;min-width:0}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,Inter,sans-serif;margin:0;line-height:1.1}
+button,input{font:inherit;color:inherit}
+.wrap{max-width:1400px;margin:auto;padding:22px max(4vw,16px) 80px}
+.head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.head h1{font-size:clamp(26px,3vw,38px);font-weight:800}
+.head p{margin:2px 0 0;color:var(--mute);font-size:14px}
+.btn{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:10px 14px;min-height:44px;font-weight:600;cursor:pointer}
+.btn:hover{border-color:var(--ink)}
+.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:22px 0}
+.mem{border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:var(--paper)}
+.mem b{display:flex;align-items:center;gap:8px;font:800 18px Archivo}
+.mem span{display:block;font-size:14px;color:var(--mute)}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}
+.filters{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-bottom:10px}
+.lbl{font-size:13px;color:var(--mute);font-weight:600}
+.chip{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:7px 13px;min-height:38px;font-size:14px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.item{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;padding:24px 0;border-top:1px solid var(--line)}
+.item h2{font-size:22px;font-weight:800;grid-column:1/-1}
+.item h2 small{font:500 14px Inter;color:var(--mute);margin-left:8px}
+.fig{position:relative;aspect-ratio:3/2;border-radius:12px;overflow:hidden;background:var(--paper)}
+.fig img,.fig canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vtabs{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.rows{display:flex;flex-direction:column;gap:10px}
+.row{border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.row .who{display:flex;align-items:center;gap:8px;font-weight:700;flex-wrap:wrap}
+.row .when{margin-left:auto;font-weight:500;font-size:13px;color:var(--mute)}
+.tag{font-size:13px;font-weight:700;border-radius:99px;padding:3px 10px}
+.tag.ok{background:var(--ok);color:#fff}.tag.is{background:var(--warnbg);color:var(--warn)}
+.row p{margin:6px 0 0;white-space:pre-wrap}
+.row .z{font-size:13px;color:var(--mute);margin-top:4px}
+.none{color:var(--mute);font-size:15px}
+.gate{max-width:440px;margin:12vh auto;padding:28px;border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;gap:12px}
+.gate input{padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+.err{color:#b42318}
+@media(max-width:860px){.item{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="gate" class="gate" hidden>
+  <h1>Synthèse privée</h1><p>Entrez la clé de la synthèse.</p>
+  <form id="gf" style="display:flex;gap:8px"><input id="gk" placeholder="Clé" style="flex:1"><button class="btn">Ouvrir</button></form>
+  <p class="err" id="gerr"></p>
+</div>
+<div class="wrap" id="app" hidden>
+  <div class="head">
+    <div><h1>Synthèse des retours</h1><p id="stamp">Sifas · Catalogue 2027 · visible uniquement avec la clé</p></div>
+    <div style="display:flex;gap:8px"><button class="btn" id="reload">Actualiser</button><button class="btn" id="copy">Copier tout en texte</button></div>
+  </div>
+  <div class="team" id="team"></div>
+  <div class="filters">
+    <span class="lbl">Collection</span><span id="fc"></span>
+    <span class="lbl">Personne</span><span id="fp"></span>
+    <span class="lbl">Afficher</span><span id="fs"></span>
+  </div>
+  <div id="list"></div>
+</div>
+<script src="data.js"></script>
+<script>
+{
+const {P,COLL,V,ISS,LET,PEOPLE,OTHER_COLOR,API}=window;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const colorOf=n=>(PEOPLE.find(p=>p[0].toLowerCase()===String(n).toLowerCase())||[0,OTHER_COLOR])[1];
+let key="";try{key=(location.hash.match(/k=([\w-]+)/)||[])[1]||localStorage.getItem("sifas:admin")||""}catch(e){}
+let RV=[],DR=[],F={c:"all",p:"all",s:"fb"},sel={};
+async function load(){
+  try{
+    const r=await fetch(API+"?admin="+encodeURIComponent(key)+"&t="+Date.now());const j=await r.json();
+    if(!j.ok){$("#gate").hidden=false;$("#app").hidden=true;$("#gerr").textContent=key?"Clé incorrecte.":"";return}
+    try{localStorage.setItem("sifas:admin",key)}catch(e){}
+    if(location.hash)history.replaceState("",document.title,location.pathname);
+    RV=j.reviews||[];DR=j.drawings||[];$("#gate").hidden=true;$("#app").hidden=false;
+    $("#stamp").textContent="Mis à jour à "+new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});render();
+  }catch(e){$("#gate").hidden=false;$("#gerr").textContent="Connexion impossible, réessayez."}
+}
+$("#gf").onsubmit=e=>{e.preventDefault();key=$("#gk").value.trim();load()};
+$("#reload").onclick=load;
+function people(){const s=new Map(PEOPLE.map(p=>[p[0],1]));RV.concat(DR).forEach(x=>{if(x.who&&![...s.keys()].some(k=>k.toLowerCase()===x.who.toLowerCase()))s.set(x.who,1)});return [...s.keys()]}
+function chips(el,list,k){el.innerHTML=list.map(([v,l])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${F[k]===v}">${esc(l)}</button>`).join(" ");el.onclick=e=>{const b=e.target.closest(".chip");if(!b)return;F[k]=b.dataset.v;render()}}
+const by=(arr,id)=>arr.filter(x=>x.id===id&&(F.p==="all"||x.who.toLowerCase()===F.p.toLowerCase()));
+const isNeg=r=>!!(r.issues||r.notes);
+function render(){
+  const ps=people();
+  $("#team").innerHTML=ps.map(n=>{const mine=RV.filter(r=>r.who.toLowerCase()===n.toLowerCase());const ok=mine.filter(r=>r.validated).length,fb=mine.filter(isNeg).length+DR.filter(d=>d.who.toLowerCase()===n.toLowerCase()&&d.strokes.length&&!mine.some(r=>r.id===d.id)).length;
+    return`<div class="mem"><b><span class="dot" style="background:${colorOf(n)}"></span>${esc(n)}</b><span>${ok} version${ok>1?"s":""} validée${ok>1?"s":""}</span><span>${fb} retour${fb>1?"s":""} à traiter</span></div>`}).join("");
+  chips($("#fc"),[["all","Toutes"],...Object.entries(COLL)],"c");
+  chips($("#fp"),[["all","Tout le monde"],...ps.map(n=>[n,n])],"p");
+  chips($("#fs"),[["fb","Avec des retours à traiter"],["any","Tout ce qui a été touché"],["all","Tous les visuels"]],"s");
+  let html="";
+  for(const x of V){
+    if(F.c!=="all"&&x.c!==F.c)continue;
+    const vers=x.ver.map((v,i)=>({v,i,r:by(RV,v),d:by(DR,v).filter(d=>d.strokes.length)}));
+    const keep=vers.filter(o=>F.s==="all"||(F.s==="any"?(o.r.length||o.d.length):(o.r.some(isNeg)||o.d.length)));
+    if(!keep.length)continue;
+    const cur=keep.find(o=>o.v===sel[x.id])||keep[0];
+    html+=`<section class="item"><h2>${esc(x.t)}<small>${esc(COLL[x.c])}</small></h2><div><div class="fig"><img src="img/${cur.v}.jpg" alt=""><canvas data-v="${cur.v}"></canvas></div>
+      ${keep.length>1||x.ver.length>1?`<div class="vtabs">${keep.map(o=>`<button class="chip" data-x="${x.id}" data-v="${o.v}" aria-pressed="${o===cur}">Version ${LET[o.i]}</button>`).join("")}</div>`:""}</div>
+      <div class="rows">${rowsFor(cur)}</div></section>`;
+  }
+  $("#list").innerHTML=html||`<p class="none" style="padding:30px 0">Rien à afficher avec ces filtres pour l'instant.</p>`;
+  document.querySelectorAll("canvas[data-v]").forEach(paint);
+}
+function rowsFor(o){
+  const names=new Set([...o.r.map(r=>r.who),...o.d.map(d=>d.who)]);
+  if(!names.size)return`<p class="none">Aucun retour sur cette version.</p>`;
+  return [...names].map(n=>{const r=o.r.find(x=>x.who===n)||{},d=o.d.find(x=>x.who===n);
+    return`<div class="row"><div class="who"><span class="dot" style="background:${colorOf(n)}"></span>${esc(n)}
+      ${r.validated?'<span class="tag ok">✓ Validé</span>':""}${(r.issues||"").split(", ").filter(Boolean).map(i=>`<span class="tag is">${esc(i)}</span>`).join("")}
+      <span class="when">${esc(r.at||d?.at||"")}</span></div>${r.notes?`<p>${esc(r.notes)}</p>`:""}${d?`<div class="z">${d.strokes.length} trait${d.strokes.length>1?"s":""} · zone : ${esc(d.zone||"?")}</div>`:""}</div>`}).join("");
+}
+function paint(cv){
+  const v=cv.dataset.v,w=cv.clientWidth,h=cv.clientHeight,dp=devicePixelRatio||1;cv.width=w*dp;cv.height=h*dp;
+  const c=cv.getContext("2d");c.scale(dp,dp);c.lineCap=c.lineJoin="round";
+  for(const d of by(DR,v))for(const s of d.strokes){const p=s.p;if(!Array.isArray(p)||p.length<4)continue;
+    c.strokeStyle=colorOf(d.who);c.lineWidth=Math.max(3,w*.005);c.shadowColor="rgba(0,0,0,.4)";c.shadowBlur=3;
+    c.beginPath();c.moveTo(p[0]*w,p[1]*h);for(let i=2;i<p.length;i+=2)c.lineTo(p[i]*w,p[i+1]*h);c.stroke()}
+}
+$("#list").onclick=e=>{const b=e.target.closest("[data-x]");if(!b)return;sel[b.dataset.x]=b.dataset.v;render()};
+addEventListener("resize",()=>document.querySelectorAll("canvas[data-v]").forEach(paint));
+$("#copy").onclick=async()=>{
+  const t=V.flatMap(x=>x.ver.map((v,i)=>{const rs=RV.filter(r=>r.id===v),ds=DR.filter(d=>d.id===v&&d.strokes.length);if(!rs.length&&!ds.length)return"";
+    const n=new Set([...rs.map(r=>r.who),...ds.map(d=>d.who)]);return`${COLL[x.c]} · ${x.t}${x.ver.length>1?" · version "+LET[i]:""} (${v})\n`+[...n].map(w=>{const r=rs.find(q=>q.who===w)||{},d=ds.find(q=>q.who===w);return`  ${w} : ${r.validated?"VALIDÉ":"retour"}${r.issues?" · "+r.issues:""}${d?" · entouré : "+d.zone:""}${r.notes?" · « "+r.notes+" »":""}`}).join("\n")})).filter(Boolean).join("\n\n");
+  try{await navigator.clipboard.writeText(t);$("#copy").textContent="Copié ✓"}catch(e){$("#copy").textContent="Copie refusée"}setTimeout(()=>$("#copy").textContent="Copier tout en texte",2000)};
+if(key)load();else $("#gate").hidden=false;
+}
+</script>
+</body>
+</html>
