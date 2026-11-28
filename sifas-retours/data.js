@@ -36,7 +36,7 @@ window.V=[
  ["bc-repas-dessus","bc","provence","Repas vu du dessus",["b2v06"],["BC-0832","BC-0852"]],
  ["bc-mer","bc","piscine","Salon face à la mer",["b2v05"],["BC-0766","BC-0734","BC-0811"]],
  ["bc-rooftop-urbain","bc","paris","Rooftop urbain",["b2v08","b2v09"],["BC-0766","BC-0814"]],
- ["mk-lac","mk","eau","Au bord du lac",["v20","v23","v28","v30"],["MK-0751","MK-0816"]],
+ ["mk-lac","mk","eau","Au bord du lac",["v20","v23","v30"],["MK-0751","MK-0816"]],
  ["mk-mur","mk","provence","Salon contre le mur en pierre",["v21"],["MK-0730","MK-0751","MK-0819"]],
  ["mk-mas","mk","provence","Fauteuil devant le mas",["v22"],["MK-0751","MK-0819"]],
  ["mk-treille","mk","provence","Fauteuil sous la treille",["v29"],["MK-0751","MK-0816"]],
