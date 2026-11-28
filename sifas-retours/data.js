@@ -33,6 +33,7 @@ window.V=[
  ["bc-fleurs","bc","provence","Fauteuil dans les massifs",["v11","v13"],["BC-0734","BC-0814"]],
  ["bc-balcon","bc","paris","Balcon parisien",["v15"],["BC-0734","BC-0814"]],
  ["bc-olivier","bc","provence","Repas sous l'olivier",["v16","v19","v12"],["BC-0832","BC-0852"]],
+ ["bc-rooftop","bc","paris","Repas sur les toits",["v17"],["BC-0832","BC-0852"]],
  ["bc-repas-dessus","bc","provence","Repas vu du dessus",["b2v06"],["BC-0832","BC-0852"]],
  ["bc-mer","bc","piscine","Salon face à la mer",["b2v05"],["BC-0766","BC-0734","BC-0811"]],
  ["bc-rooftop-urbain","bc","paris","Rooftop urbain",["b2v08","b2v09"],["BC-0766","BC-0814"]],
